@@ -1,0 +1,29 @@
+import React from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Services from "./components/Services";
+import Reasons from "./components/Reasons";
+import About from "./components/About";
+import Testimonials from "./components/Testimonials";
+import FAQ from "./components/FAQ";
+import Contact from "./components/Contact";
+import Map from "./components/Map";
+import Footer from "./components/Footer";
+import "./styles/main.css";
+
+const App: React.FC = () => (
+  <>
+    <Header />
+    <Hero />
+    <Services />
+    <Reasons />
+    <About />
+    <Testimonials />
+    <FAQ />
+    <Contact />
+    <Map />
+    <Footer />
+  </>
+);
+
+export default App;
