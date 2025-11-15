@@ -1,68 +1,337 @@
+/* =======================================
+   UMris Enterprises – Global Theme System
+   ======================================= */
+
+/* ----- Brand Colors From Logo ----- */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --umris-purple: #A64586;
+  --umris-purple-dark: #8e3c77;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --umris-green: #49B97E;
+  --umris-green-dark: #3ea06d;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --umris-white: #ffffff;
+  --umris-black: #000000;
+
+  --text-dark: #1a1a1a;
+  --text-light: #f4f4f4;
+
+  --bg-light: #ffffff;
+  --bg-grey: #fafafa;
+
+  --max-width: 1200px;
+
+  /* Typography */
+  --font-primary: "Inter", Arial, sans-serif;
+  --h1-size: 3rem;
+  --h2-size: 2.3rem;
+  --h3-size: 1.6rem;
+  --body-size: 1rem;
+
+  /* Animation durations */
+  --fade: 0.6s ease;
+  --slide: 0.7s ease;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* ----- Dark Mode ----- */
+.dark-mode {
+  --bg-light: #1c1c1c;
+  --bg-grey: #2a2a2a;
+  --text-dark: #f4f4f4;
+  --text-light: #fafafa;
 }
-a:hover {
-  color: #535bf2;
+
+/* ----- Reset ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
+/* ----- Utility Classes ----- */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* ----- Typography ----- */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: var(--h1-size);
+  font-weight: 700;
+  color: var(--text-dark);
+}
+h2 {
+  font-size: var(--h2-size);
+  font-weight: 700;
+}
+h3 {
+  font-size: var(--h3-size);
+  font-weight: 600;
+}
+p {
+  font-size: var(--body-size);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.section-title {
+  color: var(--umris-purple);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--umris-green);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ----- Navigation Bar ----- */
+nav {
+  width: 100%;
+  padding: 1.2rem 0;
+  background: var(--bg-light);
+  border-bottom: 3px solid var(--umris-green);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--fade);
+}
+
+nav .logo img {
+  height: 48px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--umris-purple);
+}
+
+/* ----- Hero Section ----- */
+.hero {
+  background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.3),
+      rgba(0,0,0,0.7)
+    ),
+    url("/images/hero-bg.jpg") center/cover no-repeat;
+  padding: 7rem 0;
+  text-align: center;
+  color: var(--umris-white);
+  animation: fadeIn var(--fade);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0.5rem auto 2rem;
+}
+
+/* ----- Buttons ----- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-@media (prefers-color-scheme: light) {
+.btn-primary {
+  background: var(--umris-purple);
+  color: var(--umris-white);
+}
+.btn-primary:hover {
+  background: var(--umris-purple-dark);
+}
+
+.btn-secondary {
+  background: var(--umris-green);
+  color: var(--umris-white);
+}
+.btn-secondary:hover {
+  background: var(--umris-green-dark);
+}
+
+/* ----- Services Section ----- */
+.services {
+  padding: 4rem 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px solid var(--umris-purple);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ----- Why Us Section ----- */
+.why-us {
+  padding: 4rem 0;
+  background: var(--umris-purple);
+  color: var(--umris-white);
+}
+
+.why-list {
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.why-item {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--umris-green);
+  font-size: 1.1rem;
+}
+
+/* ----- Testimonials ----- */
+.testimonials {
+  background: var(--bg-grey);
+  padding: 4rem 0;
+}
+
+.testimonial-card {
+  background: var(--bg-light);
+  border-left: 4px solid var(--umris-green);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* ----- Carousel (Trucks in Action) ----- */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.carousel img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  animation: slide var(--slide);
+}
+
+/* ----- Map Section ----- */
+.map-container {
+  width: 100%;
+  height: 420px;
+  border-radius: 12px;
+  border: 3px solid var(--umris-purple);
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+/* ----- Footer ----- */
+footer {
+  background: var(--umris-black);
+  color: var(--umris-white);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+footer a {
+  color: var(--umris-green);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Animations ----- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide {
+  from { transform: scale(1.08); opacity: 0.4; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ----- Responsive Breakpoints ----- */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    gap: 1rem;
+  }
+
+  .hero {
+    padding: 5rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .carousel {
+    height: 300px;
+  }
+
+  .carousel img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --h1-size: 2rem;
+    --h2-size: 1.7rem;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.6rem;
   }
 }
