@@ -10,6 +10,7 @@ import Reasons from "./components/Reasons";
 import CarouselShowcase from "./components/carouselShowcase";
 import Testimonials from "./components/Testimonial";
 import Map from "./components/Map";
+import Contact from "./components/Contact";
 
 const App: React.FC = () => {
   return (
