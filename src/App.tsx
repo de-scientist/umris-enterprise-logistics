@@ -9,6 +9,7 @@ const App: React.FC = () => {
   return (
     <div className="app-container">
 
+      {/* Header */}
       <Header />
 
       {/* Hero / Intro */}
