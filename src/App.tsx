@@ -9,8 +9,11 @@ import Services from "./components/Services";
 import Reasons from "./components/Reasons";
 import CarouselShowcase from "./components/carouselShowcase";
 import Testimonials from "./components/Testimonial";
+import Showcase from "./components/showcase";
 import Map from "./components/Map";
 import Contact from "./components/Contact";
+import FAQ from "./components/FAQ";
+
 
 const App: React.FC = () => {
   return (
@@ -37,11 +40,17 @@ const App: React.FC = () => {
       {/* Testimonials */}
       <Testimonials />
 
+      {/* showcase */}
+      <Showcase />
+
       {/* Coverage Location - Naivasha, Kenya */}
       <Map />
 
       {/* Contact / Book a Delivery */}
       <Contact />
+
+      {/* FAQ */}
+      <FAQ />
 
     </div>
   );
