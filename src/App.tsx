@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
 import Reasons from "./components/Reasons";
+import CarouselShowcase from "./components/carouselShowcase";
 
 const App: React.FC = () => {
   return (
@@ -28,7 +29,7 @@ const App: React.FC = () => {
       <Reasons />
 
       {/* Trucks In Action - Dynamic Carousel */}
-      <GalleryCarousel />
+      <CarouselShowcase />
 
       {/* Testimonials */}
       <Testimonials />
