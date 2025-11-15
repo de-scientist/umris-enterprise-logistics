@@ -15,6 +15,20 @@ import Contact from "./components/Contact";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
+const truckImages = [
+  {
+    imageUrl: "/images/umris-truck1.jpg",
+    caption: "Our fleet delivering goods in Naivasha"
+  },
+  {
+    imageUrl: "/images/umris-truck2.jpg",
+    caption: "Timely cargo drop-off for a client"
+  },
+  {
+    imageUrl: "/images/umris-truck3.jpg",
+    caption: "On the road — serving Kenya reliably"
+  },
+];
 
 const App: React.FC = () => {
   return (
