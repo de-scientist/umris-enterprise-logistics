@@ -50,7 +50,7 @@ const App: React.FC = () => {
       <Reasons />
 
       {/* Trucks In Action - Dynamic Carousel */}
-      <CarouselShowcase />
+      <CarouselShowcase items={truckImages}/>
 
       {/* Testimonials */}
       <Testimonials />
