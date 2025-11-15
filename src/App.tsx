@@ -4,6 +4,7 @@ import React from "react";
 // Core Sections
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import About from "./components/About";
 
 const App: React.FC = () => {
   return (
