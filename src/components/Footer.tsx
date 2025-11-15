@@ -2,9 +2,7 @@ import React from "react";
 
 const Footer: React.FC = () => (
   <footer className="footer">
-    <p className="footer-text">
-      Built with passion by <a href="https://github.com/de-scientist" target="_blank">Mark Kinyanjui</a>
-    </p>
+     <p>© {new Date().getFullYear()} Umris Enterprise Logistics. Built with passion by <a href="https://github.com/de-scientist">TechV</a>.</p>
   </footer>
 );
 
