@@ -8,6 +8,7 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Reasons from "./components/Reasons";
 import CarouselShowcase from "./components/carouselShowcase";
+import Testimonials from "./components/Testimonial";
 
 const App: React.FC = () => {
   return (
