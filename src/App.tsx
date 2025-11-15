@@ -56,7 +56,11 @@ const App: React.FC = () => {
       <Testimonials />
 
       {/* showcase */}
-      <Showcase />
+      <Showcase
+  imageUrl="/images/umris-truck-action.jpg" // save the FB photo locally
+  postLink="https://www.facebook.com/100063605441743/posts/1416999480430220/?mibextid=rS40aB7S9Ucbxw6v"
+/>
+
 
       {/* Coverage Location - Naivasha, Kenya */}
       <Map />
