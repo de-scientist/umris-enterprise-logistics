@@ -13,12 +13,15 @@ L.Icon.Default.mergeOptions({
 });
 
 const Map: React.FC = () => {
-  const position: [number, number] = [-0.7167, 36.4310]; // Naivasha coordinates
+  const position: [number, number] = [-0.7167, 36.431]; // Naivasha coordinates
 
   return (
     <section id="map" className="map-section">
       <h2>Find Us in Naivasha, Kenya</h2>
-      <p>We are located in the heart of Naivasha, connecting Kenya through reliable logistics services.</p>
+      <p>
+        We are located in the heart of Naivasha, connecting Kenya through
+        reliable logistics services.
+      </p>
 
       <div className="map-container">
         <MapContainer
@@ -33,7 +36,8 @@ const Map: React.FC = () => {
           />
           <Marker position={position}>
             <Popup>
-              Umris Enterprise Logistics<br />
+              Umris Enterprise Logistics
+              <br />
               Naivasha, Kenya
             </Popup>
           </Marker>

@@ -32,8 +32,8 @@ const Reasons: React.FC = () => (
   <section id="why-us" className="reasons">
     <h2>Why Choose Us</h2>
     <p>
-      At Umris Enterprise Logistics, we go beyond moving goods — we move businesses forward.  
-      Here’s why our clients trust us:
+      At Umris Enterprise Logistics, we go beyond moving goods — we move
+      businesses forward. Here’s why our clients trust us:
     </p>
 
     <div className="reasons-list">

@@ -18,22 +18,21 @@ import Footer from "./components/Footer";
 const truckImages = [
   {
     imageUrl: "/images/umris-truck1.jpg",
-    caption: "Our fleet delivering goods in Naivasha"
+    caption: "Our fleet delivering goods in Naivasha",
   },
   {
     imageUrl: "/images/umris-truck2.jpg",
-    caption: "Timely cargo drop-off for a client"
+    caption: "Timely cargo drop-off for a client",
   },
   {
     imageUrl: "/images/umris-truck3.jpg",
-    caption: "On the road — serving Kenya reliably"
+    caption: "On the road — serving Kenya reliably",
   },
 ];
 
 const App: React.FC = () => {
   return (
     <div className="app-container">
-
       {/* Header */}
       <Header />
 
@@ -50,17 +49,16 @@ const App: React.FC = () => {
       <Reasons />
 
       {/* Trucks In Action - Dynamic Carousel */}
-      <CarouselShowcase items={truckImages}/>
+      <CarouselShowcase items={truckImages} />
 
       {/* Testimonials */}
       <Testimonials />
 
       {/* showcase */}
       <Showcase
-  imageUrl="/images/umris-truck-action.jpg" // save the FB photo locally
-  postLink="https://www.facebook.com/100063605441743/posts/1416999480430220/?mibextid=rS40aB7S9Ucbxw6v"
-/>
-
+        imageUrl="/images/umris-truck-action.jpg" // save the FB photo locally
+        postLink="https://www.facebook.com/100063605441743/posts/1416999480430220/?mibextid=rS40aB7S9Ucbxw6v"
+      />
 
       {/* Coverage Location - Naivasha, Kenya */}
       <Map />
@@ -73,7 +71,6 @@ const App: React.FC = () => {
 
       {/* footer */}
       <Footer />
-
     </div>
   );
 };

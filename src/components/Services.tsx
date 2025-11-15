@@ -15,7 +15,8 @@ const services = [
   },
   {
     title: "Customs Clearance",
-    description: "Professional handling of customs and documentation processes.",
+    description:
+      "Professional handling of customs and documentation processes.",
   },
 ];
 
