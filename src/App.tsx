@@ -13,6 +13,7 @@ import Showcase from "./components/showcase";
 import Map from "./components/Map";
 import Contact from "./components/Contact";
 import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
 
 
 const App: React.FC = () => {
@@ -51,6 +52,9 @@ const App: React.FC = () => {
 
       {/* FAQ */}
       <FAQ />
+
+      {/* footer */}
+      <Footer />
 
     </div>
   );
