@@ -6,7 +6,7 @@ import forwarding from "../assets/Forwarding.jpeg";
 import trucking from "../assets/truck1.jpg";
 import tracking from "../assets/Route.jpg";
 import procurement from "../assets/Procurement.jpeg";
-import lastmile from "../assets/service-lastmile.png";
+import lastmile from "../assets/Last.jpeg";
 import consultancy from "../assets/service-consultancy.png";
 
 // Define the prop types for the ServiceCard
