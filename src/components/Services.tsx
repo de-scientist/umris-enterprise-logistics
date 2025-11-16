@@ -1,6 +1,6 @@
 import React from "react";
 import freight from "../assets/Freight.jpg";
-import warehousing from "../assets/Warehousing .jpeg";
+import warehousing from "../assets/Warehousing.jpeg";
 import clearing from "../assets/clearing.jpeg";
 import forwarding from "../assets/Forwarding.jpeg";
 import trucking from "../assets/truck1.jpg";
