@@ -18,7 +18,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({
   email = "umris.enterprises@gmail.com",
-  phone = "+254 729 934 671",
+  phone = "+254 764 268 280",
   logoSrc = logo3, 
   logoAlt = "Umris Logistics Logo",
   navLinks = [
