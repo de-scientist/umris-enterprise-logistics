@@ -1,5 +1,5 @@
 import React from "react";
-import about from "../assets/about-img.jpg";
+import about from "../assets/t3.jpeg";
 
 // Define props for flexibility and reusability
 interface AboutProps {
