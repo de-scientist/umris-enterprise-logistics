@@ -14,6 +14,7 @@ import Map from "./components/Map";
 import Contact from "./components/Contact";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
+import './App.css'
 
 const truckImages = [
   {
