@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPaperPlane, FaPhoneAlt } from "react-icons/fa";
-import horse from "../assets/horse.png"; 
+import logo3 from "../assets/logo3.png"; 
 // Replace this logo with your Umris logo when ready.
 
 interface NavLink {
@@ -19,7 +19,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({
   email = "info@umrislogistics.com",
   phone = "+254 729 934 671",
-  logoSrc = horse, 
+  logoSrc = logo3, 
   logoAlt = "Umris Logistics Logo",
   navLinks = [
     { label: "home", href: "#home" },
