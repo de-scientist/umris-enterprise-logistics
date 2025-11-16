@@ -5,7 +5,7 @@ import clearing from "../assets/clearing.jpeg";
 import forwarding from "../assets/Forwarding.jpeg";
 import trucking from "../assets/truck1.jpg";
 import tracking from "../assets/Route.jpg";
-import procurement from "../assets/service-procurement.png";
+import procurement from "../assets/Procurement.jpeg";
 import lastmile from "../assets/service-lastmile.png";
 import consultancy from "../assets/service-consultancy.png";
 
