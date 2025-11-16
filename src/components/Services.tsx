@@ -2,7 +2,7 @@ import React from "react";
 import freight from "../assets/Freight.jpg";
 import warehousing from "../assets/service-warehousing.png";
 import clearing from "../assets/clearing.jpeg";
-import forwarding from "../assets/service-forwarding.png";
+import forwarding from "../assets/Forwarding.jpeg";
 import trucking from "../assets/truck1.jpg";
 import tracking from "../assets/Route.jpg";
 import procurement from "../assets/service-procurement.png";
