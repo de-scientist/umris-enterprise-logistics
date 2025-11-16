@@ -155,7 +155,7 @@ body {
   --hero-section-gradient: rgba(0, 0, 0, 0.4);
   background:
     linear-gradient(var(--hero-section-gradient), var(--hero-section-gradient)),
-    url(./assets/hero-bg.jpg);
+    url(./assets/t1.jpeg);
   background-size: cover;
   background-attachment: fixed;
 
