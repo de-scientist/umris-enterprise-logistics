@@ -3,7 +3,7 @@ import freight from "../assets/Freight.jpg";
 import warehousing from "../assets/service-warehousing.png";
 import clearing from "../assets/service-clearing.png";
 import forwarding from "../assets/service-forwarding.png";
-import trucking from "../assets/service-trucking.png";
+import trucking from "../assets/truck1.jpg";
 import tracking from "../assets/service-tracking.png";
 import procurement from "../assets/service-procurement.png";
 import lastmile from "../assets/service-lastmile.png";
