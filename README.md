@@ -1,6 +1,6 @@
 # 🚚 Umris Enterprise – Logistics Redefined
 
-![Umris Logo](./assets/logo.png)
+![Umris Logo](./logo3.png)
 
 **Website:** [https://umrisenterprise.com](https://umrisenterprise.com)  
 **Tech Stack:** React.js, TypeScript, Tailwind CSS, Vite  
