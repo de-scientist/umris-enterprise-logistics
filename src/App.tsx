@@ -4,7 +4,7 @@ import About from "./components/About";
 import ServicesSection from "./components/Services";
 import ReasonsSection from "./components/Reasons";
 import TeamSection from "./components/Team";
-//import BlogSection from "./components/Blogs";
+import BlogSection from "./components/Blogs";
 //import TestimonialSection from "./components/Testimonial";
 //import GallerySection from "./components/Gallery";
 //import ContactSection from "./components/Contact";
