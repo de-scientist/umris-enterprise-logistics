@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPaperPlane, FaPhoneAlt } from "react-icons/fa";
-import logo3 from "../assets/logo3.png"; 
+import logo3 from "../assets/logo31.png"; 
 // Replace this logo with your Umris logo when ready.
 
 interface NavLink {
