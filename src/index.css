@@ -1,3 +1,5 @@
+@import "mapbox-gl/dist/mapbox-gl.css";
+
 :root {
   /* Brand Colors from Logo */
   --color-primary: #8A2F6A; /* Plum Purple – main brand color */

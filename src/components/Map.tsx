@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
-// Fix Leaflet’s default icon paths
-delete (L.Icon.Default.prototype as any)._getIconUrl;
+// Fix markers for Vite/React builds
+import iconUrl from "leaflet/dist/images/marker-icon.png";
+import iconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
+import shadowUrl from "leaflet/dist/images/marker-shadow.png";
+
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconRetinaUrl,
+  iconUrl,
+  shadowUrl,
 });
 
 const Map: React.FC = () => {
   const position: [number, number] = [-0.7167, 36.431];
+
+  useEffect(() => {
+    // Fix strict browsers blocking unload
+    (window as any).onunload = null;
+  }, []);
 
   return (
     <section
@@ -30,12 +37,12 @@ const Map: React.FC = () => {
         </p>
       </div>
 
-      <div className="relative max-w-5xl mx-auto shadow-lg rounded-xl overflow-hidden">
+      <div className="relative max-w-5xl mx-auto h-[420px] shadow-lg rounded-xl overflow-hidden">
         <MapContainer
           center={position}
           zoom={13}
           scrollWheelZoom={true}
-          className="w-full h-[420px] z-10"
+          className="w-full h-full"
           attributionControl={true}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
