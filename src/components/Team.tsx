@@ -1,6 +1,6 @@
 import React from "react";
 import joseph from "../assets/me.jpg"; // Replace with Joseph’s actual image
-import milkah from "../assets/bro.jpeg"; // Replace with Milkah’s actual image
+import milkah from "../assets/milkah.png"; // Replace with Milkah’s actual image
 
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
