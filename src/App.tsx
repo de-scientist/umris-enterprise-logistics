@@ -1,79 +1,33 @@
-// App.tsx
-import React from "react";
-
-// Core Sections
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Services from "./components/Services";
-import Reasons from "./components/Reasons";
-import CarouselShowcase from "./components/carouselShowcase";
-import Testimonials from "./components/Testimonial";
-import Showcase from "./components/showcase";
-import Map from "./components/Map";
-import Contact from "./components/Contact";
-import FAQ from "./components/FAQ";
+import ServicesSection from "./components/Services";
+import ReasonsSection from "./components/Reasons";
+import TeamSection from "./components/Team";
+import BlogSection from "./components/Blogs";
+import TestimonialSection from "./components/Testimonial";
+import GallerySection from "./components/Gallery";
+import ContactSection from "./components/Contact";
+import FAQSection from "./components/Faq";
 import Footer from "./components/Footer";
-import './App.css'
 
-const truckImages = [
-  {
-    imageUrl: "/images/umris-truck1.jpg",
-    caption: "Our fleet delivering goods in Naivasha",
-  },
-  {
-    imageUrl: "/images/umris-truck2.jpg",
-    caption: "Timely cargo drop-off for a client",
-  },
-  {
-    imageUrl: "/images/umris-truck3.jpg",
-    caption: "On the road — serving Kenya reliably",
-  },
-];
-
-const App: React.FC = () => {
+function App() {
   return (
-    <div className="app-container">
-      {/* Header */}
+    <div>
       <Header />
-
-      {/* Hero / Intro */}
       <Hero />
-
-      {/* Who We Are */}
       <About />
-
-      {/* What We Offer */}
-      <Services />
-
-      {/* Why Choose Us */}
-      <Reasons />
-
-      {/* Trucks In Action - Dynamic Carousel */}
-      <CarouselShowcase items={truckImages} />
-
-      {/* Testimonials */}
-      <Testimonials />
-
-      {/* showcase */}
-      <Showcase
-        imageUrl="/images/umris-truck-action.jpg" // save the FB photo locally
-        postLink="https://www.facebook.com/100063605441743/posts/1416999480430220/?mibextid=rS40aB7S9Ucbxw6v"
-      />
-
-      {/* Coverage Location - Naivasha, Kenya */}
-      <Map />
-
-      {/* Contact / Book a Delivery */}
-      <Contact />
-
-      {/* FAQ */}
-      <FAQ />
-
-      {/* footer */}
+      <ServicesSection />
+      <ReasonsSection />
+      <TeamSection />
+      <BlogSection />
+      <TestimonialSection />
+      <GallerySection />
+      <ContactSection />
+      <FAQSection />
       <Footer />
     </div>
   );
-};
+}
 
 export default App;
