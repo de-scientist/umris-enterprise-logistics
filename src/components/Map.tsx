@@ -38,9 +38,13 @@ const Map: React.FC = () => {
           className="w-full h-[420px] z-10"
         >
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            options={{
+              attribution:
+                '&copy; <a href="https://www.openstreetmap.org">OpenStreetMap</a>',
+            }}
           />
+
           <Marker position={position}>
             <Popup>
               <strong>Umris Enterprise Logistics</strong>
