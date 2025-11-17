@@ -1,27 +1,32 @@
 import React from "react";
 
 interface FooterProps {
-  authorName?: string;
-  authorUrl?: string;
+  companyName?: string;
+  companyUrl?: string;
 }
 
 const Footer: React.FC<FooterProps> = ({
-  authorName = "Mark Kinyanjui",
-  authorUrl = "https://github.com/de-scientist/",
+  companyName = "Umris Logistics",
+  companyUrl = "https://umrislogistics.co.ke/",
 }) => {
   return (
-    <footer className="footer py-4 text-center bg-gray-900 text-white">
-      <p className="footer-text">
-        Built with lots of <span className="text-red-500">&hearts;</span> by{" "}
-        <a
-          href={authorUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:text-red-400 transition-colors duration-200"
-        >
-          {authorName}
-        </a>
+    <footer className="footer py-6 text-center bg-gray-900 text-gray-300">
+      <p className="text-sm md:text-base">
+        © {new Date().getFullYear()} {companyName}. All rights reserved.
       </p>
+
+      <p className="mt-1 text-xs md:text-sm text-gray-400">
+        Delivering reliability, safety, and nationwide logistics excellence.
+      </p>
+
+      <a
+        href={companyUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block mt-2 underline hover:text-white transition-colors duration-200"
+      >
+        Visit our official website
+      </a>
     </footer>
   );
 };

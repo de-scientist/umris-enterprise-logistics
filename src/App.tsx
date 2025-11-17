@@ -9,6 +9,7 @@ import TestimonialSection from "./components/Testimonial";
 import GallerySection from "./components/Gallery";
 import ContactSection from "./components/Contact";
 import FAQSection from "./components/FAQ";
+import Map from "./components/Map";
 import Footer  from "./components/Footer";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <GallerySection />
       <ContactSection />
       <FAQSection />
+      <Map />
       <Footer />
     </div>
   );
