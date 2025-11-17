@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-// Replace these with Umris Logistics images
-import truck1 from "../assets/umris-truck-1.jpg";
+// Umris Logistics in action
+import truck1 from "../assets/t1.jpeg";
 import warehouse from "../assets/umris-warehouse.jpg";
 import delivery from "../assets/umris-delivery.jpg";
 import fleet from "../assets/umris-fleet.jpg";
