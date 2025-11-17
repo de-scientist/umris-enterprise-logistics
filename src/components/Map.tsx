@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-// Fix Leaflet’s default icon paths for Vite/React builds
+// Fix Leaflet’s default icon paths
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
@@ -13,7 +13,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const Map: React.FC = () => {
-  const position: [number, number] = [-0.7167, 36.431]; // Naivasha coordinates
+  const position: [number, number] = [-0.7167, 36.431];
 
   return (
     <section
@@ -36,14 +36,9 @@ const Map: React.FC = () => {
           zoom={13}
           scrollWheelZoom={true}
           className="w-full h-[420px] z-10"
+          attributionControl={true}
         >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            options={{
-              attribution:
-                '&copy; <a href="https://www.openstreetmap.org">OpenStreetMap</a>',
-            }}
-          />
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
           <Marker position={position}>
             <Popup>
