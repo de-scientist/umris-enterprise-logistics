@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# 🚚 Umris Enterprise – Logistics Redefined
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Umris Logo](./assets/logo.png)
 
-Currently, two official plugins are available:
+**Website:** [https://umrisenterprise.com](https://umrisenterprise.com)  
+**Tech Stack:** React.js, TypeScript, Tailwind CSS, Vite  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Umris Enterprise is more than a logistics company—it’s a bridge connecting businesses, people, and possibilities. This website showcases our operations, services, and commitment to seamless logistics solutions.  
 
-## Expanding the ESLint configuration
+Through an intuitive UI and modern frontend architecture, the platform allows clients to explore services, track deliveries, and understand our end-to-end supply chain processes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Responsive Design** – Works perfectly on mobile, tablet, and desktop.
+- **Service Showcase** – Interactive cards for warehousing, transportation, and cargo handling.
+- **Real-Time Updates** – Highlighting latest offers and operational news.
+- **Contact & Inquiry Forms** – Smooth user experience for client queries.
+- **Clean, Modern UI** – Built with Tailwind CSS for maintainable and scalable styling.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tech Stack
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+| Layer        | Technology |
+| ------------ | ---------- |
+| Frontend     | React.js, TypeScript, Tailwind CSS |
+| Build Tool   | Vite |
+| Versioning   | Git & GitHub |
+| Deployment   | Vercel / Netlify |
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+---
+
+## Installation & Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/umris-enterprise.git
+cd umris-enterprise
+Install dependencies:
+
+bash
+Copy code
+npm install
+Start development server:
+
+bash
+Copy code
+npm run dev
+Open http://localhost:5173 to view in your browser.
+
+Usage
+Navigate to the Services page to explore logistics offerings.
+
+Fill out the Contact Form to get in touch with Umris Enterprise.
+
+Check out the About Us section to learn more about the company’s mission and values.
+
+Contributing
+Contributions are welcome!
+
+Fork the repository.
+
+Create a feature branch: git checkout -b feature-name.
+
+Commit your changes: git commit -m "Add feature".
+
+Push to the branch: git push origin feature-name.
+
+Open a Pull Request.
+
+Badges
+
+
+
+Author
+Mark Gitau – De-scientist
+CEO, TechVision Studios & Solutions
+LinkedIn | Portfolio
+
+License
+This project is licensed under the MIT License.
