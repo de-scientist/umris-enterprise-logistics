@@ -8,7 +8,7 @@ import BlogSection from "./components/Blogs";
 import TestimonialSection from "./components/Testimonial";
 import GallerySection from "./components/Gallery";
 import ContactSection from "./components/Contact";
-//import FAQSection from "./components/Faq";
+import FAQSection from "./components/FAQ";
 import Footer from "./components/Footer";
 
 function App() {
