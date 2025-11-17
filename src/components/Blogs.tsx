@@ -1,6 +1,6 @@
 import React from "react";
 import img from "../assets/t1.jpeg";
-import img2 from "../assets/blog-img-2.jpg";
+import img2 from "../assets/t2.jpeg";
 import img3 from "../assets/blog-img-3.jpg";
 
 // Define types for blog metadata and blog card
