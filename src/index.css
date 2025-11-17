@@ -2,20 +2,20 @@
 
 :root {
   /* Brand Colors from Logo */
-  --color-primary: #8A2F6A; /* Plum Purple – main brand color */
-  --color-primary-dark: #6A234F; /* Deeper plum for shadows + hover */
-  --color-accent-green: #6CC06B; /* Logo leaf green */
+  --color-primary: #8A2F6A; 
+  --color-primary-dark: #6A234F; 
+  --color-accent-green: #6CC06B; 
   --color-accent-green-dark: #4B9A4C;
 
   /* Supporting Colors */
   --color-white: #ffffff;
   --color-black: #2b2b2b;
-  --color-grey: #6F6F6F; /* Neutral grey to replace brownish tones */
-  --color-grey-light: #F4EAF5; /* Soft lavender-tint background */
-  --color-grey-lighter: #D8B6D9; /* Light plum for highlights */
+  --color-grey: #6F6F6F; 
+  --color-grey-light: #F4EAF5; 
+  --color-grey-lighter: #D8B6D9;
 
-  /* Optional Beige Replacement */
-  --color-beige: #F9F4FA; /* Very light lavender */
+  
+  --color-beige: #F9F4FA; 
 
   --primary-font: "Poppins", sans-serif;
 
