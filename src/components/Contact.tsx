@@ -1,21 +1,60 @@
 import React, { useState, type FormEvent } from "react";
+import { FaInstagramSquare, FaFacebookSquare, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 interface FormData {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   message: string;
 }
 
-const Contact: React.FC = () => {
+interface ContactInfoItem {
+  iconClass: React.ReactNode;
+  label: string;
+  href?: string;
+}
+
+interface ContactSectionProps {
+  contactInfo?: ContactInfoItem[];
+}
+
+const defaultContactInfo: ContactInfoItem[] = [
+  {
+    iconClass: <FaPhoneAlt />,
+    label: "+254 729 934 671",
+    href: "tel:+254729934671",
+  },
+  {
+    iconClass: <FaEnvelope />,
+    label: "info@umrislogistics.com",
+    href: "mailto:info@umrislogistics.com",
+  },
+  {
+    iconClass: <FaFacebookSquare />,
+    label: "Umris Logistics",
+    href: "https://www.facebook.com/100063605441743",
+  },
+  {
+    iconClass: <FaInstagramSquare />,
+    label: "Instagram",
+    href: "https://instagram.com",
+  },
+];
+
+const ContactSection: React.FC<ContactSectionProps> = ({
+  contactInfo = defaultContactInfo,
+}) => {
   const [formData, setFormData] = useState<FormData>({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     message: "",
   });
-  const [statusMessage, setStatusMessage] = useState<string>("");
+
+  const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -23,49 +62,88 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatusMessage("Message sent successfully. We’ll get back to you soon!");
-    setFormData({ name: "", email: "", message: "" });
+
+    console.log("Form submitted:", formData);
+
+    setStatusMessage("Thank you! Your message has been received.");
+    setFormData({ firstName: "", lastName: "", email: "", message: "" });
   };
 
   return (
     <section id="contact" className="contact">
-      <h2>Contact Us</h2>
+      <div className="contact-header">
+        <h2>Contact Umris Logistics</h2>
+        <p>
+          Whether it's transport, warehousing, last-mile delivery, or humanitarian logistics — 
+          we’re here to support your mission with efficiency and trust.
+        </p>
+      </div>
+
+      {/* Contact Info */}
+      <div className="contact-info">
+        {contactInfo.map((item, index) => {
+          const Card = item.href ? "a" : "div";
+
+          return (
+            <Card
+              key={index}
+              className="info-item interactive-card"
+              href={item.href}
+              target={item.href ? "_blank" : undefined}
+              rel={item.href ? "noopener noreferrer" : undefined}
+            >
+              <span className="icon">{item.iconClass}</span>
+              <p>{item.label}</p>
+            </Card>
+          );
+        })}
+      </div>
+
+      {/* Contact Form */}
       <form className="contact-form" onSubmit={handleSubmit}>
+        <div className="form-row">
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            required
+            value={formData.firstName}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            required
+            value={formData.lastName}
+            onChange={handleChange}
+          />
+        </div>
+
         <input
-          name="name"
-          placeholder="Your Name"
-          required
-          value={formData.name}
-          onChange={handleChange}
-        />
-        <input
-          name="email"
           type="email"
-          placeholder="Your Email"
+          name="email"
+          placeholder="Email Address"
           required
           value={formData.email}
           onChange={handleChange}
         />
+
         <textarea
           name="message"
-          placeholder="Your Message"
+          placeholder="Your Message..."
+          rows={6}
           required
           value={formData.message}
           onChange={handleChange}
         />
-        <button type="submit">Send</button>
-        {statusMessage && <p className="form-status">{statusMessage}</p>}
+
+        <button type="submit">Send Message</button>
+
+        {statusMessage && <p id="form-status">{statusMessage}</p>}
       </form>
-      <div className="contact-info">
-        <p>
-          <strong>Phone:</strong> +254 718 764 327
-        </p>
-        <p>
-          <strong>Email:</strong> info@umrisenterprise.com
-        </p>
-      </div>
     </section>
   );
 };
 
-export default Contact;
+export default ContactSection;
