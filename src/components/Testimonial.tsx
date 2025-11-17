@@ -4,7 +4,7 @@ import img2 from "../assets/Malteser.png";
 import img3 from "../assets/medi.jpg";
 import img4 from "../assets/meds1.png";
 import img5 from "../assets/ngo1.jpeg";
-import img6 from "../assets/testimonial-6.jpg";
+import img6 from "../assets/ngo2.jpeg";
 
 // Define types for testimonial props
 interface TestimonialProps {
