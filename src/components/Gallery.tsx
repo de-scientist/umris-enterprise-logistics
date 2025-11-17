@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import truck1 from "../assets/t1.jpeg";
 import warehouse from "../assets/t2.jpeg";
 import delivery from "../assets/t3.jpeg";
-import fleet from "../assets/umris-fleet.jpg";
+import fleet from "../assets/1.png";
 import loading from "../assets/umris-loading.jpg";
 import clearance from "../assets/umris-customs.jpg";
 
