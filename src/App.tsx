@@ -9,7 +9,7 @@ import TestimonialSection from "./components/Testimonial";
 import GallerySection from "./components/Gallery";
 import ContactSection from "./components/Contact";
 import FAQSection from "./components/FAQ";
-import Footer from "./components/Footer";
+import Footer  from "./components/Footer";
 
 function App() {
   return (
