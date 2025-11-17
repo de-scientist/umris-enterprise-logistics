@@ -721,6 +721,35 @@ body {
     transform: scale(1);
   }
 }
+
+.interactive-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.interactive-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.interactive-card a,
+.interactive-card p {
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.interactive-card:hover p,
+.interactive-card:hover a {
+  font-weight: 600;
+}
+
 /*End of gallery styling*/
 
 /*Start of contact styling*/
