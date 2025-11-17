@@ -359,7 +359,7 @@ body {
   /* height: 100vh; */
   background:
     linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(./assets/reasons-bg-img.jpg);
+    url(./assets/t1.jpeg);
   background-size: cover;
   background-position: center;
   display: flex;
