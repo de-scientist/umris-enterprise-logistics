@@ -26,8 +26,8 @@ const defaultContactInfo: ContactInfoItem[] = [
   },
   {
     iconClass: <FaEnvelope />,
-    label: "info@umrislogistics.com",
-    href: "mailto:info@umrislogistics.com",
+    label: "umris.enterprises@gmail.com",
+    href: "mailto:umris.enterprises@gmail.com",
   },
   {
     iconClass: <FaFacebookSquare />,
