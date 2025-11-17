@@ -3,7 +3,7 @@ import img1 from "../assets/contractors.png";
 import img2 from "../assets/Malteser.png";
 import img3 from "../assets/medi.jpg";
 import img4 from "../assets/meds1.png";
-import img5 from "../assets/testimonial-5.jpg";
+import img5 from "../assets/ngo1.jpeg";
 import img6 from "../assets/testimonial-6.jpg";
 
 // Define types for testimonial props
