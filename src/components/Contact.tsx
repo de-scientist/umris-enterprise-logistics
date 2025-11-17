@@ -21,8 +21,8 @@ interface ContactSectionProps {
 const defaultContactInfo: ContactInfoItem[] = [
   {
     iconClass: <FaPhoneAlt />,
-    label: "+254 729 934 671",
-    href: "tel:+254729934671",
+    label: "+254 764 268 280",
+    href: "tel:+254764268280",
   },
   {
     iconClass: <FaEnvelope />,
