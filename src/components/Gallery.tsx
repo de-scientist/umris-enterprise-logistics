@@ -5,7 +5,7 @@ import truck1 from "../assets/t1.jpeg";
 import warehouse from "../assets/t2.jpeg";
 import delivery from "../assets/t3.jpeg";
 import fleet from "../assets/1.png";
-import loading from "../assets/umris-loading.jpg";
+import loading from "../assets/2.png";
 import clearance from "../assets/umris-customs.jpg";
 
 interface GalleryItem {
