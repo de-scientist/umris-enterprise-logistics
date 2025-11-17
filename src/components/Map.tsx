@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-// Fix Leaflet’s default icon paths for builds
+// Fix Leaflet’s default icon paths for Vite/React builds
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
@@ -16,27 +16,34 @@ const Map: React.FC = () => {
   const position: [number, number] = [-0.7167, 36.431]; // Naivasha coordinates
 
   return (
-    <section id="map" className="map-section">
-      <h2>Find Us in Naivasha, Kenya</h2>
-      <p>
-        We are located in the heart of Naivasha, connecting Kenya through
-        reliable logistics services.
-      </p>
+    <section
+      id="map"
+      className="py-12 px-4 md:px-10 bg-gray-100 text-gray-800"
+    >
+      <div className="max-w-4xl mx-auto text-center mb-8">
+        <h2 className="text-3xl font-bold text-gray-800 mb-2">
+          Our Main Operations Hub
+        </h2>
+        <p className="text-gray-600">
+          Umris Logistics operates from Naivasha — strategically positioned for
+          swift, safe, and nationwide delivery routes.
+        </p>
+      </div>
 
-      <div className="map-container">
+      <div className="relative max-w-5xl mx-auto shadow-lg rounded-xl overflow-hidden">
         <MapContainer
           center={position}
           zoom={13}
           scrollWheelZoom={true}
-          style={{ height: "400px", width: "100%", borderRadius: "8px" }}
+          className="w-full h-[420px] z-10"
         >
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            attribution='&copy; <a href="https://www.openstreetmap.org">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker position={position}>
             <Popup>
-              Umris Enterprise Logistics
+              <strong>Umris Enterprise Logistics</strong>
               <br />
               Naivasha, Kenya
             </Popup>
