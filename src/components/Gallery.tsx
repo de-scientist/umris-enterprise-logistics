@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // Umris Logistics in action
 import truck1 from "../assets/t1.jpeg";
-import warehouse from "../assets/umris-warehouse.jpg";
+import warehouse from "../assets/t2.jpeg";
 import delivery from "../assets/umris-delivery.jpg";
 import fleet from "../assets/umris-fleet.jpg";
 import loading from "../assets/umris-loading.jpg";
