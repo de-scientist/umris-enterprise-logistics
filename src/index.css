@@ -498,7 +498,7 @@ p {
 
 @media (max-width: 980px) {
   .nav,
-  .header-cta .btn {
+  .header-cta {
     display: none;
   }
   .nav-toggle {

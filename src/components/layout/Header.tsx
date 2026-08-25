@@ -107,7 +107,7 @@ export default function Header() {
   );
 }
 
-function Button-like({
+function HeaderCta({
   to,
   link,
   label,
