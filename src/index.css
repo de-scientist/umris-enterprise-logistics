@@ -1324,3 +1324,52 @@ p {
 .stack > * + * {
   margin-top: var(--space-3);
 }
+
+/* ===================== WHATSAPP FLOAT ===================== */
+.wa-float {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 950;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25d366;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.wa-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+  color: #fff;
+}
+.wa-float svg {
+  font-size: 2.2rem;
+}
+@media (max-width: 760px) {
+  .wa-float {
+    display: none;
+  }
+}
+
+/* ===================== SCROLL REVEAL ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms var(--ease), transform 600ms var(--ease);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
