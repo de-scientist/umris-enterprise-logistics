@@ -3,12 +3,12 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 export default function Reveal({
   children,
   className = "",
-  as: Tag = "div",
+  as = "div",
   delay = 0,
 }: {
   children: ReactNode;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: string;
   delay?: number;
 }) {
   const ref = useRef<HTMLElement | null>(null);
@@ -36,7 +36,7 @@ export default function Reveal({
     return () => obs.disconnect();
   }, []);
 
-  const Component = Tag as any;
+  const Component = as as any;
   return (
     <Component
       ref={ref}
