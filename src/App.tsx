@@ -26,9 +26,12 @@ function Loading() {
 export default function App() {
   return (
     <>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       <ScrollToTop />
       <Header />
-      <main>
+      <main id="main">
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />

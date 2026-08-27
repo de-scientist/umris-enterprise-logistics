@@ -62,7 +62,8 @@ export const NAV_LINKS = [
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Industries", to: "/industries" },
-  { label: "Portfolio", to: "/portfolio" },
+  { label: "Capabilities", to: "/#capabilities" },
+  { label: "Projects", to: "/portfolio" },
   { label: "Insights", to: "/insights" },
   { label: "Contact", to: "/contact" },
 ] as const;

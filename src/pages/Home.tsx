@@ -3,6 +3,8 @@ import { FaArrowRight } from "react-icons/fa6";
 import Hero from "../components/sections/Hero";
 import TrustStrip from "../components/sections/TrustStrip";
 import WhyUs from "../components/sections/WhyUs";
+import HowItWorks from "../components/sections/HowItWorks";
+import Capabilities from "../components/sections/Capabilities";
 import CtaBand from "../components/sections/CtaBand";
 import ServiceCard from "../components/ServiceCard";
 import Testimonials from "../components/Testimonials";
@@ -36,6 +38,8 @@ export default function Home() {
       />
       <Hero />
       <TrustStrip />
+
+      <HowItWorks />
 
       {/* Services */}
       <section className="section" id="services">
@@ -89,6 +93,8 @@ export default function Home() {
       </section>
 
       <WhyUs />
+
+      <Capabilities />
 
       {/* Industries preview */}
       <section className="section">
