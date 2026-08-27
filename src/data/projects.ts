@@ -1,6 +1,5 @@
 import t1 from "../assets/t1.jpeg";
 import t2 from "../assets/t2.jpeg";
-import t3 from "../assets/t3.jpeg";
 import clearance from "../assets/9.png";
 import loading from "../assets/2.png";
 

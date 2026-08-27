@@ -1,4 +1,3 @@
-import { FaCircleCheck } from "react-icons/fa6";
 import SectionHeading from "../ui/SectionHeading";
 
 const PILLARS = [

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaQuoteLeft } from "react-icons/fa";
-import { TESTIMONIALS } from "../../data/testimonials";
+import { TESTIMONIALS } from "../data/testimonials";
 
 export default function Testimonials() {
   return (

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
-import type { Service } from "../../data/services";
+import type { Service } from "../data/services";
 
 export default function ServiceCard({ service }: { service: Service }) {
   return (

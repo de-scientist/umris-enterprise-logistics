@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SectionHeading from "../components/ui/SectionHeading";
 import Reveal from "../components/ui/Reveal";
 import CtaBand from "../components/sections/CtaBand";

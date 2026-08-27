@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
-import { SERVICES } from "../../data/services";
-import { SITE, whatsappLink } from "../../data/siteConfig";
+import { SERVICES } from "../data/services";
+import { SITE, whatsappLink } from "../data/siteConfig";
 
 interface FormState {
   name: string;
