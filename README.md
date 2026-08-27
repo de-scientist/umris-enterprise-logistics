@@ -1,27 +1,16 @@
-# 🚚 Umris Enterprise – Logistics Redefined
+# Umris Enterprise Logistics
 
-![Umris Logo](./logo3.png)
+A conversion-focused website for **Umris Enterprise Logistics** — a Kenyan logistics and transportation company serving businesses across Kenya and East Africa.
 
-**Website:** [https://umrisenterprise.com](https://umrisenterprise.com)  
-**Tech Stack:** React.js, TypeScript, Tailwind CSS, Vite  
+**Live site:** https://umris-enterprise-logistics.vercel.app/
 
 ---
 
 ## Overview
 
-Umris Enterprise is more than a logistics company—it’s a bridge connecting businesses, people, and possibilities. This website showcases our operations, services, and commitment to seamless logistics solutions.  
+The site presents Umris Enterprise's logistics services (freight transportation, secure warehousing, customs clearing, freight forwarding, trucking, cargo tracking, procurement, last-mile delivery and consultancy), its operational capabilities, industry focus, project evidence and insights. It is built as a fast, accessible, SEO- and AEO-friendly single-page application with server-rendered-equivalent metadata via React.
 
-Through an intuitive UI and modern frontend architecture, the platform allows clients to explore services, track deliveries, and understand our end-to-end supply chain processes.
-
----
-
-## Features
-
-- **Responsive Design** – Works perfectly on mobile, tablet, and desktop.
-- **Service Showcase** – Interactive cards for warehousing, transportation, and cargo handling.
-- **Real-Time Updates** – Highlighting latest offers and operational news.
-- **Contact & Inquiry Forms** – Smooth user experience for client queries.
-- **Clean, Modern UI** – Built with Tailwind CSS for maintainable and scalable styling.
+The project prioritises **authenticity**: all copy, case studies and claims are grounded in the business's actual operations. No clients, statistics, fleet sizes, certifications or results are invented.
 
 ---
 
@@ -29,60 +18,123 @@ Through an intuitive UI and modern frontend architecture, the platform allows cl
 
 | Layer        | Technology |
 | ------------ | ---------- |
-| Frontend     | React.js, TypeScript, Tailwind CSS |
-| Build Tool   | Vite |
-| Versioning   | Git & GitHub |
-| Deployment   | Vercel / Netlify |
+| Frontend     | React 19, TypeScript |
+| Routing      | React Router 7 (with lazy-loaded routes) |
+| Styling      | Hand-authored CSS design system (`src/index.css`) with design tokens |
+| Icons        | React Icons (`react-icons/fa` and `react-icons/fa6`) |
+| Maps         | Leaflet + React Leaflet (contact page) |
+| Build Tool   | Vite 7 |
+| Language     | TypeScript (strict-ish, `tsc -b`) |
+| Deployment   | Vercel |
+
+> Note: the project does **not** use Tailwind CSS or a UI component library. Styling is a single, token-driven stylesheet.
 
 ---
 
-## Installation & Setup
-
-1. Clone the repository:
+## Getting Started
 
 ```bash
-git clone https://github.com/yourusername/umris-enterprise.git
-cd umris-enterprise
-Install dependencies:
-
-bash
-Copy code
+# Install dependencies
 npm install
-Start development server:
 
-bash
-Copy code
+# Start the development server (http://localhost:5173)
 npm run dev
-Open http://localhost:5173 to view in your browser.
 
-Usage
-Navigate to the Services page to explore logistics offerings.
+# Type-check and build for production
+npm run build
 
-Fill out the Contact Form to get in touch with Umris Enterprise.
+# Preview the production build locally
+npm run preview
 
-Check out the About Us section to learn more about the company’s mission and values.
+# Lint
+npm run lint
+```
 
-Contributing
-Contributions are welcome!
+Requires Node.js (the project targets the current LTS line compatible with Vite 7 / React 19).
 
-Fork the repository.
+---
 
-Create a feature branch: git checkout -b feature-name.
+## Project Structure
 
-Commit your changes: git commit -m "Add feature".
+```
+src/
+  main.tsx              # App entry, BrowserRouter
+  App.tsx               # Route definitions, global layout (Header/Footer/CTA)
+  index.css             # Design system (tokens, components, utilities)
+  data/                 # Single source of truth for content
+    siteConfig.ts       # Brand, contact, social, navigation (verify fields flagged)
+    services.ts         # Service catalogue + per-service FAQs/process
+    industries.tsx      # Industry focus cards
+    projects.ts         # Case studies / project evidence
+    testimonials.ts     # Client testimonials (classified by verification)
+    articles.ts         # Insights / blog articles
+    faqs.ts             # Site-wide FAQ content
+    process.ts          # "How it works" steps
+  lib/
+    seo.ts              # Per-route metadata + JSON-LD injection
+    schema.ts           # Structured data builders (Org, LocalBusiness, Service, FAQ…)
+  components/
+    layout/             # Header, Footer, MobileActionBar, ScrollToTop, MapSection
+    sections/           # Hero, TrustStrip, WhyUs, HowItWorks, Capabilities, CtaBand
+    ui/                 # SectionHeading, Reveal, Faq, Button, Breadcrumbs, WhatsApp
+    ServiceCard.tsx, Testimonials.tsx, Gallery.tsx
+  pages/                # Home, About, Services, ServiceDetail, Industries,
+                        # Portfolio, Insights, Article, Contact, NotFound
+public/
+  robots.txt            # Crawl rules
+  sitemap.xml           # Indexable route map
+```
 
-Push to the branch: git push origin feature-name.
+---
 
-Open a Pull Request.
+## Routes
 
-Badges
+| Path | Page |
+| ---- | ---- |
+| `/` | Home |
+| `/about` | About |
+| `/services` | Services overview |
+| `/services/:slug` | Service detail (one per service in `data/services.ts`) |
+| `/industries` | Industries served |
+| `/portfolio` | Projects / case studies |
+| `/insights` | Insights / blog index |
+| `/insights/:slug` | Article |
+| `/contact` | Contact & quote hub |
+| `*` | Not Found (404) |
 
+---
 
+## Design System
 
-Author
-Mark Gitau – De-scientist
-CEO, TechVision Studios & Solutions
-LinkedIn | Portfolio
+Visual identity uses a magenta primary (`#8a2f6a`) with a green accent (`#6cc06b`), a neutral ink/surface scale and Poppins typography. Tokens (colors, spacing, radii, shadows, motion) live as CSS custom properties in `src/index.css`. Motion is restrained and honours `prefers-reduced-motion`.
 
-License
-This project is licensed under the MIT License.
+---
+
+## SEO, AEO & Structured Data
+
+- Per-route titles, meta descriptions, canonical and Open Graph/Twitter tags are managed by `useSeo()` in `lib/seo.ts`.
+- JSON-LD structured data is injected per page: `Organization`, `MovingCompany` (LocalBusiness), `WebSite`, `Service`, `Article`, `FAQPage` and `BreadcrumbList`.
+- `public/sitemap.xml` and `public/robots.txt` are provided for crawlability.
+
+---
+
+## Business Information — Verify Before Publishing
+
+Several fields in `src/data/siteConfig.ts` are flagged with `verify: true` because the original sources conflicted. **Do not treat the following as confirmed:**
+
+- **HQ location** — original code conflicted between Thika and Naivasha; currently set to Naivasha with Naivasha coordinates.
+- **Street address** — placeholder line only; confirm the real address.
+- **Instagram** — currently a generic `instagram.com` placeholder and intentionally hidden from the UI until a real handle is supplied.
+- **Canonical domain** — currently the Vercel deployment subdomain. Update `canonicalDomain` once the official domain is confirmed so metadata, sitemap and Open Graph all point to the right place.
+
+Update these in **one place** (`src/data/siteConfig.ts`) — they propagate to the footer, contact page, schema and metadata automatically.
+
+Contact details (phone, WhatsApp, email) are taken from the existing codebase and should also be confirmed.
+
+---
+
+## Notes
+
+- No backend or API integrations are present; the quote form is a client-side qualification form (no submission endpoint). Wire it to an email/CRM service before relying on it for leads.
+- Images are sourced from `src/assets/`; some are large PNGs and should be optimised (WebP/AVIF + responsive sizes) for Core Web Vitals.
+- This README reflects the codebase as built; it does not assert business facts beyond what the application itself states.
