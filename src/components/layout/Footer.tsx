@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import type { ReactNode } from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { SITE, NAV_LINKS } from "../../data/siteConfig";
 import { SERVICES } from "../../data/services";
@@ -7,7 +8,7 @@ import { WhatsAppButton } from "../ui/WhatsApp";
 export default function Footer() {
   const year = new Date().getFullYear();
   const serviceLinks = SERVICES.slice(0, 6);
-  const socials = [
+  const socials: { icon: ReactNode; href: string; label: string }[] = [
     { icon: <FaFacebookF />, href: SITE.social.facebook, label: "Facebook" },
   ];
   if (SITE.social.instagram && !SITE.social.instagramVerify) {
