@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { FaRegClock, FaCalendar } from "react-icons/fa6";
-import SectionHeading from "../components/ui/SectionHeading";
 import Reveal from "../components/ui/Reveal";
 import CtaBand from "../components/sections/CtaBand";
 import Breadcrumbs from "../components/ui/Breadcrumbs";
