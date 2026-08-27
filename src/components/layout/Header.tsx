@@ -18,7 +18,7 @@ export default function Header() {
 
   useEffect(() => {
     setOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
