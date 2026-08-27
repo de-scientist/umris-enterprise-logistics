@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaTimes } from "react-icons/fa6";
+import { FaXmark } from "react-icons/fa6";
 import gallery1 from "../../assets/t1.jpeg";
 import gallery2 from "../../assets/t2.jpeg";
 import gallery3 from "../../assets/t3.jpeg";
@@ -44,7 +44,7 @@ export default function Gallery() {
       {open && (
         <div className="lightbox" onClick={() => setOpen(null)} role="dialog" aria-modal="true" aria-label="Image preview">
           <button className="lightbox__close" onClick={() => setOpen(null)} aria-label="Close preview">
-            <FaTimes />
+            <FaXmark />
           </button>
           <img src={open} alt="Enlarged view" />
         </div>

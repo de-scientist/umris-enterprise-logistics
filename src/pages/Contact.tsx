@@ -1,4 +1,4 @@
-import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa6";
+import { FaPhone, FaWhatsapp, FaEnvelope, FaLocationDot, FaClock } from "react-icons/fa6";
 import Breadcrumbs from "../components/ui/Breadcrumbs";
 import QuoteForm from "../components/QuoteForm";
 import MapSection from "../components/layout/MapSection";
@@ -15,10 +15,10 @@ export default function Contact() {
   });
 
   const cards = [
-    { icon: <FaPhoneAlt />, label: "Call", value: SITE.phoneDisplay, href: `tel:${SITE.phone}` },
+    { icon: <FaPhone />, label: "Call", value: SITE.phoneDisplay, href: `tel:${SITE.phone}` },
     { icon: <FaWhatsapp />, label: "WhatsApp", value: "Chat with us", href: whatsappLink("Hello Umris, I'd like a quote.") },
     { icon: <FaEnvelope />, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
-    { icon: <FaMapMarkerAlt />, label: "Location", value: SITE.hq.addressLine, href: undefined },
+    { icon: <FaLocationDot />, label: "Location", value: SITE.hq.addressLine, href: undefined },
   ];
 
   return (
