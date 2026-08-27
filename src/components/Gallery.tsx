@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { FaXmark } from "react-icons/fa6";
-import gallery1 from "../../assets/t1.jpeg";
-import gallery2 from "../../assets/t2.jpeg";
-import gallery3 from "../../assets/t3.jpeg";
-import gallery4 from "../../assets/1.png";
-import gallery5 from "../../assets/2.png";
-import gallery6 from "../../assets/9.png";
+import gallery1 from "../assets/t1.jpeg";
+import gallery2 from "../assets/t2.jpeg";
+import gallery3 from "../assets/t3.jpeg";
+import gallery4 from "../assets/1.png";
+import gallery5 from "../assets/2.png";
+import gallery6 from "../assets/9.png";
 
 const ITEMS = [
   { src: gallery1, alt: "Umris truck on transit", cap: "Reliable cross-border transport handled with precision." },
