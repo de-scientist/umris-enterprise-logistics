@@ -35,6 +35,7 @@ export function useSeo({ title, description, path = "/", image, type = "website"
   useEffect(() => {
     const url = absoluteUrl(path);
     const fullTitle = title.includes(SITE.name) ? title : title + BRAND_SUFFIX;
+    const shareImage = image ?? absoluteUrl("/logo512.png");
 
     document.title = fullTitle;
     upsertMeta('meta[name="description"]', "name", "description", description);
@@ -42,13 +43,11 @@ export function useSeo({ title, description, path = "/", image, type = "website"
     upsertMeta('meta[property="og:description"]', "property", "og:description", description);
     upsertMeta('meta[property="og:url"]', "property", "og:url", url);
     upsertMeta('meta[property="og:type"]', "property", "og:type", type);
+    upsertMeta('meta[property="og:image"]', "property", "og:image", shareImage);
     upsertMeta('meta[name="twitter:title"]', "name", "twitter:title", fullTitle);
     upsertMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
     upsertMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
-    if (image) {
-      upsertMeta('meta[property="og:image"]', "property", "og:image", image);
-      upsertMeta('meta[name="twitter:image"]', "name", "twitter:image", image);
-    }
+    upsertMeta('meta[name="twitter:image"]', "name", "twitter:image", shareImage);
     upsertLink("canonical", url);
   }, [title, description, path, image, type]);
 }
