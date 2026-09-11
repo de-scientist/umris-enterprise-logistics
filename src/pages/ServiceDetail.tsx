@@ -45,7 +45,7 @@ export default function ServiceDetail() {
           <h1>{service.title}</h1>
           <p>{service.intro}</p>
           <div className="mt-4 flex gap-3 wrap">
-            <Link to="/contact" className="btn btn--accent btn--lg">Request a Quote</Link>
+            <Link to="/quote" className="btn btn--accent btn--lg">Request a Quote</Link>
             <Link to="/services" className="btn btn--light btn--lg">All services</Link>
           </div>
         </div>

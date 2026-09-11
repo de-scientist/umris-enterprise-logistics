@@ -6,7 +6,7 @@ export default function CtaBand({
   title = "Ready to move your goods with confidence?",
   text = "Tell us what you need moved and we'll get back to you with a clear, tailored quotation.",
   primaryLabel = "Request a Quote",
-  primaryTo = "/contact",
+  primaryTo = "/quote",
   topic = "",
 }: {
   title?: string;

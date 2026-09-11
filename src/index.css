@@ -2221,6 +2221,285 @@ p {
   color: var(--color-accent);
 }
 
+/* ============================================================
+   UMRIS DUAL-THEME SYSTEM
+   Light = primary commercial experience (default, :root tokens).
+   Dark  = premium technology experience ([data-theme="dark"]).
+   Components consume semantic tokens only — no theme props.
+   ============================================================ */
+
+/* ---------- DARK THEME TOKENS ---------- */
+[data-theme="dark"] {
+  /* Brand — same identity, luminance-adjusted for dark surfaces.
+     --color-primary keeps white-text contrast (buttons);
+     --color-primary-dark becomes the light plum for text accents. */
+  --color-primary: #a8447f;
+  --color-primary-dark: #d89abf;
+  --color-primary-light: #d89abf;
+  --color-primary-tint: #261426;
+
+  --color-accent: #6cc06b;
+  --color-accent-dark: #8fd694;
+
+  /* Text — light slate scale on deep navy */
+  --color-ink: #f2f5fa;
+  --color-text: #dfe6f1;
+  --color-text-secondary: #adb7c9;
+  --color-text-muted: #8b94a9;
+
+  /* Surfaces — layered deep navy (never pure black) */
+  --color-bg: #0a0f1c;
+  --color-surface: #0d1526;
+  --color-surface-muted: #16203a;
+  --color-border: #223049;
+  --color-border-strong: #35486a;
+
+  /* Elevated surfaces, inputs & chrome */
+  --color-surface-elevated: #131e34;
+  --color-input-bg: #0c1322;
+  --color-header-bg: rgba(10, 15, 28, 0.82);
+  --color-header-bg-solid: #0a0f1c;
+  --color-backdrop: rgba(2, 6, 14, 0.68);
+  --color-skeleton-shine: #1b2745;
+
+  /* Status — luminance-adjusted semantic colours */
+  --color-success: #7ccb7d;
+  --color-warning: #e5a93d;
+  --color-error: #e57363;
+
+  /* Shadows — restrained, black-based (no glow) */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.55);
+
+  color-scheme: dark;
+}
+
+/* ---------- DARK: small-text brand accents ----------
+   Primary buttons keep --color-primary (white-text safe).
+   Small text/icons use the lighter plum for 4.5:1 contrast. */
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] .brand__name small,
+[data-theme="dark"] .service-card__link,
+[data-theme="dark"] .track-box__label,
+[data-theme="dark"] .track-box__demo,
+[data-theme="dark"] .how-step__num,
+[data-theme="dark"] .why-item__num,
+[data-theme="dark"] .faq-item__icon,
+[data-theme="dark"] .quote-aside__list a,
+[data-theme="dark"] .case-card__grid dt,
+[data-theme="dark"] .nav__link:hover,
+[data-theme="dark"] .nav__link.is-active,
+[data-theme="dark"] .mobile-nav__sublink--all,
+[data-theme="dark"] .nav-dropdown__all {
+  color: #d89abf;
+}
+
+/* ---------- DARK: layered canonical surfaces ---------- */
+[data-theme="dark"] .section--ink,
+[data-theme="dark"] .page-hero {
+  background: #060b14;
+}
+
+[data-theme="dark"] .site-footer {
+  background: #070c15;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Brand bands stay deep-plum (never inverted to light) */
+[data-theme="dark"] .cta-band,
+[data-theme="dark"] .footer-cta,
+[data-theme="dark"] .industry-hero-icon {
+  background: linear-gradient(120deg, #31102b, #5e1e4e);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+[data-theme="dark"] .trust-strip {
+  background: #0d1526;
+  border-block: 1px solid var(--color-border);
+  color: #fff;
+}
+
+/* Hero — deeper overlay keeps white type crisp over imagery */
+[data-theme="dark"] .hero {
+  background-image: linear-gradient(
+      180deg,
+      rgba(5, 9, 18, 0.82),
+      rgba(5, 9, 18, 0.62)
+    ),
+    url("../src/assets/t1.jpeg");
+}
+
+/* ---------- DARK: buttons ---------- */
+[data-theme="dark"] .btn--primary:hover {
+  background: #8a2f6a;
+}
+
+[data-theme="dark"] .btn--accent:hover {
+  background: #8fd694;
+  color: #0b2a0b;
+}
+
+/* Ink button becomes a light solid button on dark surfaces */
+[data-theme="dark"] .btn--ink {
+  background: var(--color-ink);
+  color: #0a0f1c;
+}
+[data-theme="dark"] .btn--ink:hover {
+  background: #ffffff;
+}
+
+/* Light button stays deliberately white; text pinned to brand-dark */
+[data-theme="dark"] .btn--light {
+  color: #6a234f;
+}
+
+/* ---------- DARK: status / feedback ---------- */
+[data-theme="dark"] .form-status--ok {
+  background: #0f2417;
+  border-color: #1e4a2c;
+}
+[data-theme="dark"] .form-status--err {
+  background: #2c1410;
+  border-color: #5c2721;
+}
+
+[data-theme="dark"] .chip--demo {
+  background: #2c230e;
+  color: #ebc46a;
+}
+
+[data-theme="dark"] .field input:focus,
+[data-theme="dark"] .field select:focus,
+[data-theme="dark"] .field textarea:focus,
+[data-theme="dark"] .track-box__input-wrap input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(168, 68, 127, 0.35);
+}
+
+[data-theme="dark"] :focus-visible {
+  outline-color: #d89abf;
+}
+
+/* ---------- DARK: contact accents ---------- */
+[data-theme="dark"] .mobile-action a.action--wa {
+  color: #6cc06b;
+}
+[data-theme="dark"] .header-wa {
+  color: #6cc06b;
+}
+[data-theme="dark"] .mobile-action {
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- THEME TOGGLE ---------- */
+.theme-toggle {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface-elevated);
+  color: var(--color-primary-dark);
+  font-size: 1.7rem;
+  transition: border-color var(--transition), color var(--transition),
+    transform var(--transition), background-color 250ms ease;
+}
+.theme-toggle:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+.theme-toggle:active {
+  transform: translateY(0);
+}
+.theme-toggle__icons {
+  position: relative;
+  display: block;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.theme-toggle__icons svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Default (light): offer the moon. Dark: offer the sun. */
+.theme-toggle__sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+.theme-toggle__moon {
+  opacity: 1;
+  transform: none;
+}
+[data-theme="dark"] .theme-toggle__sun {
+  opacity: 1;
+  transform: none;
+}
+[data-theme="dark"] .theme-toggle__moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .theme-toggle__icons svg {
+    transition: opacity 200ms ease, transform 300ms ease;
+  }
+}
+
+/* ---------- THEME TRANSITIONS (motion-safe only) ----------
+   Short, surface-level transitions. The global reduced-motion
+   rule already disables these when the user prefers less motion. */
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: background-color 250ms ease, color 250ms ease;
+  }
+  .why-item,
+  .industry-card,
+  .contact-card,
+  .testi,
+  .faq-item,
+  .shipment,
+  .answer-block,
+  .calc__estimate,
+  .hero__track,
+  .section--surface,
+  .section--ink,
+  .page-hero,
+  .trust-strip,
+  .site-footer,
+  .track-box__input-wrap input,
+  .mobile-action a {
+    transition: background-color 250ms ease, color 250ms ease,
+      border-color 250ms ease;
+  }
+  .card {
+    transition: transform var(--transition), box-shadow var(--transition),
+      border-color var(--transition), background-color 250ms ease,
+      color 250ms ease;
+  }
+  .how-step,
+  .capability-card {
+    transition: transform var(--transition), box-shadow var(--transition),
+      border-color var(--transition), background-color 250ms ease,
+      color 250ms ease;
+  }
+  .site-header {
+    transition: background var(--transition), background-color 250ms ease,
+      box-shadow var(--transition), border-color var(--transition);
+  }
+  .nav-dropdown {
+    transition: opacity var(--transition), transform var(--transition),
+      visibility var(--transition), background-color 250ms ease;
+  }
+  .mobile-nav__panel {
+    transition: transform var(--transition), background-color 250ms ease;
+  }
+}
+
 /* Mega dropdown: wider for 4-col content */
 .nav-dropdown--mega {
   min-width: 340px;

@@ -18,7 +18,7 @@ export default function MobileActionBar() {
         <FaWhatsapp />
         WhatsApp
       </a>
-      <Link to="/contact" className="action--quote">
+      <Link to="/quote" className="action--quote">
         <FaPenToSquare />
         Quote
       </Link>
