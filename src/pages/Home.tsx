@@ -7,20 +7,24 @@ import HowItWorks from "../components/sections/HowItWorks";
 import Capabilities from "../components/sections/Capabilities";
 import CtaBand from "../components/sections/CtaBand";
 import ServiceCard from "../components/ServiceCard";
-import Testimonials from "../components/Testimonials";
-import Gallery from "../components/Gallery";
+import NetworkVisual from "../components/logistics/NetworkVisual";
+import QuoteCalculator from "../components/logistics/QuoteCalculator";
+import TrackingForm from "../components/logistics/TrackingForm";
 import Faq from "../components/ui/Faq";
 import Reveal from "../components/ui/Reveal";
 import SectionHeading from "../components/ui/SectionHeading";
 import { SERVICES } from "../data/services";
 import { INDUSTRIES } from "../data/industries";
-import { PROJECTS } from "../data/projects";
 import { ARTICLES } from "../data/articles";
 import { SITE_FAQ } from "../data/faqs";
 import { useSeo, JsonLd } from "../lib/seo";
 import { organizationSchema, websiteSchema, localBusinessSchema, faqSchema } from "../lib/schema";
 import aboutImg from "../assets/t3.jpeg";
 
+/**
+ * Homepage order (§51): hero → trust strip → tracking → services →
+ * why → how → industries → network → calculator → insights → FAQ → CTA.
+ */
 export default function Home() {
   useSeo({
     title: `Logistics & Transportation Services in Kenya`,
@@ -39,9 +43,19 @@ export default function Home() {
       <Hero />
       <TrustStrip />
 
-      <HowItWorks />
+      {/* TRACK SHIPMENT band */}
+      <section className="section section--surface" aria-label="Track your shipment">
+        <div className="container container-narrow">
+          <SectionHeading
+            eyebrow="Visibility"
+            title="Know where your goods are"
+            intro="Enter your tracking number for live status, route and delivery progress."
+          />
+          <TrackingForm variant="page" />
+        </div>
+      </section>
 
-      {/* Services */}
+      {/* SERVICES */}
       <section className="section" id="services">
         <div className="container">
           <SectionHeading
@@ -64,12 +78,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Split feature */}
+      {/* WHO WE ARE split */}
       <section className="section section--surface">
         <div className="container split">
           <div>
             <span className="eyebrow">Who we are</span>
-            <h2>We move business forward</h2>
+            <h2>Logistics built around reliability</h2>
             <p>
               Umris Enterprise Logistics exists to keep Kenyan businesses moving.
               Whether it is freight across the country, storage between movements,
@@ -83,7 +97,7 @@ export default function Home() {
             </p>
             <div className="mt-4 flex gap-3 wrap">
               <Link to="/about" className="btn btn--primary">About Umris</Link>
-              <Link to="/portfolio" className="btn btn--ghost">See our work</Link>
+              <Link to="/case-studies" className="btn btn--ghost">See our work</Link>
             </div>
           </div>
           <div className="split__media">
@@ -94,9 +108,11 @@ export default function Home() {
 
       <WhyUs />
 
+      <HowItWorks />
+
       <Capabilities />
 
-      {/* Industries preview */}
+      {/* INDUSTRIES */}
       <section className="section">
         <div className="container">
           <SectionHeading
@@ -107,11 +123,12 @@ export default function Home() {
           <div className="grid-3">
             {INDUSTRIES.slice(0, 6).map((ind) => (
               <Reveal key={ind.slug}>
-                <article className="industry-card">
+                <Link to={`/industries/${ind.slug}`} className="industry-card" style={{ height: "100%" }}>
                   <span className="industry-card__icon" aria-hidden>{ind.icon}</span>
                   <h3>{ind.name}</h3>
                   <p>{ind.solution}</p>
-                </article>
+                  <span className="service-card__link">Explore →</span>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -123,36 +140,27 @@ export default function Home() {
         </div>
       </section>
 
-      <Testimonials />
-
-      {/* Portfolio preview */}
-      <section className="section section--surface">
+      {/* LOGISTICS NETWORK */}
+      <section className="section section--ink" aria-label="Logistics network">
         <div className="container">
-          <SectionHeading
-            eyebrow="Proof in the field"
-            title="Selected work"
-            intro="A look at the kinds of logistics challenges Umris coordinates."
-          />
-          <div className="grid-3">
-            {PROJECTS.slice(0, 3).map((p) => (
-              <Reveal key={p.slug}>
-                <Link to={`/portfolio`} className="card card--interactive" style={{ display: "block" }}>
-                  <img src={p.image} alt={p.title} style={{ width: "100%", height: 180, objectFit: "cover", borderRadius: "var(--radius-md)", marginBottom: "1.2rem" }} loading="lazy" />
-                  <span className="chip">{p.industry}</span>
-                  <h3 className="mt-2" style={{ fontSize: "1.9rem" }}>{p.title}</h3>
-                  <p className="text-muted mt-2" style={{ fontSize: "1.4rem" }}>{p.challenge}</p>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-          <div className="text-center mt-5">
-            <Link to="/portfolio" className="btn btn--primary btn--lg">View portfolio</Link>
-          </div>
+          <NetworkVisual />
         </div>
       </section>
 
-      {/* Insights preview */}
-      <section className="section">
+      {/* QUOTE CALCULATOR */}
+      <section className="section" aria-label="Estimate your shipment">
+        <div className="container container-narrow">
+          <SectionHeading
+            eyebrow="Pricing guide"
+            title="Estimate your shipment in seconds"
+            intro="Illustrative rates to guide your budget — final pricing is always confirmed with an official quote."
+          />
+          <QuoteCalculator />
+        </div>
+      </section>
+
+      {/* FEATURED INSIGHTS */}
+      <section className="section section--surface">
         <div className="container">
           <SectionHeading
             eyebrow="Insights"
@@ -178,14 +186,16 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="section section--surface">
-        <div className="container">
+      <section className="section">
+        <div className="container container-narrow">
           <SectionHeading eyebrow="Questions" title="Frequently asked questions" />
-          <Faq items={SITE_FAQ} />
+          <Faq items={SITE_FAQ.slice(0, 6)} />
+          <div className="text-center mt-4">
+            <Link to="/faq" className="btn btn--ghost">View all FAQs</Link>
+          </div>
         </div>
       </section>
 
-      <Gallery />
       <CtaBand />
     </>
   );

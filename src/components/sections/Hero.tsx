@@ -1,36 +1,44 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaShieldHalved, FaTruckFast, FaClock, FaCircleCheck } from "react-icons/fa6";
 import { SITE } from "../../data/siteConfig";
-import { WhatsAppButton } from "../ui/WhatsApp";
+import TrackingForm from "../logistics/TrackingForm";
 
 export default function Hero() {
   return (
     <section className="hero" id="home">
-      <div className="container hero__inner">
-        <span className="hero__eyebrow">Umris Enterprise Logistics · Kenya</span>
-        <h1 className="hero__title">
-          Moving Your <em>Business</em> Forward.
-        </h1>
-        <p className="hero__lead">
-          Reliable logistics and transportation solutions built around timely
-          delivery, operational efficiency and dependable service — across Kenya
-          and East Africa.
-        </p>
-        <div className="hero__actions">
-          <Link to="/contact" className="btn btn--accent btn--lg">
-            Request a Quote
-          </Link>
-          <Link to="/services" className="btn btn--light btn--lg">
-            Explore Our Services <FaArrowRight />
-          </Link>
-          <WhatsAppButton label="WhatsApp Us" variant="light" size="lg" />
+      <div className="container hero__layout">
+        <div className="hero__inner">
+          <span className="hero__eyebrow">Umris Enterprise Logistics · Kenya &amp; East Africa</span>
+          <h1 className="hero__title">
+            Global logistics.<br />
+            <em>Local expertise.</em>
+          </h1>
+          <p className="hero__lead">
+            Reliable logistics solutions designed to move your goods, connect
+            your markets and keep your supply chain moving.
+          </p>
+          <div className="hero__actions">
+            <Link to="/quote" className="btn btn--accent btn--lg">
+              Get a Quote
+            </Link>
+            <Link to="/tracking" className="btn btn--light btn--lg">
+              Track Shipment <FaArrowRight />
+            </Link>
+          </div>
+          <ul className="hero__trust">
+            <li><FaCircleCheck /> {SITE.serviceArea}</li>
+            <li><FaShieldHalved /> Professional handling</li>
+            <li><FaTruckFast /> Reliable transport</li>
+            <li><FaClock /> Timely delivery</li>
+          </ul>
         </div>
-        <ul className="hero__trust">
-          <li><FaCircleCheck /> {SITE.serviceArea}</li>
-          <li><FaShieldHalved /> Professional handling</li>
-          <li><FaTruckFast /> Reliable transport</li>
-          <li><FaClock /> Timely delivery</li>
-        </ul>
+        <div className="hero__track">
+          <TrackingForm variant="hero" />
+          <p className="hero__track-note">
+            We don&apos;t simply move goods — we connect businesses, people
+            and markets through dependable logistics.
+          </p>
+        </div>
       </div>
     </section>
   );
