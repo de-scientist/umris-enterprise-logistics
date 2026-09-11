@@ -58,14 +58,12 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
+  { label: "Solutions", to: "/solutions" },
   { label: "Industries", to: "/industries" },
-  { label: "Capabilities", to: "/#capabilities" },
-  { label: "Projects", to: "/portfolio" },
-  { label: "Insights", to: "/insights" },
-  { label: "Contact", to: "/contact" },
+  { label: "Tracking", to: "/tracking" },
+  { label: "Resources", to: "/insights" },
+  { label: "About", to: "/about" },
 ] as const;
 
 export function whatsappLink(message: string): string {
