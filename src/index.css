@@ -1113,9 +1113,15 @@ p {
   padding: 1.2rem 1.4rem;
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-md);
-  background: #fff;
+  background: var(--color-input-bg);
   color: var(--color-text);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition),
+    background-color var(--transition), color var(--transition);
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
 }
 .field input:focus,
 .field select:focus,
@@ -1166,7 +1172,7 @@ p {
   padding: var(--space-4);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: #fff;
+  background: var(--color-surface-elevated);
 }
 .contact-card__icon {
   flex: none;
@@ -1206,7 +1212,7 @@ p {
 .faq-item {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: #fff;
+  background: var(--color-surface-elevated);
   overflow: hidden;
 }
 .faq-item__q {
@@ -1376,7 +1382,7 @@ p {
   align-items: center;
   gap: 0.3rem;
   padding: 1rem;
-  background: #fff;
+  background: var(--color-surface-elevated);
   color: var(--color-primary-dark);
   font-size: 1.2rem;
   font-weight: 600;
@@ -1712,9 +1718,13 @@ p {
   padding: 1.3rem 1.4rem 1.3rem 3.8rem;
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-md);
-  background: #fff;
+  background: var(--color-input-bg);
   color: var(--color-ink);
   letter-spacing: 0.04em;
+}
+.track-box__input-wrap input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
 }
 .track-box__input-wrap input:focus {
   outline: none;
@@ -1753,7 +1763,7 @@ p {
 
 /* ===================== SHIPMENT CARD ===================== */
 .shipment {
-  background: #fff;
+  background: var(--color-surface-elevated);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-5);
@@ -1840,7 +1850,7 @@ p {
   border: 2px solid var(--color-border-strong);
   color: var(--color-text-muted);
   font-size: 1.4rem;
-  background: #fff;
+  background: var(--color-surface-elevated);
 }
 .shipment__stage.is-done .shipment__stage-marker {
   background: var(--color-accent);
@@ -1936,7 +1946,7 @@ p {
 .sk {
   display: block;
   border-radius: 6px;
-  background: linear-gradient(90deg, var(--color-surface-muted) 25%, #f7f4f8 50%, var(--color-surface-muted) 75%);
+  background: linear-gradient(90deg, var(--color-surface-muted) 25%, var(--color-skeleton-shine) 50%, var(--color-surface-muted) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.2s infinite;
 }
@@ -1965,7 +1975,7 @@ p {
   display: block;
   height: 22px;
   border-radius: 6px;
-  background: linear-gradient(90deg, var(--color-surface-muted) 25%, #f7f4f8 50%, var(--color-surface-muted) 75%);
+  background: linear-gradient(90deg, var(--color-surface-muted) 25%, var(--color-skeleton-shine) 50%, var(--color-surface-muted) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.2s infinite;
 }
