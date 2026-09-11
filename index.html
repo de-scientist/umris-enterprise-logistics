@@ -27,7 +27,28 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Theme -->
-    <meta name="theme-color" content="#8a2f6a" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Pre-paint theme init: applies saved/system theme before first
+         render to prevent any flash of the wrong theme. Mirrors the
+         logic in src/lib/theme.tsx (kept dependency-free). -->
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("umris-theme");
+          var t =
+            s === "light" || s === "dark"
+              ? s
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", t);
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute("content", t === "dark" ? "#0a0f1c" : "#ffffff");
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
 
     <!-- Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
