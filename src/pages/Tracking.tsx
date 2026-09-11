@@ -16,7 +16,6 @@ import { organizationSchema, breadcrumbSchema } from "../lib/schema";
 export default function Tracking() {
   const [params] = useSearchParams();
   const initial = params.get("tn") ?? "";
-  const [query, setQuery] = useState(initial);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<TrackingResult | null>(null);
   const [searched, setSearched] = useState(false);
@@ -29,7 +28,6 @@ export default function Tracking() {
   });
 
   const search = async (tn: string) => {
-    setQuery(tn);
     setLoading(true);
     setSearched(true);
     const r = await fetchShipment(tn);

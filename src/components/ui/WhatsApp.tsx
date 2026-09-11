@@ -1,6 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa6";
 import { whatsappLink } from "../../data/siteConfig";
 
+/* eslint-disable react-refresh/only-export-components -- shared helper + components by design */
 export function whatsappMessage(topic: string, detail = ""): string {
   const base = `Hello Umris Enterprise Logistics, I'd like to request a quotation`;
   const service = topic ? ` for ${topic}` : "";

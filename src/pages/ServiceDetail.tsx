@@ -14,13 +14,13 @@ export default function ServiceDetail() {
   const { slug } = useParams();
   const service = slug ? getService(slug) : undefined;
 
-  if (!service) return <NotFound />;
-
   useSeo({
-    title: `${service.title} in Kenya`,
-    description: service.short,
-    path: `/services/${service.slug}`,
+    title: service ? `${service.title} in Kenya` : "Service",
+    description: service ? service.short : "Umris logistics service.",
+    path: `/services/${service ? service.slug : slug ?? ""}`,
   });
+
+  if (!service) return <NotFound />;
 
   const related = service.related
     .map((r) => SERVICES.find((s) => s.slug === r))

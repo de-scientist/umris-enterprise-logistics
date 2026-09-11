@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react";
 
 export default function Reveal({
   children,
@@ -36,7 +36,7 @@ export default function Reveal({
     return () => obs.disconnect();
   }, []);
 
-  const Component = as as any;
+  const Component = as as ElementType;
   return (
     <Component
       ref={ref}

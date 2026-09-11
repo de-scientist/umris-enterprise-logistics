@@ -23,14 +23,15 @@ function Block({ block }: { block: (typeof ARTICLES)[number]["blocks"][number] }
 export default function Article() {
   const { slug } = useParams();
   const article = slug ? getArticle(slug) : undefined;
-  if (!article) return <NotFound />;
 
   useSeo({
-    title: article.title,
-    description: article.excerpt,
-    path: `/insights/${article.slug}`,
+    title: article ? article.title : "Insight",
+    description: article ? article.excerpt : "Umris logistics insight.",
+    path: `/insights/${article ? article.slug : slug ?? ""}`,
     type: "article",
   });
+
+  if (!article) return <NotFound />;
 
   const related = article.relatedServices
     .map((r) => SERVICES.find((s) => s.slug === r))
