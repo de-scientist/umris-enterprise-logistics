@@ -3,33 +3,31 @@ import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 import { NAV_LINKS, SITE, whatsappLink } from "../../data/siteConfig";
+import { SERVICES } from "../../data/services";
+import { INDUSTRIES } from "../../data/industries";
 import { WhatsAppButton } from "../ui/WhatsApp";
 
-const SERVICE_CATEGORIES = [
-  {
-    name: "Transportation",
-    desc: "Move goods efficiently across Kenya and East Africa.",
-    to: "/services",
-  },
-  {
-    name: "Logistics",
-    desc: "Coordinate storage, clearing and forwarding.",
-    to: "/services",
-  },
-  {
-    name: "Enterprise Solutions",
-    desc: "Procurement and consultancy for business logistics.",
-    to: "/services",
-  },
+const SOLUTIONS_MENU = [
+  { name: "E-commerce Logistics", desc: "Last-mile delivery with confirmation.", to: "/industries/ecommerce" },
+  { name: "Business Logistics", desc: "Freight, trucking and distribution.", to: "/solutions" },
+  { name: "Import & Export", desc: "Clearing and port-to-door handover.", to: "/services/customs-clearing" },
+  { name: "Fulfilment & Storage", desc: "Warehousing between movements.", to: "/services/secure-warehousing" },
+];
+
+const RESOURCES_MENU = [
+  { name: "Logistics Insights", desc: "Practical guides for growing businesses.", to: "/insights" },
+  { name: "Case Studies", desc: "Selected work from the field.", to: "/case-studies" },
+  { name: "FAQs", desc: "Answers to common logistics questions.", to: "/faq" },
+  { name: "Coverage", desc: "Where Umris operates.", to: "/locations" },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const { pathname, hash } = useLocation();
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
@@ -40,14 +38,12 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menus on route change
   useEffect(() => {
     setOpen(false);
-    setServicesOpen(false);
-    setMobileServicesOpen(false);
+    setOpenMenu(null);
+    setMobileExpanded(null);
   }, [pathname, hash]);
 
-  // Body scroll lock while the mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -55,16 +51,13 @@ export default function Header() {
     };
   }, [open]);
 
-  // Desktop dropdown: Escape + outside click to close
   useEffect(() => {
-    if (!servicesOpen) return;
+    if (!openMenu) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setServicesOpen(false);
+      if (e.key === "Escape") setOpenMenu(null);
     };
     const onClick = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setServicesOpen(false);
-      }
+      if (navRef.current && !navRef.current.contains(e.target as Node)) setOpenMenu(null);
     };
     document.addEventListener("keydown", onKey);
     document.addEventListener("mousedown", onClick);
@@ -72,9 +65,8 @@ export default function Header() {
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("mousedown", onClick);
     };
-  }, [servicesOpen]);
+  }, [openMenu]);
 
-  // Mobile menu: focus the close button, Escape to close, simple focus trap
   useEffect(() => {
     if (!open) return;
     closeBtnRef.current?.focus();
@@ -84,9 +76,7 @@ export default function Header() {
         return;
       }
       if (e.key === "Tab" && panelRef.current) {
-        const focusables = panelRef.current.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled])'
-        );
+        const focusables = panelRef.current.querySelectorAll<HTMLElement>("a[href], button:not([disabled])");
         if (focusables.length === 0) return;
         const first = focusables[0];
         const last = focusables[focusables.length - 1];
@@ -105,11 +95,20 @@ export default function Header() {
 
   function navActive(to: string) {
     if (to === "/") return pathname === "/" && !hash;
-    if (to === "/#capabilities") return pathname === "/" && hash === "#capabilities";
-    return pathname === to || pathname.startsWith(to + "/");
+    return pathname === to || pathname.startsWith(to + "/") || pathname.startsWith(to + "-");
   }
 
-  const servicesActive = pathname.startsWith("/services");
+  const toggle = (label: string) => setOpenMenu((m) => (m === label ? null : label));
+
+  const dropdownFor = (label: string) => {
+    if (label === "Services")
+      return SERVICES.slice(0, 6).map((s) => ({ name: s.title, desc: s.short.slice(0, 72) + "…", to: `/services/${s.slug}` }));
+    if (label === "Solutions") return SOLUTIONS_MENU;
+    if (label === "Industries")
+      return INDUSTRIES.slice(0, 6).map((i) => ({ name: i.name, desc: i.solution.slice(0, 72) + "…", to: `/industries/${i.slug}` }));
+    if (label === "Resources") return RESOURCES_MENU;
+    return null;
+  };
 
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
@@ -122,38 +121,32 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="nav" aria-label="Primary">
+        <nav className="nav" aria-label="Primary" ref={navRef}>
           {NAV_LINKS.map((l) => {
-            if (l.label === "Services") {
+            const items = dropdownFor(l.label);
+            if (items) {
+              const isOpen = openMenu === l.label;
+              const active = navActive(l.to);
               return (
-                <div
-                  className={`nav__item has-dropdown ${servicesOpen ? "is-open" : ""}`}
-                  key={l.to}
-                  ref={dropdownRef}
-                >
+                <div className={`nav__item has-dropdown ${isOpen ? "is-open" : ""}`} key={l.label}>
                   <button
                     type="button"
-                    className={`nav__link nav__trigger ${servicesActive ? "is-active" : ""}`}
+                    className={`nav__link nav__trigger ${active ? "is-active" : ""}`}
                     aria-haspopup="true"
-                    aria-expanded={servicesOpen}
-                    onClick={() => setServicesOpen((v) => !v)}
+                    aria-expanded={isOpen}
+                    onClick={() => toggle(l.label)}
                   >
                     {l.label} <FaChevronDown className="nav__chev" aria-hidden />
                   </button>
-                  <div className="nav-dropdown" role="menu" aria-label="Services">
-                    {SERVICE_CATEGORIES.map((c) => (
-                      <Link
-                        key={c.name}
-                        to={c.to}
-                        className="nav-dropdown__group"
-                        role="menuitem"
-                      >
+                  <div className="nav-dropdown nav-dropdown--mega" role="menu" aria-label={l.label}>
+                    {items.map((c) => (
+                      <Link key={c.name} to={c.to} className="nav-dropdown__group" role="menuitem">
                         <span className="nav-dropdown__title">{c.name}</span>
                         <span className="nav-dropdown__desc">{c.desc}</span>
                       </Link>
                     ))}
-                    <Link to="/services" className="nav-dropdown__all" role="menuitem">
-                      View all services <span aria-hidden>&rarr;</span>
+                    <Link to={l.to} className="nav-dropdown__all" role="menuitem">
+                      View all {l.label.toLowerCase()} <span aria-hidden>&rarr;</span>
                     </Link>
                   </div>
                 </div>
@@ -161,12 +154,8 @@ export default function Header() {
             }
             const active = navActive(l.to);
             return (
-              <div className="nav__item" key={l.to}>
-                <Link
-                  to={l.to}
-                  className={`nav__link ${active ? "is-active" : ""}`}
-                  aria-current={active ? "page" : undefined}
-                >
+              <div className="nav__item" key={l.label}>
+                <Link to={l.to} className={`nav__link ${active ? "is-active" : ""}`} aria-current={active ? "page" : undefined}>
                   {l.label}
                 </Link>
               </div>
@@ -175,6 +164,9 @@ export default function Header() {
         </nav>
 
         <div className="header-cta">
+          <Link to="/tracking" className="btn btn--ghost btn--sm">
+            Track Shipment
+          </Link>
           <a
             className="header-wa"
             href={whatsappLink("Hello Umris, I'd like to request a quotation.")}
@@ -184,78 +176,51 @@ export default function Header() {
           >
             <FaWhatsapp />
           </a>
-          <Link to="/contact" className="btn btn--primary btn--sm">
-            Request a Quote
+          <Link to="/quote" className="btn btn--primary btn--sm">
+            Get a Quote
           </Link>
         </div>
 
-        <button
-          className="nav-toggle"
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-        >
+        <button className="nav-toggle" onClick={() => setOpen(true)} aria-label="Open menu" aria-expanded={open} aria-controls="mobile-nav">
           <FaBars />
         </button>
       </div>
 
-      {/* Mobile navigation */}
-      <div
-        id="mobile-nav"
-        className={`mobile-nav ${open ? "is-open" : ""}`}
-        aria-hidden={!open}
+      <div id="mobile-nav" className={`mobile-nav ${open ? "is-open" : ""}`} aria-hidden={!open}
         onClick={(e) => {
           if (e.target === e.currentTarget) setOpen(false);
         }}
       >
-        <div
-          className="mobile-nav__panel"
-          ref={panelRef}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Site menu"
-        >
-          <button
-            className="mobile-nav__close"
-            onClick={() => setOpen(false)}
-            aria-label="Close menu"
-            ref={closeBtnRef}
-          >
+        <div className="mobile-nav__panel" ref={panelRef} role="dialog" aria-modal="true" aria-label="Site menu">
+          <button className="mobile-nav__close" onClick={() => setOpen(false)} aria-label="Close menu" ref={closeBtnRef}>
             <FaTimes />
           </button>
-
           <nav className="mobile-nav__links" aria-label="Mobile">
             {NAV_LINKS.map((l) => {
-              if (l.label === "Services") {
+              const items = dropdownFor(l.label);
+              if (items) {
+                const expanded = mobileExpanded === l.label;
                 return (
-                  <div className="mobile-nav__accordion" key={l.to}>
+                  <div className="mobile-nav__accordion" key={l.label}>
                     <button
                       type="button"
                       className="mobile-nav__accordion-btn"
-                      aria-expanded={mobileServicesOpen}
-                      aria-controls="mobile-services"
-                      onClick={() => setMobileServicesOpen((v) => !v)}
+                      aria-expanded={expanded}
+                      aria-controls={`mobile-${l.label}`}
+                      onClick={() => setMobileExpanded((m) => (m === l.label ? null : l.label))}
                     >
                       {l.label}
                       <FaChevronDown className="chev" aria-hidden />
                     </button>
-                    {mobileServicesOpen && (
-                      <div className="mobile-nav__sub" id="mobile-services">
-                        {SERVICE_CATEGORIES.map((c) => (
-                          <Link
-                            key={c.name}
-                            to={c.to}
-                            className="mobile-nav__sublink"
-                          >
+                    {expanded && (
+                      <div className="mobile-nav__sub" id={`mobile-${l.label}`}>
+                        {items.map((c) => (
+                          <Link key={c.name} to={c.to} className="mobile-nav__sublink">
                             {c.name}
                           </Link>
                         ))}
-                        <Link
-                          to="/services"
-                          className="mobile-nav__sublink mobile-nav__sublink--all"
-                        >
-                          View all services
+                        <Link to={l.to} className="mobile-nav__sublink mobile-nav__sublink--all">
+                          View all {l.label.toLowerCase()}
                         </Link>
                       </div>
                     )}
@@ -264,21 +229,21 @@ export default function Header() {
               }
               const active = navActive(l.to);
               return (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  className={`mobile-nav__link ${active ? "is-active" : ""}`}
-                  aria-current={active ? "page" : undefined}
-                >
+                <Link key={l.label} to={l.to} className={`mobile-nav__link ${active ? "is-active" : ""}`} aria-current={active ? "page" : undefined}>
                   {l.label}
                 </Link>
               );
             })}
+            <Link to="/contact" className="mobile-nav__link">
+              Contact
+            </Link>
           </nav>
-
           <div className="mobile-nav__actions">
-            <Link to="/contact" className="btn btn--primary btn--block btn--lg">
-              Request a Quote
+            <Link to="/quote" className="btn btn--primary btn--block btn--lg">
+              Get a Quote
+            </Link>
+            <Link to="/tracking" className="btn btn--ghost btn--block btn--lg">
+              Track Shipment
             </Link>
             <WhatsAppButton label="WhatsApp Umris" />
           </div>
