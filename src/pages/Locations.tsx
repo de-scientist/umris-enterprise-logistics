@@ -1,0 +1,69 @@
+import { Link } from "react-router-dom";
+import Breadcrumbs from "../components/ui/Breadcrumbs";
+import CtaBand from "../components/sections/CtaBand";
+import Reveal from "../components/ui/Reveal";
+import { LOCATIONS } from "../data/locations";
+import { useSeo, JsonLd } from "../lib/seo";
+import { organizationSchema, breadcrumbSchema } from "../lib/schema";
+
+/** /locations — honest coverage. Only areas Umris actually serves. */
+export default function Locations() {
+  useSeo({
+    title: "Coverage & Locations",
+    description:
+      "Umris Enterprise Logistics operates across Kenya with regional coordination across East Africa. See hubs, service areas and port links.",
+    path: "/locations",
+  });
+
+  return (
+    <>
+      <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "Coverage", path: "/locations" }])]} />
+      <section className="page-hero">
+        <div className="container">
+          <Breadcrumbs items={[{ name: "Coverage" }]} />
+          <h1>Where Umris operates</h1>
+          <p>
+            Nationwide logistics across Kenya, coordinated from Naivasha, with
+            port links in Mombasa and regional coordination across East
+            Africa. Only areas we genuinely serve are listed here.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="grid-3">
+            {LOCATIONS.map((l) => (
+              <Reveal key={l.slug}>
+                <article className="card card--interactive" style={{ height: "100%" }}>
+                  <span className="chip">{l.type}</span>
+                  <h2 className="h3 mt-2">{l.name}</h2>
+                  <p className="text-muted mt-2">{l.summary}</p>
+                  <p className="mt-3" style={{ fontSize: "1.4rem", color: "var(--color-primary)", fontWeight: 600 }}>
+                    {l.presence}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="answer-block mt-5">
+            <h2 className="h3">What areas does Umris serve?</h2>
+            <p>
+              Umris serves clients across Kenya — including Nairobi, Naivasha,
+              Nakuru, Eldoret and Mombasa corridors — and coordinates
+              cross-border movement into neighbouring East African markets on
+              request. Share your origin and destination when requesting a
+              quote and the team will confirm coverage.
+            </p>
+            <p className="mt-3">
+              <Link to="/quote" className="btn btn--primary">Check your route →</Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <CtaBand title="Moving goods on one of these routes?" text="Request a quote with your origin and destination." />
+    </>
+  );
+}
