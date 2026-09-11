@@ -32,6 +32,16 @@
   --color-error: #c0392b;
   --color-on-dark: #f4f1f5;
 
+  /* Elevated surfaces, inputs & chrome (light values; redefined per theme) */
+  --color-surface-elevated: #ffffff;
+  --color-input-bg: #ffffff;
+  --color-header-bg: rgba(255, 255, 255, 0.82);
+  --color-header-bg-solid: #ffffff;
+  --color-backdrop: rgba(20, 18, 24, 0.55);
+  --color-skeleton-shine: #f4f0f5;
+
+  color-scheme: light;
+
   /* Typography */
   --font-sans: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
 
@@ -364,14 +374,14 @@ p {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--color-header-bg);
   backdrop-filter: saturate(180%) blur(10px);
   border-bottom: 1px solid transparent;
   transition: background var(--transition), box-shadow var(--transition),
     border-color var(--transition);
 }
 .site-header.is-scrolled {
-  background: #fff;
+  background: var(--color-header-bg-solid);
   border-bottom-color: var(--color-border);
   box-shadow: var(--shadow-sm);
 }
@@ -475,7 +485,7 @@ p {
   top: calc(100% + 0.6rem);
   left: 0;
   min-width: 300px;
-  background: #fff;
+  background: var(--color-surface-elevated);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
@@ -563,7 +573,7 @@ p {
   position: fixed;
   inset: 0;
   z-index: 1100;
-  background: rgba(20, 18, 24, 0.55);
+  background: var(--color-backdrop);
   backdrop-filter: blur(2px);
   opacity: 0;
   pointer-events: none;
@@ -579,7 +589,7 @@ p {
   right: 0;
   height: 100%;
   width: min(86vw, 360px);
-  background: #fff;
+  background: var(--color-surface-elevated);
   padding: var(--space-5);
   display: flex;
   flex-direction: column;
@@ -591,8 +601,12 @@ p {
 .mobile-nav.is-open .mobile-nav__panel {
   transform: translateX(0);
 }
+.mobile-nav__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .mobile-nav__close {
-  align-self: flex-end;
   background: none;
   border: none;
   font-size: 3rem;
@@ -835,7 +849,7 @@ p {
   padding: var(--space-5);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: var(--color-surface-elevated);
 }
 .why-item__num {
   font-size: 1.4rem;
@@ -857,7 +871,7 @@ p {
   padding: var(--space-5);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: var(--color-surface-elevated);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -940,7 +954,7 @@ p {
   gap: var(--space-4);
 }
 .testi {
-  background: #fff;
+  background: var(--color-surface-elevated);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-5);
@@ -1552,7 +1566,7 @@ p {
   padding: var(--space-5);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background: #fff;
+  background: var(--color-surface-elevated);
   transition: transform var(--transition), box-shadow var(--transition),
     border-color var(--transition);
 }
@@ -1588,7 +1602,7 @@ p {
   padding: var(--space-5);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: var(--color-surface-elevated);
   height: 100%;
   transition: transform var(--transition), box-shadow var(--transition),
     border-color var(--transition);
@@ -1643,7 +1657,7 @@ p {
   align-items: center;
 }
 .hero__track {
-  background: rgba(255, 255, 255, 0.96);
+  background: var(--color-surface-elevated);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
   color: var(--color-ink);
