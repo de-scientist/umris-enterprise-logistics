@@ -8,6 +8,8 @@ import {
   type ReactNode,
 } from "react";
 
+/* eslint-disable react-refresh/only-export-components -- theme engine: provider + helpers by design */
+
 /* ============================================================
    THEME ENGINE — frontend-only, SSR-safe by design
    ------------------------------------------------------------
