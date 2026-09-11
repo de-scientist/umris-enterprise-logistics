@@ -6,6 +6,7 @@ import { NAV_LINKS, SITE, whatsappLink } from "../../data/siteConfig";
 import { SERVICES } from "../../data/services";
 import { INDUSTRIES } from "../../data/industries";
 import { WhatsAppButton } from "../ui/WhatsApp";
+import ThemeToggle from "../ui/ThemeToggle";
 
 const SOLUTIONS_MENU = [
   { name: "E-commerce Logistics", desc: "Last-mile delivery with confirmation.", to: "/industries/ecommerce" },
@@ -164,6 +165,7 @@ export default function Header() {
         </nav>
 
         <div className="header-cta">
+          <ThemeToggle />
           <Link to="/tracking" className="btn btn--ghost btn--sm">
             Track Shipment
           </Link>
@@ -192,9 +194,12 @@ export default function Header() {
         }}
       >
         <div className="mobile-nav__panel" ref={panelRef} role="dialog" aria-modal="true" aria-label="Site menu">
-          <button className="mobile-nav__close" onClick={() => setOpen(false)} aria-label="Close menu" ref={closeBtnRef}>
-            <FaTimes />
-          </button>
+          <div className="mobile-nav__top">
+            <ThemeToggle />
+            <button className="mobile-nav__close" onClick={() => setOpen(false)} aria-label="Close menu" ref={closeBtnRef}>
+              <FaTimes />
+            </button>
+          </div>
           <nav className="mobile-nav__links" aria-label="Mobile">
             {NAV_LINKS.map((l) => {
               const items = dropdownFor(l.label);
