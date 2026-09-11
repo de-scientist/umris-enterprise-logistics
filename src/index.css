@@ -1547,7 +1547,7 @@ p {
   left: 1.5rem;
   top: -6rem;
   z-index: 2000;
-  background: var(--color-ink);
+  background: #1a1a22;
   color: #fff;
   padding: 1rem 1.6rem;
   border-radius: var(--radius-sm);
