@@ -2,10 +2,11 @@ import SectionHeading from "../components/ui/SectionHeading";
 import ServiceCard from "../components/ServiceCard";
 import Reveal from "../components/ui/Reveal";
 import CtaBand from "../components/sections/CtaBand";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import { SERVICES, type Service } from "../data/services";
 import { useSeo, JsonLd } from "../lib/seo";
 import { organizationSchema, breadcrumbSchema } from "../lib/schema";
+import servicesHero from "../assets/t2.jpeg";
 
 const CATEGORIES: Service["category"][] = [
   "Transportation",
@@ -24,16 +25,15 @@ export default function Services() {
   return (
     <>
       <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "Services", path: "/services" }])]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Services" }]} />
-          <h1>Logistics services for every movement</h1>
-          <p>
-            Umri's covers the full journey of your goods — transport, storage,
-            clearing and final delivery — coordinated as one operation.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Transportation & Logistics"
+        title="Moving With Precision."
+        description="Umri's covers the full journey of your goods — transport, storage, clearing and final delivery — coordinated as one operation."
+        image={servicesHero}
+        imageAlt="Umri's Enterprises trucks loaded with labelled cargo cartons, prepared for transit"
+        crumbs={[{ name: "Services" }]}
+        actions={[{ label: "Request a Quote", to: "/quote", variant: "accent" }]}
+      />
 
       {CATEGORIES.map((cat) => (
         <section className="section" key={cat} style={{ paddingTop: cat === CATEGORIES[0] ? "var(--space-7)" : undefined }}>
