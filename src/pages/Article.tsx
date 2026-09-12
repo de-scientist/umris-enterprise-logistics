@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { FaArrowRight, FaCalendar, FaRegClock, FaUser } from "react-icons/fa6";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import Faq from "../components/ui/Faq";
 import CtaBand from "../components/sections/CtaBand";
 import { getArticle, ARTICLES } from "../data/articles";
@@ -49,22 +49,24 @@ export default function Article() {
           ]),
         ]}
       />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Insights", to: "/insights" }, { name: article.title }]} />
-          <span className="chip" style={{ marginBottom: "1.2rem" }}>{article.category}</span>
-          <h1>{article.title}</h1>
-          <div className="article__meta" style={{ marginTop: "1.6rem" }}>
+      <PageHero
+        eyebrow="Insights"
+        title={article.title}
+        description={
+          <span className="article__meta" style={{ marginTop: 0 }}>
             <span><FaUser /> {article.author}</span>
             <span><FaCalendar /> {article.date}</span>
             <span><FaRegClock /> {article.readTime}</span>
-          </div>
-        </div>
-      </section>
+          </span>
+        }
+        image={article.image}
+        imageAlt={article.title}
+        crumbs={[{ name: "Insights", to: "/insights" }, { name: article.title }]}
+        topNote={<span className="chip chip--light" style={{ marginBottom: "1.2rem" }}>{article.category}</span>}
+      />
 
       <article className="section article">
         <div className="container-narrow article">
-          <img src={article.image} alt={article.title} style={{ width: "100%", borderRadius: "var(--radius-md)", marginBottom: "2.4rem" }} />
           {article.blocks.map((b, i) => <Block key={i} block={b} />)}
 
           <hr className="my-5" style={{ border: "none", borderTop: "1px solid var(--color-border)" }} />
