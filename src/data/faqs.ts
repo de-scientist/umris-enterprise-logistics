@@ -10,7 +10,39 @@ export const SITE_FAQ: FAQ[] = [
   },
   {
     q: "Where does Umri's Enterprises Logistics operate?",
-    a: "Umri's Enterprises provides transportation and logistics support across selected counties in Kenya. Our current coverage includes Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui and Kwale.",
+    a: "Umri's Enterprises provides transportation and logistics support across selected counties in Kenya. Our current coverage includes Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu counties.",
+  },
+  {
+    q: "Which counties does Umri's Enterprises currently cover?",
+    a: "Our current coverage includes Meru County, Makueni County, Samburu County, Taita-Taveta County, Nyandarua County, Kajiado County, Nakuru County, Laikipia County, Kitui County, Kwale County, Embu County, Machakos County and Lamu County.",
+  },
+  {
+    q: "Do you deliver to every location within these counties?",
+    a: "Coverage can vary depending on the specific destination, service requirements, cargo and operational conditions. Contact Umri's Enterprises with your origin and destination so availability can be confirmed.",
+  },
+  {
+    q: "Can I request transportation services outside the listed counties?",
+    a: "The listed counties represent our current stated coverage. If your destination is outside these areas, contact Umri's Enterprises so the team can confirm whether the requested service can be supported.",
+  },
+  {
+    q: "Does the online calculator provide official pricing?",
+    a: "No. The current calculator provides an illustrative estimate using guide rates. Final pricing is subject to confirmation by Umri's Enterprises based on the specific transportation or logistics requirements.",
+  },
+  {
+    q: "Why might the final quote differ from the calculator estimate?",
+    a: "The calculator is an illustrative estimator and does not account for every operational factor. Final pricing may depend on the specific route, cargo requirements, service type and other applicable considerations. Umri's Enterprises confirms the final quote directly.",
+  },
+  {
+    q: "What information do I need when requesting a quote?",
+    a: "Provide your origin, destination, required service, approximate cargo weight, package count and any relevant delivery or handling requirements. Additional information may be requested before the final quote is confirmed.",
+  },
+  {
+    q: "Is shipment tracking currently live?",
+    a: "The tracking feature is currently being developed and is not yet a fully connected live tracking service. For shipment-related enquiries, please contact Umri's Enterprises directly.",
+  },
+  {
+    q: "How do I request an official quote?",
+    a: "Use the official quote request form and provide the relevant transportation or logistics requirements. The Umri's Enterprises team can then review the request and confirm the appropriate service and pricing.",
   },
   {
     q: "Do you deliver to all parts of these counties?",

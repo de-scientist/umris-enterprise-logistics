@@ -63,7 +63,7 @@ export function localBusinessSchema() {
   const coverageAreaNames = [
     "Meru County", "Makueni County", "Samburu County", "Taita-Taveta County",
     "Nyandarua County", "Kajiado County", "Nakuru County", "Laikipia County",
-    "Kitui County", "Kwale County",
+    "Kitui County", "Kwale County", "Embu County", "Machakos County", "Lamu County",
   ];
   return {
     "@context": "https://schema.org",

@@ -14,7 +14,16 @@ export const COVERAGE_AREAS: CoverageArea[] = [
   { name: "Laikipia County", slug: "laikipia" },
   { name: "Kitui County", slug: "kitui" },
   { name: "Kwale County", slug: "kwale" },
+  { name: "Embu County", slug: "embu" },
+  { name: "Machakos County", slug: "machakos" },
+  { name: "Lamu County", slug: "lamu" },
 ] as const;
+
+if (typeof window !== "undefined" && import.meta.env?.DEV) {
+  if (COVERAGE_AREAS.length !== 13) {
+    throw new Error(`Expected 13 Umri's Enterprises coverage areas, got ${COVERAGE_AREAS.length}.`);
+  }
+}
 
 export function getCoverageArea(slug: string): CoverageArea | undefined {
   return COVERAGE_AREAS.find((a) => a.slug === slug);

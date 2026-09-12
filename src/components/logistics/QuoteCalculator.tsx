@@ -208,7 +208,7 @@ export default function QuoteCalculator() {
           <strong>Service coverage</strong>
         </p>
         <p>
-          We currently provide transportation and logistics support across selected counties including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui and Kwale.
+          We currently provide transportation and logistics support across selected counties including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu.
         </p>
         <p>
           For an official quote, submit your requirements and our team can confirm availability and pricing.

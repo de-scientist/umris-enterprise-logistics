@@ -30,7 +30,7 @@ export default function Home() {
   useSeo({
     title: "Umri's Enterprises | Logistics & Transportation in Kenya",
     description:
-      "Umri's Enterprises provides reliable transportation and logistics support across selected counties in Kenya, including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui and Kwale. Eyes on Perfection.",
+      "Umri's Enterprises provides transportation and logistics support across selected counties in Kenya, including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu. Eyes on Perfection.",
     path: "/",
   });
 
