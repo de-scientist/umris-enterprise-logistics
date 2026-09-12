@@ -45,16 +45,14 @@ export default function Tracking() {
   return (
     <>
       <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "Tracking", path: "/tracking" }])]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Tracking" }]} />
-          <h1>Track your shipment</h1>
-          <p>
-            Enter your tracking number to see where your goods are — from
-            pickup to delivery. Demonstration uses sample shipment data.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Shipment Tracking"
+        title="Know Where Your Shipment Stands."
+        description="Enter your tracking number to see where your goods are — from pickup to delivery. Demonstration uses sample shipment data; live tracking connects once the operations API is live."
+        image="/testimonials/t2.jpeg"
+        imageAlt="Umri's Enterprises truck arrived at a health facility during delivery operations in Kenya"
+        crumbs={[{ name: "Tracking" }]}
+      />
 
       <section className="section">
         <div className="container container-narrow">
