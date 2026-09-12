@@ -118,7 +118,7 @@ export default function Header() {
           <img src="/logo31.png" alt={`${SITE.name} logo`} />
           <span className="brand__name">
             {SITE.shortName}
-            <small>Enterprise Logistics</small>
+            <small>Enterprises Logistics</small>
           </span>
         </Link>
 
