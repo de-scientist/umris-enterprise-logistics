@@ -982,6 +982,19 @@ p {
   font-size: 1.3rem;
   color: var(--color-text-muted);
 }
+.testi__logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  flex: none;
+}
+.testi__role {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+}
 
 /* ===================== GALLERY ===================== */
 .gallery-grid {
@@ -1798,11 +1811,6 @@ p {
   height: 10px;
   border-radius: 50%;
   background: var(--color-accent-dark);
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
 }
 .shipment__progress {
   height: 10px;

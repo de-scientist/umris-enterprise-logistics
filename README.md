@@ -2,7 +2,7 @@
 
 A conversion-focused website for **Umri's Enterprises Logistics** — a Kenyan logistics and transportation company serving businesses across Kenya and East Africa.
 
-**Live site:** https://umris-enterprise-logistics.vercel.app/
+**Live site:** https://umrisenterprise.co.ke/
 
 ---
 

@@ -10,7 +10,6 @@ import CtaBand from "../components/sections/CtaBand";
 import ServiceCard from "../components/ServiceCard";
 import NetworkVisual from "../components/logistics/NetworkVisual";
 import QuoteCalculator from "../components/logistics/QuoteCalculator";
-import TrackingForm from "../components/logistics/TrackingForm";
 import Faq from "../components/ui/Faq";
 import Reveal from "../components/ui/Reveal";
 import SectionHeading from "../components/ui/SectionHeading";
@@ -23,7 +22,7 @@ import { organizationSchema, websiteSchema, localBusinessSchema, faqSchema } fro
 import aboutImg from "../assets/t3.jpeg";
 
 /**
- * Homepage order (§51): hero → trust strip → tracking → services →
+ * Homepage order (§51): hero → trust strip → services →
  * why → how → industries → network → calculator → insights → FAQ → CTA.
  */
 export default function Home() {
@@ -43,18 +42,6 @@ export default function Home() {
       />
       <Hero />
       <TrustStrip />
-
-      {/* TRACK SHIPMENT band */}
-      <section className="section section--surface" aria-label="Track your shipment">
-        <div className="container container-narrow">
-          <SectionHeading
-            eyebrow="Visibility"
-            title="Know where your goods are"
-            intro="Enter your tracking number for live status, route and delivery progress."
-          />
-          <TrackingForm variant="page" />
-        </div>
-      </section>
 
       {/* SERVICES */}
       <section className="section" id="services">

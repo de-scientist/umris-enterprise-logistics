@@ -24,10 +24,10 @@ export const SITE = {
   shortName: BRAND.shortName,
   legalNote: BRAND.name,
 
-  /* ⚠️ VERIFY: production domain. The live deployment is on Vercel's
-     subdomain; set this to the official domain once confirmed so
-     canonical/sitemap/OG all point to the right place. */
-  canonicalDomain: "https://umris-enterprise-logistics.vercel.app",
+   /* ⚠️ VERIFY: production domain. The live deployment is on Vercel's
+      subdomain; set this to the official domain once confirmed so
+      canonical/sitemap/OG all point to the right place. */
+   canonicalDomain: "https://umrisenterprise.co.ke",
 
   /* Contact — taken from existing codebase (Header/Contact). */
   email: "umris.enterprises@gmail.com",

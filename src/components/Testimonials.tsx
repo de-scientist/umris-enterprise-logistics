@@ -20,13 +20,28 @@ export default function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <figure className="testi" key={i}>
               <FaQuoteLeft style={{ color: "var(--color-primary)", fontSize: "2rem" }} />
-              <blockquote className="testi__quote">“{t.quote}”</blockquote>
+              <blockquote className="testi__quote">{t.quote}</blockquote>
               <figcaption className="testi__author">
-                <span className="testi__avatar" aria-hidden>
-                  {t.name.charAt(0)}
-                </span>
+                {t.logo ? (
+                  <img
+                    src={t.logo}
+                    alt={`${t.org} logo`}
+                    className="testi__logo"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className="testi__avatar" aria-hidden>
+                    {t.name.charAt(0)}
+                  </span>
+                )}
                 <span>
                   <span className="testi__name">{t.name}</span>
+                  {t.role && (
+                    <>
+                      <br />
+                      <span className="testi__role">{t.role}</span>
+                    </>
+                  )}
                   <br />
                   <span className="testi__org">{t.org}</span>
                 </span>

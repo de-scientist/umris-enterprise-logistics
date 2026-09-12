@@ -23,7 +23,7 @@ export default function Tracking() {
   useSeo({
     title: "Track Your Shipment",
     description:
-      "Track your Umri's shipment by tracking number. Enter your tracking number to see status, origin, destination and delivery progress.",
+      "Track your Umri's shipment using a demo tracking number. This page demonstrates shipment tracking with sample data — live tracking is not yet available.",
     path: "/tracking",
   });
 
@@ -48,7 +48,7 @@ export default function Tracking() {
       <PageHero
         eyebrow="Shipment Tracking"
         title="Know Where Your Shipment Stands."
-        description="Enter your tracking number to see where your goods are — from pickup to delivery. Demonstration uses sample shipment data; live tracking connects once the operations API is live."
+        description="Enter a demo tracking number to view a sample shipment status. This is a demonstration of tracking functionality — live tracking is not yet available."
         image="/testimonials/t2.jpeg"
         imageAlt="Umri's Enterprises truck arrived at a health facility during delivery operations in Kenya"
         crumbs={[{ name: "Tracking" }]}
@@ -93,30 +93,31 @@ export default function Tracking() {
 
             {!loading && !searched && (
               <div className="card mt-4">
-                <h2 className="h3">How tracking works</h2>
-                <ol className="track-how">
-                  <li><strong>Book</strong> — request a quote and confirm your shipment.</li>
-                  <li><strong>Receive a number</strong> — your tracking number (format UMRS-XXXX-XXX).</li>
-                  <li><strong>Follow progress</strong> — from pickup through transit to delivery.</li>
-                </ol>
-                <p className="text-muted text-sm mt-3">
-                  Need help? Call <a href="tel:+254764268280">+254 764 268 280</a> or{" "}
-                  <Link to="/contact">contact the team</Link>.
-                </p>
+              <h2 className="h3">How tracking works</h2>
+              <ol className="track-how">
+                <li><strong>Book</strong> — request a quote and confirm your shipment.</li>
+                <li><strong>Receive a number</strong> — your tracking number (format UMRS-XXXX-XXX).</li>
+                <li><strong>Try the demo</strong> — enter a demo number to preview the tracking interface.</li>
+              </ol>
+              <p className="text-muted text-sm mt-3">
+                Live tracking is currently being developed. Use the demo numbers above to preview the interface, or{" "}
+                <a href="tel:+254764268280">+254 764 268 280</a> or{" "}
+                <Link to="/contact">contact the team</Link> for real shipment assistance.
+              </p>
               </div>
             )}
           </div>
 
           {/* GEO/AEO answer block */}
-          <div className="answer-block mt-5">
-            <h2 className="h3">How can I track a shipment with Umri's?</h2>
-            <p>
-              Enter the tracking number issued at booking into the form above.
-              You&apos;ll see the current status, origin, destination, estimated
-              delivery and a stage-by-stage history. For live help, contact
-              Umri's by phone, WhatsApp or the contact page.
-            </p>
-          </div>
+            <div className="answer-block mt-5">
+              <h2 className="h3">How can I track a shipment with Umri's?</h2>
+              <p>
+                Enter the tracking number issued at booking into the form above
+                to preview the shipment interface. Currently, tracking is
+                demonstrated with sample shipment data — live GPS and
+                real-time carrier updates are under development.
+              </p>
+            </div>
         </div>
       </section>
 
