@@ -50,6 +50,7 @@ export default function PageHero({
         <div className="page-hero__copy">
           <Breadcrumbs items={crumbs} />
           <p className="page-hero__eyebrow">{eyebrow}</p>
+          {topNote}
           <h1>{title}</h1>
           {description && <p className="page-hero__desc">{description}</p>}
           {tagline && (
