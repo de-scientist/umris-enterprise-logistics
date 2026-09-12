@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaShieldHalved, FaTruckFast, FaClock, FaCircleCheck } from "react-icons/fa6";
-import { SITE } from "../../data/siteConfig";
-import TrackingForm from "../logistics/TrackingForm";
+import { BRAND, SITE } from "../../data/siteConfig";
+import heroImg from "../../assets/t1.jpeg";
 
 export default function Hero() {
   return (
     <section className="hero" id="home">
       <div className="container hero__layout">
         <div className="hero__inner">
-          <span className="hero__eyebrow">Umri's Enterprises Logistics · Kenya &amp; East Africa</span>
+          <span className="hero__eyebrow">{BRAND.name}</span>
           <h1 className="hero__title">
-            Global logistics.<br />
-            <em>Local expertise.</em>
+            Moving What Matters.
+            <br />
+            <em>With Eyes on Perfection.</em>
           </h1>
           <p className="hero__lead">
             Reliable logistics solutions designed to move your goods, connect
@@ -19,25 +20,26 @@ export default function Hero() {
           </p>
           <div className="hero__actions">
             <Link to="/quote" className="btn btn--accent btn--lg">
-              Get a Quote
+              Request a Quote
             </Link>
-            <Link to="/tracking" className="btn btn--light btn--lg">
-              Track Shipment <FaArrowRight />
+            <Link to="/services" className="btn btn--light btn--lg">
+              Explore Our Services <FaArrowRight />
             </Link>
           </div>
           <ul className="hero__trust">
-            <li><FaCircleCheck /> {SITE.serviceArea}</li>
-            <li><FaShieldHalved /> Professional handling</li>
-            <li><FaTruckFast /> Reliable transport</li>
-            <li><FaClock /> Timely delivery</li>
+            <li><FaCircleCheck aria-hidden /> {SITE.serviceArea}</li>
+            <li><FaShieldHalved aria-hidden /> Professional handling</li>
+            <li><FaTruckFast aria-hidden /> Reliable transport</li>
+            <li><FaClock aria-hidden /> Timely delivery</li>
           </ul>
         </div>
-        <div className="hero__track">
-          <TrackingForm variant="hero" />
-          <p className="hero__track-note">
-            We don&apos;t simply move goods — we connect businesses, people
-            and markets through dependable logistics.
-          </p>
+        <div className="hero__media">
+          <img
+            src={heroImg}
+            alt="Umri's Enterprises truck at a dispatch flag-off event with officials and team members present"
+            loading="eager"
+            fetchPriority="high"
+          />
         </div>
       </div>
     </section>

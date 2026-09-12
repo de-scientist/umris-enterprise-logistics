@@ -14,6 +14,8 @@ export const BRAND = {
   logisticsName: "Umri's Enterprises Logistics",
   /** Shortest reference, e.g. header lockup. */
   shortName: "Umri's",
+  /** Official brand signature. Use intentionally — hero, About, footer. */
+  tagline: "Eyes on Perfection.",
 } as const;
 
 export const SITE = {
@@ -61,8 +63,8 @@ export const SITE = {
     linkedin: "", // not verified — omitted from UI
   },
 
-  /* Brand tagline / positioning */
-  tagline: "Reliable Logistics. Delivered With Precision.",
+  /* Official brand signature (single source: BRAND.tagline). */
+  tagline: BRAND.tagline,
   positioning:
     "Umri's Enterprises Logistics provides dependable transport, warehousing and distribution solutions that keep Kenyan businesses moving.",
 } as const;
