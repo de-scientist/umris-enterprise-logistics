@@ -1,6 +1,6 @@
 import Reveal from "../components/ui/Reveal";
 import CtaBand from "../components/sections/CtaBand";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import { PROJECTS } from "../data/projects";
 import { useSeo, JsonLd } from "../lib/seo";
 import { organizationSchema, breadcrumbSchema } from "../lib/schema";
@@ -16,16 +16,12 @@ export default function Portfolio() {
   return (
     <>
       <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "Portfolio", path: "/portfolio" }])]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Portfolio" }]} />
-          <h1>Work that keeps things moving</h1>
-          <p>
-            Selected engagements that show how Umri's coordinates logistics under
-            real operational conditions.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Work"
+        title="Work that keeps things moving"
+        description="Selected engagements that show how Umri's coordinates logistics under real operational conditions."
+        crumbs={[{ name: "Portfolio" }]}
+      />
 
       <section className="section">
         <div className="container">

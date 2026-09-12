@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/ui/Reveal";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import CtaBand from "../components/sections/CtaBand";
 import { PROJECTS } from "../data/projects";
 import { useSeo, JsonLd } from "../lib/seo";
@@ -22,17 +22,12 @@ export default function CaseStudies() {
   return (
     <>
       <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "Case Studies", path: "/case-studies" }])]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Case Studies" }]} />
-          <h1>Logistics challenges, solved in the field</h1>
-          <p>
-            Selected engagements showing how Umri's coordinates movement under
-            real operational conditions. Detailed metrics are published only
-            where verified with partners.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Work"
+        title="Logistics challenges, solved in the field"
+        description="Selected engagements showing how Umri's coordinates movement under real operational conditions. Detailed metrics are published only where verified with partners."
+        crumbs={[{ name: "Case Studies" }]}
+      />
 
       <section className="section">
         <div className="container">

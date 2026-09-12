@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import CtaBand from "../components/sections/CtaBand";
 import Faq from "../components/ui/Faq";
 import NotFound from "./NotFound";

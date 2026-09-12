@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaRegClock, FaCalendar } from "react-icons/fa6";
 import Reveal from "../components/ui/Reveal";
 import CtaBand from "../components/sections/CtaBand";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import { ARTICLES } from "../data/articles";
 import { useSeo, JsonLd } from "../lib/seo";
 import { organizationSchema, breadcrumbSchema } from "../lib/schema";
@@ -18,13 +18,12 @@ export default function Insights() {
   return (
     <>
       <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "Insights", path: "/insights" }])]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Insights" }]} />
-          <h1>Insights</h1>
-          <p>Practical perspectives on moving goods efficiently across Kenya and East Africa.</p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Resources"
+        title="Insights"
+        description="Practical perspectives on moving goods efficiently across Kenya and East Africa."
+        crumbs={[{ name: "Insights" }]}
+      />
 
       <section className="section">
         <div className="container">

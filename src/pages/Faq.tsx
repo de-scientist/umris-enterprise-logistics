@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import Faq from "../components/ui/Faq";
 import CtaBand from "../components/sections/CtaBand";
 import { SITE_FAQ } from "../data/faqs";
@@ -18,16 +18,12 @@ export default function FaqPage() {
   return (
     <>
       <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "FAQs", path: "/faq" }]), faqSchema()]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "FAQs" }]} />
-          <h1>Frequently asked questions</h1>
-          <p>
-            What Umri's does, where we operate, how quotes and tracking work —
-            answered directly.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Help Center"
+        title="Frequently asked questions"
+        description="What Umri's does, where we operate, how quotes and tracking work — answered directly."
+        crumbs={[{ name: "FAQs" }]}
+      />
 
       {/* AEO definition block */}
       <section className="section">
