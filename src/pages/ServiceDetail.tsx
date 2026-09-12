@@ -4,7 +4,7 @@ import SectionHeading from "../components/ui/SectionHeading";
 import Reveal from "../components/ui/Reveal";
 import Faq from "../components/ui/Faq";
 import CtaBand from "../components/sections/CtaBand";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import { getService, SERVICES } from "../data/services";
 import { useSeo, JsonLd } from "../lib/seo";
 import { organizationSchema, serviceSchema, breadcrumbSchema } from "../lib/schema";
@@ -38,30 +38,40 @@ export default function ServiceDetail() {
           ]),
         ]}
       />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Services", to: "/services" }, { name: service.title }]} />
-          <span className="chip" style={{ marginBottom: "1.2rem" }}>{service.category}</span>
-          <h1>{service.title}</h1>
-          <p>{service.intro}</p>
-          <div className="mt-4 flex gap-3 wrap">
-            <Link to="/quote" className="btn btn--accent btn--lg">Request a Quote</Link>
-            <Link to="/services" className="btn btn--light btn--lg">All services</Link>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Services"
+        title={service.title}
+        description={service.intro}
+        image={service.image}
+        imageAlt={service.title}
+        crumbs={[{ name: "Services", to: "/services" }, { name: service.title }]}
+        actions={[
+          { label: "Request a Quote", to: "/quote", variant: "accent" },
+          { label: "All services", to: "/services", variant: "light" },
+        ]}
+        topNote={<span className="chip chip--light" style={{ marginBottom: "1.2rem" }}>{service.category}</span>}
+      />
 
       {/* Who & benefit */}
       <section className="section">
-        <div className="container split">
-          <div className="split__media">
-            <img src={service.image} alt={service.title} />
-          </div>
-          <div>
-            <span className="eyebrow">Who it's for</span>
-            <h2>Built for businesses that move goods</h2>
-            <p>{service.who}</p>
-            <p className="mt-3"><strong>Benefit:</strong> {service.benefit}</p>
+        <div className="container">
+          <div className="grid-3">
+            <div className="card">
+              <span className="eyebrow">Who it's for</span>
+              <h2 className="h3 mt-2">Built for businesses that move goods</h2>
+              <p className="text-muted mt-2">{service.who}</p>
+            </div>
+            <div className="card">
+              <span className="eyebrow">Key benefit</span>
+              <h2 className="h3 mt-2">Why it matters</h2>
+              <p className="text-muted mt-2">{service.benefit}</p>
+            </div>
+            <div className="card">
+              <span className="eyebrow">Next step</span>
+              <h2 className="h3 mt-2">Get a tailored quote</h2>
+              <p className="text-muted mt-2">Share your requirement and the team will confirm the right option.</p>
+              <Link to="/quote" className="btn btn--primary mt-3">Request a Quote</Link>
+            </div>
           </div>
         </div>
       </section>
