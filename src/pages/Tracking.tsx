@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import TrackingForm from "../components/logistics/TrackingForm";
 import ShipmentCard from "../components/logistics/ShipmentCard";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import CtaBand from "../components/sections/CtaBand";
 import { fetchShipment, type TrackingResult } from "../lib/tracking";
 import { DEMO_TRACKING_NUMBERS } from "../data/mockShipments";
