@@ -72,9 +72,11 @@ export function localBusinessSchema() {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
+      streetAddress: SITE.hq.label,
       addressLocality: SITE.hq.city,
       addressCountry: SITE.hq.country,
     },
+    hasMap: SITE.mapsUrl,
     geo: {
       "@type": "GeoCoordinates",
       latitude: lat,
