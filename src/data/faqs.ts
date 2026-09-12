@@ -7,11 +7,11 @@ export interface FAQ {
    support both on-page SEO and an FAQPage structured-data block. */
 export const SITE_FAQ: FAQ[] = [
   {
-    q: "What logistics services does Umris Enterprise Logistics provide?",
+    q: "What logistics services does Umri's Enterprises Logistics provide?",
     a: "We provide transport, warehousing, last-mile delivery, customs clearing, freight forwarding, procurement support and tailored supply-chain solutions for businesses, institutions and organisations across Kenya and East Africa.",
   },
   {
-    q: "Where does Umris Enterprise Logistics operate?",
+    q: "Where does Umri's Enterprises Logistics operate?",
     a: "We operate across Kenya, with regional logistics coordination across East Africa. Local, long-distance and cross-border movements are supported.",
   },
   {
@@ -27,7 +27,7 @@ export const SITE_FAQ: FAQ[] = [
     a: "Yes. We offer secure, monitored warehousing for short-term and longer-term storage, with handling and coordination into outbound transport.",
   },
   {
-    q: "Can Umris handle large or bulky shipments?",
+    q: "Can Umri's handle large or bulky shipments?",
     a: "Yes. We manage bulk goods, heavy equipment and multi-package consignments with proper loading, handling and route planning.",
   },
   {
@@ -39,11 +39,11 @@ export const SITE_FAQ: FAQ[] = [
     a: "Yes. We support emergency response, relief missions and NGO-based logistics with structured coordination and careful handling.",
   },
   {
-    q: "Does Umris handle business cargo?",
+    q: "Does Umri's handle business cargo?",
     a: "Yes. Commercial cargo — from manufactured goods to medical supplies — is core to our freight and trucking services.",
   },
   {
-    q: "How can I contact Umris Enterprise Logistics?",
+    q: "How can I contact Umri's Enterprises Logistics?",
     a: "By phone on +254 764 268 280, by WhatsApp on the same number, by email at umris.enterprises@gmail.com, or through the contact form on this website.",
   },
 ];

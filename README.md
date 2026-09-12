@@ -1,6 +1,6 @@
-# Umris Enterprise Logistics
+# Umri's Enterprises Logistics
 
-A conversion-focused website for **Umris Enterprise Logistics** — a Kenyan logistics and transportation company serving businesses across Kenya and East Africa.
+A conversion-focused website for **Umri's Enterprises Logistics** — a Kenyan logistics and transportation company serving businesses across Kenya and East Africa.
 
 **Live site:** https://umris-enterprise-logistics.vercel.app/
 
@@ -8,7 +8,7 @@ A conversion-focused website for **Umris Enterprise Logistics** — a Kenyan log
 
 ## Overview
 
-The site presents Umris Enterprise's logistics services (freight transportation, secure warehousing, customs clearing, freight forwarding, trucking, cargo tracking, procurement, last-mile delivery and consultancy), its operational capabilities, industry focus, project evidence and insights. It is built as a fast, accessible, SEO- and AEO-friendly single-page application with server-rendered-equivalent metadata via React.
+The site presents Umri's Enterprises' logistics services (freight transportation, secure warehousing, customs clearing, freight forwarding, trucking, cargo tracking, procurement, last-mile delivery and consultancy), its operational capabilities, industry focus, project evidence and insights. It is built as a fast, accessible, SEO- and AEO-friendly single-page application with server-rendered-equivalent metadata via React.
 
 The project prioritises **authenticity**: all copy, case studies and claims are grounded in the business's actual operations. No clients, statistics, fleet sizes, certifications or results are invented.
 

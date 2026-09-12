@@ -26,7 +26,7 @@ export default function Article() {
 
   useSeo({
     title: article ? article.title : "Insight",
-    description: article ? article.excerpt : "Umris logistics insight.",
+    description: article ? article.excerpt : "Umri's logistics insight.",
     path: `/insights/${article ? article.slug : slug ?? ""}`,
     type: "article",
   });

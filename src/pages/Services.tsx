@@ -17,7 +17,7 @@ export default function Services() {
   useSeo({
     title: "Logistics & Transportation Services",
     description:
-      "Explore Umris Enterprise Logistics services: freight transport, warehousing, customs clearing, forwarding, trucking, tracking, procurement, last-mile delivery and consultancy.",
+      "Explore Umri's Enterprises Logistics services: freight transport, warehousing, customs clearing, forwarding, trucking, tracking, procurement, last-mile delivery and consultancy.",
     path: "/services",
   });
 
@@ -29,7 +29,7 @@ export default function Services() {
           <Breadcrumbs items={[{ name: "Services" }]} />
           <h1>Logistics services for every movement</h1>
           <p>
-            Umris covers the full journey of your goods — transport, storage,
+            Umri's covers the full journey of your goods — transport, storage,
             clearing and final delivery — coordinated as one operation.
           </p>
         </div>

@@ -23,7 +23,7 @@ export default function Tracking() {
   useSeo({
     title: "Track Your Shipment",
     description:
-      "Track your Umris shipment by tracking number. Enter your tracking number to see status, origin, destination and delivery progress.",
+      "Track your Umri's shipment by tracking number. Enter your tracking number to see status, origin, destination and delivery progress.",
     path: "/tracking",
   });
 
@@ -111,12 +111,12 @@ export default function Tracking() {
 
           {/* GEO/AEO answer block */}
           <div className="answer-block mt-5">
-            <h2 className="h3">How can I track a shipment with Umris?</h2>
+            <h2 className="h3">How can I track a shipment with Umri's?</h2>
             <p>
               Enter the tracking number issued at booking into the form above.
               You&apos;ll see the current status, origin, destination, estimated
               delivery and a stage-by-stage history. For live help, contact
-              Umris by phone, WhatsApp or the contact page.
+              Umri's by phone, WhatsApp or the contact page.
             </p>
           </div>
         </div>

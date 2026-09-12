@@ -9,7 +9,7 @@ export default function HowItWorks() {
         <SectionHeading
           eyebrow="How it works"
           title="A clear path from enquiry to delivery"
-          intro="Logistics should not be a mystery. Here is exactly how a requirement moves through Umris."
+          intro="Logistics should not be a mystery. Here is exactly how a requirement moves through Umri's."
         />
         <ol className="how-steps">
           {PROCESS.map((p, i) => (

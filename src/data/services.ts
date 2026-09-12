@@ -43,7 +43,7 @@ export const SERVICES: Service[] = [
     benefit:
       "Dependable movement of commercial goods with coordination built around your delivery requirements.",
     intro:
-      "Freight transportation is at the core of what Umris does. We move commercial cargo between verified destinations across Kenya and into the wider East African region, coordinating each consignment so it arrives safely and as scheduled.",
+      "Freight transportation is at the core of what Umri's does. We move commercial cargo between verified destinations across Kenya and into the wider East African region, coordinating each consignment so it arrives safely and as scheduled.",
     what: [
       "Full truckload (FTL) and consolidated freight movement across Kenya.",
       "Cross-border coordination into neighbouring East African markets.",
@@ -75,7 +75,7 @@ export const SERVICES: Service[] = [
       "Single point of contact for your shipment",
     ],
     faqs: [
-      { q: "What size of freight can Umris move?", a: "From consolidated smaller consignments to full truckloads. Share your cargo details and we will confirm the right option." },
+      { q: "What size of freight can Umri's move?", a: "From consolidated smaller consignments to full truckloads. Share your cargo details and we will confirm the right option." },
       { q: "Do you handle cross-border freight?", a: "Yes. We coordinate regional movement across East Africa where required, managing route and border documentation." },
     ],
     related: ["trucking-services", "freight-forwarding", "last-mile-delivery"],
@@ -139,7 +139,7 @@ export const SERVICES: Service[] = [
     benefit:
       "Faster, structured clearing with compliance, documentation and coordination handled for you.",
     intro:
-      "Customs clearing is often where delays happen. Umris supports the clearing of imported and exported goods, handling compliance, duty processing, documentation and port-to-door coordination.",
+      "Customs clearing is often where delays happen. Umri's supports the clearing of imported and exported goods, handling compliance, duty processing, documentation and port-to-door coordination.",
     what: [
       "Coordination of import and export clearing.",
       "Documentation and compliance support.",
@@ -187,7 +187,7 @@ export const SERVICES: Service[] = [
     benefit:
       "A coordinated flow from origin to destination instead of managing each leg yourself.",
     intro:
-      "Freight forwarding brings the pieces together. Umris coordinates shipping schedules, documentation, route planning and multi-modal logistics tailored to your business needs.",
+      "Freight forwarding brings the pieces together. Umri's coordinates shipping schedules, documentation, route planning and multi-modal logistics tailored to your business needs.",
     what: [
       "Coordination of cargo from origin to destination.",
       "Schedule and route planning.",
@@ -379,7 +379,7 @@ export const SERVICES: Service[] = [
     benefit:
       "The final, critical step between your business and the customer handled reliably.",
     intro:
-      "Last-mile delivery is where service is felt. Umris bridges the final step between business and customer with fast, dependable distribution for e-commerce, retail and corporate clients.",
+      "Last-mile delivery is where service is felt. Umri's bridges the final step between business and customer with fast, dependable distribution for e-commerce, retail and corporate clients.",
     what: [
       "Final-mile delivery to end recipients.",
       "Distribution for e-commerce and retail.",

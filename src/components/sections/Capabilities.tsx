@@ -49,7 +49,7 @@ export default function Capabilities() {
         <SectionHeading
           eyebrow="Operational capability"
           title="Built to move goods, not just talk about it"
-          intro="The practical infrastructure behind every Umris shipment — described, not exaggerated."
+          intro="The practical infrastructure behind every Umri's shipment — described, not exaggerated."
         />
         <div className="capability-grid">
           {CAPABILITIES.map((c, i) => (

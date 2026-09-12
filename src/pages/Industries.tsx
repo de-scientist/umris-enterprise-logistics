@@ -9,7 +9,7 @@ export default function Industries() {
   useSeo({
     title: "Industries We Serve",
     description:
-      "Umris Enterprise Logistics serves humanitarian, medical, manufacturing, retail, agriculture, construction, e-commerce and corporate clients across Kenya.",
+      "Umri's Enterprises Logistics serves humanitarian, medical, manufacturing, retail, agriculture, construction, e-commerce and corporate clients across Kenya.",
     path: "/industries",
   });
 
@@ -22,7 +22,7 @@ export default function Industries() {
           <h1>Logistics tailored to your industry</h1>
           <p>
             Every sector moves goods differently. Here is the logistics problem
-            each faces — and how Umris solves it.
+            each faces — and how Umri's solves it.
           </p>
         </div>
       </section>

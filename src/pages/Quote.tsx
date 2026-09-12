@@ -31,7 +31,7 @@ export default function Quote() {
   useSeo({
     title: "Get a Quote",
     description:
-      "Request a logistics quote from Umris Enterprise Logistics. Get an illustrative estimate instantly, then request an official quote for your shipment.",
+      "Request a logistics quote from Umri's Enterprises Logistics. Get an illustrative estimate instantly, then request an official quote for your shipment.",
     path: "/quote",
   });
 
@@ -57,7 +57,7 @@ export default function Quote() {
               <span className="eyebrow">Step 1 · Instant guide</span>
               <h2>Estimate your shipment</h2>
               <p className="text-muted">
-                Illustrative rates only — not official Umris pricing.
+                Illustrative rates only — not official Umri's pricing.
               </p>
               <div className="mt-3">
                 <QuoteCalculator />

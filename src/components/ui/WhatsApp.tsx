@@ -3,7 +3,7 @@ import { whatsappLink } from "../../data/siteConfig";
 
 /* eslint-disable react-refresh/only-export-components -- shared helper + components by design */
 export function whatsappMessage(topic: string, detail = ""): string {
-  const base = `Hello Umris Enterprise Logistics, I'd like to request a quotation`;
+  const base = `Hello Umri's Enterprises Logistics, I'd like to request a quotation`;
   const service = topic ? ` for ${topic}` : "";
   const extra = detail ? ` ${detail}` : ".";
   return `${base}${service}${extra}`;
@@ -21,7 +21,7 @@ interface CtaProps {
 export function WhatsAppButton({
   topic = "",
   detail = "",
-  label = "WhatsApp Umris",
+  label = "WhatsApp Umri's",
   variant = "accent",
   size = "md",
   className = "",
@@ -52,7 +52,7 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       className="wa-float"
-      aria-label="Chat with Umris on WhatsApp"
+      aria-label="Chat with Umri's on WhatsApp"
     >
       <FaWhatsapp />
       <span className="wa-float__label">WhatsApp</span>

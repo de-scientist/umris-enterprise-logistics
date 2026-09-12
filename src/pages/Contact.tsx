@@ -10,13 +10,13 @@ export default function Contact() {
   useSeo({
     title: "Contact & Request a Quote",
     description:
-      "Contact Umris Enterprise Logistics by phone, WhatsApp or email, or request a quotation online. Operating across Kenya and East Africa.",
+      "Contact Umri's Enterprises Logistics by phone, WhatsApp or email, or request a quotation online. Operating across Kenya and East Africa.",
     path: "/contact",
   });
 
   const cards = [
     { icon: <FaPhone />, label: "Call", value: SITE.phoneDisplay, href: `tel:${SITE.phone}` },
-    { icon: <FaWhatsapp />, label: "WhatsApp", value: "Chat with us", href: whatsappLink("Hello Umris, I'd like a quote.") },
+    { icon: <FaWhatsapp />, label: "WhatsApp", value: "Chat with us", href: whatsappLink("Hello Umri's, I'd like a quote.") },
     { icon: <FaEnvelope />, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
     { icon: <FaLocationDot />, label: "Location", value: SITE.hq.addressLine, href: undefined },
   ];

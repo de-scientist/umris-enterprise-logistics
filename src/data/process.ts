@@ -5,7 +5,7 @@ export interface ProcessStep {
 }
 
 /* Verified business process — mirrors the service-level process described
-   across Umris service pages. No metrics or guarantees invented. */
+   across Umri's service pages. No metrics or guarantees invented. */
 export const PROCESS: ProcessStep[] = [
   {
     step: "01",
@@ -17,7 +17,7 @@ export const PROCESS: ProcessStep[] = [
     step: "02",
     title: "We Plan",
     detail:
-      "Umris reviews the requirement and proposes a coordinated solution with a clear quotation.",
+      "Umri's reviews the requirement and proposes a coordinated solution with a clear quotation.",
   },
   {
     step: "03",

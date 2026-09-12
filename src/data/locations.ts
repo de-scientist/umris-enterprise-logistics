@@ -1,5 +1,5 @@
 /* ============================================================
-   LOCATIONS — only publish areas Umris actually serves.
+   LOCATIONS — only publish areas Umri's actually serves.
    Never add a location for SEO alone. Update this file when
    real coverage changes; sitemap + pages derive from it.
    ============================================================ */

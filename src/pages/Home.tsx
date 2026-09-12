@@ -29,7 +29,7 @@ export default function Home() {
   useSeo({
     title: `Logistics & Transportation Services in Kenya`,
     description:
-      "Umris Enterprise Logistics provides reliable freight, warehousing, distribution and transport solutions across Kenya and East Africa. Request a quote today.",
+      "Umri's Enterprises Logistics provides reliable freight, warehousing, distribution and transport solutions across Kenya and East Africa. Request a quote today.",
     path: "/",
   });
 
@@ -61,7 +61,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="What we do"
             title="Logistics services built around your operation"
-            intro="From single shipments to managed supply chains, Umris covers the movement of goods end to end."
+            intro="From single shipments to managed supply chains, Umri's covers the movement of goods end to end."
           />
           <div className="grid-3">
             {previewServices.map((s) => (
@@ -85,7 +85,7 @@ export default function Home() {
             <span className="eyebrow">Who we are</span>
             <h2>Logistics built around reliability</h2>
             <p>
-              Umris Enterprise Logistics exists to keep Kenyan businesses moving.
+              Umri's Enterprises Logistics exists to keep Kenyan businesses moving.
               Whether it is freight across the country, storage between movements,
               or the final delivery to a customer, we coordinate each step with
               care and clear communication.
@@ -96,12 +96,12 @@ export default function Home() {
               reliability.
             </p>
             <div className="mt-4 flex gap-3 wrap">
-              <Link to="/about" className="btn btn--primary">About Umris</Link>
+              <Link to="/about" className="btn btn--primary">About Umri's</Link>
               <Link to="/case-studies" className="btn btn--ghost">See our work</Link>
             </div>
           </div>
           <div className="split__media">
-            <img src={aboutImg} alt="Umris logistics operation" loading="lazy" />
+            <img src={aboutImg} alt="Umri's logistics operation" loading="lazy" />
           </div>
         </div>
       </section>
@@ -118,7 +118,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Industries we serve"
             title="Logistics that fits your sector"
-            intro="Different industries face different logistics problems. Here is how Umris solves them."
+            intro="Different industries face different logistics problems. Here is how Umri's solves them."
           />
           <div className="grid-3">
             {INDUSTRIES.slice(0, 6).map((ind) => (

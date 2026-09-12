@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="hero" id="home">
       <div className="container hero__layout">
         <div className="hero__inner">
-          <span className="hero__eyebrow">Umris Enterprise Logistics · Kenya &amp; East Africa</span>
+          <span className="hero__eyebrow">Umri's Enterprises Logistics · Kenya &amp; East Africa</span>
           <h1 className="hero__title">
             Global logistics.<br />
             <em>Local expertise.</em>

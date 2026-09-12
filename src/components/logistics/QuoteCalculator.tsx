@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 /* ============================================================
    QUOTE CALCULATOR — frontend-only illustrative estimator.
-   Rates are NOT official Umris pricing; the result is labelled
+   Rates are NOT official Umri's pricing; the result is labelled
    as an estimate and every CTA routes to /quote for confirmation.
    ============================================================ */
 
@@ -150,7 +150,7 @@ export default function QuoteCalculator() {
             <p className="calc__note">
               <strong>Estimated quote</strong> — final pricing is subject to
               confirmation. Rates shown are illustrative guides, not official
-              Umris pricing.
+              Umri's pricing.
             </p>
             <div className="calc__actions">
               <Link to="/quote" className="btn btn--primary">

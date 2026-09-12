@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
     challenge:
       "Medical supplies are time-critical and must be handled with accountability from origin to clinic.",
     solution:
-      "Umris coordinated movement with monitoring and clear updates, giving the partners visibility of every consignment in transit.",
+      "Umri's coordinated movement with monitoring and clear updates, giving the partners visibility of every consignment in transit.",
     outcome:
       "A more accountable supply flow, with partners citing improved trust and smoother coordination of medical cargo.",
     image: t2,
@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     challenge:
       "Cross-border operations carry extra risk — border processes, route uncertainty and pressure to deliver.",
     solution:
-      "Umris managed coordination and documentation with structure, keeping consignments moving even under pressure.",
+      "Umri's managed coordination and documentation with structure, keeping consignments moving even under pressure.",
     outcome:
       "Dependable cross-border movement described by the partner as confident, structured and skilled.",
     image: clearance,
@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
     challenge:
       "Emergency response leaves no room for delay; supplies must reach field operations efficiently.",
     solution:
-      "Umris supported rapid, well-coordinated dispatch and delivery, with handling suited to sensitive relief cargo.",
+      "Umri's supported rapid, well-coordinated dispatch and delivery, with handling suited to sensitive relief cargo.",
     outcome:
       "Smoother, more efficient emergency operations and stronger field coordination for the partners.",
     image: loading,
@@ -74,7 +74,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "operational-fleet-dispatch",
     title: "Operational Fleet Dispatch & Loading",
-    client: "Umris Enterprise Logistics",
+    client: "Umri's Enterprises Logistics",
     industry: "Internal Capability",
     location: "Kenya",
     service: "Local & Long-Distance Trucking",

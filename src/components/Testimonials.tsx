@@ -11,7 +11,7 @@ export default function Testimonials() {
           <span className="eyebrow">Partner Voices</span>
           <h2>Trusted by organisations that move with purpose</h2>
           <p>
-            Relief, medical and institutional partners rely on Umris for
+            Relief, medical and institutional partners rely on Umri's for
             coordinated, accountable logistics across Kenya and East Africa.
           </p>
         </div>

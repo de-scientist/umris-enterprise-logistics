@@ -10,7 +10,7 @@ const ITEMS = [
 
 export default function TrustStrip() {
   return (
-    <section className="trust-strip" aria-label="Why businesses trust Umris">
+    <section className="trust-strip" aria-label="Why businesses trust Umri's">
       <div className="container">
         <ul className="trust-strip__grid">
           {ITEMS.map((it) => (

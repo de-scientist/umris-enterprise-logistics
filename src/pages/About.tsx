@@ -29,9 +29,9 @@ const CAPABILITIES = [
 
 export default function About() {
   useSeo({
-    title: "About Umris Enterprise Logistics",
+    title: "About Umri's Enterprises Logistics",
     description:
-      "Umris Enterprise Logistics is a Kenyan logistics partner providing reliable transport, warehousing and distribution for businesses, institutions and NGOs.",
+      "Umri's Enterprises Logistics is a Kenyan logistics partner providing reliable transport, warehousing and distribution for businesses, institutions and NGOs.",
     path: "/about",
   });
 
@@ -64,7 +64,7 @@ export default function About() {
             </p>
           </div>
           <div className="split__media">
-            <img src={team} alt="Umris team at work" loading="lazy" />
+            <img src={team} alt="Umri's team at work" loading="lazy" />
           </div>
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function About() {
       <section className="section section--surface">
         <div className="container split split--reverse">
           <div className="split__media">
-            <img src={truck} alt="Umris truck on the road" loading="lazy" />
+            <img src={truck} alt="Umri's truck on the road" loading="lazy" />
           </div>
           <div>
             <span className="eyebrow">Our approach</span>
@@ -93,7 +93,7 @@ export default function About() {
 
       <section className="section">
         <div className="container">
-          <SectionHeading align="left" eyebrow="Our capabilities" title="What Umris handles" />
+          <SectionHeading align="left" eyebrow="Our capabilities" title="What Umri's handles" />
           <div className="grid-3">
             {CAPABILITIES.map((c, i) => (
               <Reveal key={i}>

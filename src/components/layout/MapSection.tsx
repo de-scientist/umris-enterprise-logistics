@@ -17,7 +17,7 @@ export default function MapSection() {
           <span className="eyebrow">Find Us</span>
           <h2>Our operations hub</h2>
           <p>
-            Umris Enterprise Logistics operates from {SITE.hq.city}, {SITE.hq.country} —
+            Umri's Enterprises Logistics operates from {SITE.hq.city}, {SITE.hq.country} —
             positioned for swift, nationwide delivery routes.
           </p>
         </div>

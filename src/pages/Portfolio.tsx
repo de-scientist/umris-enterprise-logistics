@@ -9,7 +9,7 @@ export default function Portfolio() {
   useSeo({
     title: "Portfolio & Case Studies",
     description:
-      "See how Umris Enterprise Logistics coordinates freight, relief and cross-border logistics for partners across Kenya and East Africa.",
+      "See how Umri's Enterprises Logistics coordinates freight, relief and cross-border logistics for partners across Kenya and East Africa.",
     path: "/portfolio",
   });
 
@@ -21,7 +21,7 @@ export default function Portfolio() {
           <Breadcrumbs items={[{ name: "Portfolio" }]} />
           <h1>Work that keeps things moving</h1>
           <p>
-            Selected engagements that show how Umris coordinates logistics under
+            Selected engagements that show how Umri's coordinates logistics under
             real operational conditions.
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function Portfolio() {
         <div className="container">
           <p className="text-muted mb-4" style={{ fontSize: "1.4rem" }}>
             Note: partner names are shown only where originally attributed; outcomes
-            are described qualitatively. Umris should confirm details before public use.
+            are described qualitatively. Umri's should confirm details before public use.
           </p>
           <div className="stack">
             {PROJECTS.map((p) => (
@@ -57,7 +57,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <CtaBand title="Have a similar logistics challenge?" text="Let's talk about how Umris can support your operation." />
+      <CtaBand title="Have a similar logistics challenge?" text="Let's talk about how Umri's can support your operation." />
     </>
   );
 }

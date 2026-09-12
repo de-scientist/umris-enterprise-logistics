@@ -19,7 +19,7 @@ const RESOURCES_MENU = [
   { name: "Logistics Insights", desc: "Practical guides for growing businesses.", to: "/insights" },
   { name: "Case Studies", desc: "Selected work from the field.", to: "/case-studies" },
   { name: "FAQs", desc: "Answers to common logistics questions.", to: "/faq" },
-  { name: "Coverage", desc: "Where Umris operates.", to: "/locations" },
+  { name: "Coverage", desc: "Where Umri's operates.", to: "/locations" },
 ];
 
 export default function Header() {
@@ -171,10 +171,10 @@ export default function Header() {
           </Link>
           <a
             className="header-wa"
-            href={whatsappLink("Hello Umris, I'd like to request a quotation.")}
+            href={whatsappLink("Hello Umri's, I'd like to request a quotation.")}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Chat with Umris on WhatsApp"
+            aria-label="Chat with Umri's on WhatsApp"
           >
             <FaWhatsapp />
           </a>
@@ -250,7 +250,7 @@ export default function Header() {
             <Link to="/tracking" className="btn btn--ghost btn--block btn--lg">
               Track Shipment
             </Link>
-            <WhatsAppButton label="WhatsApp Umris" />
+            <WhatsAppButton label="WhatsApp Umri's" />
           </div>
         </div>
       </div>

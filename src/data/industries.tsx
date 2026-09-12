@@ -17,7 +17,7 @@ export interface Industry {
   solution: string;
 }
 
-/* Industries reflect sectors Umris already serves (NGO/humanitarian,
+/* Industries reflect sectors Umri's already serves (NGO/humanitarian,
    medical, commercial) plus common Kenyan business sectors where the
    existing services apply. No fabricated results are claimed. */
 export const INDUSTRIES: Industry[] = [
@@ -28,7 +28,7 @@ export const INDUSTRIES: Industry[] = [
     problem:
       "Relief and development organisations need cargo moved quickly, sensitively and accountably — often to hard-to-reach areas.",
     solution:
-      "Umris supports NGO logistics with structured coordination, tracking and careful handling of supplies, from medical goods to field equipment.",
+      "Umri's supports NGO logistics with structured coordination, tracking and careful handling of supplies, from medical goods to field equipment.",
   },
   {
     slug: "health-medical",
@@ -91,6 +91,6 @@ export const INDUSTRIES: Industry[] = [
     problem:
       "Corporate and institutional teams need consistent, documented logistics without managing every detail.",
     solution:
-      "From procurement support to scheduled deliveries, Umris acts as a steady logistics partner for institutions.",
+      "From procurement support to scheduled deliveries, Umri's acts as a steady logistics partner for institutions.",
   },
 ];

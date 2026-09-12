@@ -60,7 +60,7 @@ export default function IndustryDetail() {
               <span className="eyebrow">The challenge</span>
               <h2>What {industry.name.toLowerCase()} operations face</h2>
               <p className="text-lead">{industry.problem}</p>
-              <span className="eyebrow mt-4">The Umris solution</span>
+              <span className="eyebrow mt-4">The Umri's solution</span>
               <p className="mt-2">{industry.solution}</p>
               <h3 className="h4 mt-4">How it works</h3>
               <ol className="track-how">
@@ -102,14 +102,14 @@ export default function IndustryDetail() {
               {industry.name} businesses, institutions and organisations moving
               goods across Kenya and East Africa — from single consignments to
               regular distribution. If your operation matches the challenge
-              above, Umris can coordinate the movement.
+              above, Umri's can coordinate the movement.
             </p>
           </div>
           <div className="mt-4">
             <Faq
               items={[
                 {
-                  q: `Does Umris handle ${industry.name.toLowerCase()} logistics?`,
+                  q: `Does Umri's handle ${industry.name.toLowerCase()} logistics?`,
                   a: industry.solution,
                 },
                 {

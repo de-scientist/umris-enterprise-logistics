@@ -11,7 +11,7 @@ export default function FaqPage() {
   useSeo({
     title: "Frequently Asked Questions",
     description:
-      "Answers about Umris logistics services, quotes, tracking, warehousing, customs clearing and coverage across Kenya and East Africa.",
+      "Answers about Umri's logistics services, quotes, tracking, warehousing, customs clearing and coverage across Kenya and East Africa.",
     path: "/faq",
   });
 
@@ -23,7 +23,7 @@ export default function FaqPage() {
           <Breadcrumbs items={[{ name: "FAQs" }]} />
           <h1>Frequently asked questions</h1>
           <p>
-            What Umris does, where we operate, how quotes and tracking work —
+            What Umri's does, where we operate, how quotes and tracking work —
             answered directly.
           </p>
         </div>
@@ -33,9 +33,9 @@ export default function FaqPage() {
       <section className="section">
         <div className="container container-narrow">
           <div className="answer-block">
-            <h2 className="h3">What logistics services does Umris Enterprise Logistics provide?</h2>
+            <h2 className="h3">What logistics services does Umri's Enterprises Logistics provide?</h2>
             <p>
-              Umris provides freight transportation, trucking, secure
+              Umri's provides freight transportation, trucking, secure
               warehousing, customs clearing, freight forwarding, last-mile
               delivery, procurement support and logistics consultancy for
               businesses and organisations across Kenya and East Africa.

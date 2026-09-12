@@ -16,7 +16,7 @@ export default function ServiceDetail() {
 
   useSeo({
     title: service ? `${service.title} in Kenya` : "Service",
-    description: service ? service.short : "Umris logistics service.",
+    description: service ? service.short : "Umri's logistics service.",
     path: `/services/${service ? service.slug : slug ?? ""}`,
   });
 
@@ -66,7 +66,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* What Umris handles */}
+      {/* What Umri's handles */}
       <section className="section section--surface">
         <div className="container">
           <SectionHeading align="left" eyebrow="What we do" title={`What ${service.title.toLowerCase()} covers`} />

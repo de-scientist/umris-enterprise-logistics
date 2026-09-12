@@ -6,12 +6,12 @@ import { LOCATIONS } from "../data/locations";
 import { useSeo, JsonLd } from "../lib/seo";
 import { organizationSchema, breadcrumbSchema } from "../lib/schema";
 
-/** /locations — honest coverage. Only areas Umris actually serves. */
+/** /locations — honest coverage. Only areas Umri's actually serves. */
 export default function Locations() {
   useSeo({
     title: "Coverage & Locations",
     description:
-      "Umris Enterprise Logistics operates across Kenya with regional coordination across East Africa. See hubs, service areas and port links.",
+      "Umri's Enterprises Logistics operates across Kenya with regional coordination across East Africa. See hubs, service areas and port links.",
     path: "/locations",
   });
 
@@ -21,7 +21,7 @@ export default function Locations() {
       <section className="page-hero">
         <div className="container">
           <Breadcrumbs items={[{ name: "Coverage" }]} />
-          <h1>Where Umris operates</h1>
+          <h1>Where Umri's operates</h1>
           <p>
             Nationwide logistics across Kenya, coordinated from Naivasha, with
             port links in Mombasa and regional coordination across East
@@ -48,9 +48,9 @@ export default function Locations() {
           </div>
 
           <div className="answer-block mt-5">
-            <h2 className="h3">What areas does Umris serve?</h2>
+            <h2 className="h3">What areas does Umri's serve?</h2>
             <p>
-              Umris serves clients across Kenya — including Nairobi, Naivasha,
+              Umri's serves clients across Kenya — including Nairobi, Naivasha,
               Nakuru, Eldoret and Mombasa corridors — and coordinates
               cross-border movement into neighbouring East African markets on
               request. Share your origin and destination when requesting a

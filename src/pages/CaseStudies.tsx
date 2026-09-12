@@ -15,7 +15,7 @@ export default function CaseStudies() {
   useSeo({
     title: "Case Studies",
     description:
-      "How Umris Enterprise Logistics coordinates freight, relief and cross-border logistics — challenges, approaches and outcomes.",
+      "How Umri's Enterprises Logistics coordinates freight, relief and cross-border logistics — challenges, approaches and outcomes.",
     path: "/case-studies",
   });
 
@@ -27,7 +27,7 @@ export default function CaseStudies() {
           <Breadcrumbs items={[{ name: "Case Studies" }]} />
           <h1>Logistics challenges, solved in the field</h1>
           <p>
-            Selected engagements showing how Umris coordinates movement under
+            Selected engagements showing how Umri's coordinates movement under
             real operational conditions. Detailed metrics are published only
             where verified with partners.
           </p>
@@ -59,7 +59,7 @@ export default function CaseStudies() {
           <div className="answer-block mt-5">
             <h2 className="h3">Have a logistics challenge of your own?</h2>
             <p>
-              Share your cargo, route and timing — Umris will confirm whether
+              Share your cargo, route and timing — Umri's will confirm whether
               the operation fits and propose a plan.{" "}
               <Link to="/quote">Request a quote →</Link>
             </p>

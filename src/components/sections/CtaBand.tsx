@@ -25,7 +25,7 @@ export default function CtaBand({
             <Link to={primaryTo} className="btn btn--light btn--lg">
               {primaryLabel} <FaArrowRight />
             </Link>
-            <WhatsAppButton label="WhatsApp Umris" variant="light" size="lg" topic={topic} />
+            <WhatsAppButton label="WhatsApp Umri's" variant="light" size="lg" topic={topic} />
           </div>
         </div>
       </div>

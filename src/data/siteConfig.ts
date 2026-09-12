@@ -1,9 +1,9 @@
 /* ============================================================
-   SITE CONFIG — Single source of truth for Umris Enterprise
+   SITE CONFIG — Single source of truth for Umri's Enterprises
    ------------------------------------------------------------
    ⚠️ HUMAN VERIFICATION REQUIRED for fields marked `verify: true`.
    The original codebase contained conflicting information:
-     - Business name: "Umris Logistics" vs "Umris Enterprise Logistics"
+     - Business name: "Umri's Logistics" vs "Umri's Enterprises Logistics"
      - HQ location: Hero said "Thika"; Map said "Naivasha"
      - Domain: README -> umrisenterprise.com; Footer -> umrislogistics.co.ke
    These are kept as configurable constants so they can be corrected
@@ -12,9 +12,9 @@
 
 export const SITE = {
   /* Official legal/brand entity — used in schema, titles, footer */
-  name: "Umris Enterprise Logistics",
-  shortName: "Umris",
-  legalNote: "Umris Enterprise",
+  name: "Umri's Enterprises Logistics",
+  shortName: "Umri's",
+  legalNote: "Umri's Enterprises",
 
   /* ⚠️ VERIFY: production domain. The live deployment is on Vercel's
      subdomain; set this to the official domain once confirmed so
@@ -54,7 +54,7 @@ export const SITE = {
   /* Brand tagline / positioning */
   tagline: "Reliable Logistics. Delivered With Precision.",
   positioning:
-    "Umris Enterprise Logistics provides dependable transport, warehousing and distribution solutions that keep Kenyan businesses moving.",
+    "Umri's Enterprises Logistics provides dependable transport, warehousing and distribution solutions that keep Kenyan businesses moving.",
 } as const;
 
 export const NAV_LINKS = [

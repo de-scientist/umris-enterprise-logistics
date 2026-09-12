@@ -32,9 +32,9 @@ export default function WhyUs() {
     <section className="section section--surface" id="why">
       <div className="container">
         <SectionHeading
-          eyebrow="Why Umris"
+          eyebrow="Why Umri's"
           title="A logistics partner, not just a fleet"
-          intro="Six reasons businesses across Kenya trust Umris with their cargo."
+          intro="Six reasons businesses across Kenya trust Umri's with their cargo."
         />
         <div className="why-grid">
           {PILLARS.map((p, i) => (

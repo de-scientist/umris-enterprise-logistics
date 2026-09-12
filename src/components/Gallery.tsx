@@ -8,7 +8,7 @@ import gallery5 from "../assets/2.png";
 import gallery6 from "../assets/9.png";
 
 const ITEMS = [
-  { src: gallery1, alt: "Umris truck on transit", cap: "Reliable cross-border transport handled with precision." },
+  { src: gallery1, alt: "Umri's truck on transit", cap: "Reliable cross-border transport handled with precision." },
   { src: gallery2, alt: "Warehouse operations", cap: "Secure storage with real-time monitoring." },
   { src: gallery3, alt: "Last-mile delivery in the field", cap: "Delivering supplies where they are needed most." },
   { src: gallery4, alt: "Operational fleet", cap: "A fleet prepared for planned and urgent dispatch." },
@@ -23,7 +23,7 @@ export default function Gallery() {
       <div className="container">
         <div className="section-head">
           <span className="eyebrow">In Operation</span>
-          <h2>Umris on the ground</h2>
+          <h2>Umri's on the ground</h2>
           <p>A glimpse into the daily work that keeps supply chains moving across East Africa.</p>
         </div>
         <div className="gallery-grid">
