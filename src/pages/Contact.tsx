@@ -44,7 +44,7 @@ export default function Contact() {
                 <span>
                   <span className="contact-card__label">{c.label}</span>
                   <br />
-                  {c.href ? <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">{c.value}</a> : <p>{c.value}</p>}
+                  {c.href ? <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" aria-label={c.href === SITE.mapsUrl ? `Get directions to ${SITE.name} at ${SITE.hq.addressLine} (opens Google Maps)` : undefined}>{c.value}</a> : <p>{c.value}</p>}
                 </span>
               </div>
             ))}

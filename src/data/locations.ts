@@ -27,8 +27,8 @@ export const LOCATIONS: ServiceLocation[] = [
     name: "Naivasha",
     type: "Hub",
     summary:
-      "Operational hub for coordination, dispatch and regional movement across the Rift Valley and beyond.",
-    presence: "Operational hub — address to be confirmed",
+      "Operational hub at Genesis House for coordination, dispatch and regional movement across the Rift Valley and beyond.",
+    presence: "Operational hub — Genesis House, Naivasha",
   },
   {
     slug: "nairobi",
