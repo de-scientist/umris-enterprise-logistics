@@ -22,6 +22,8 @@ interface PageHeroProps {
   tagline?: boolean;
   /** Above-the-fold heroes: eager load with high fetch priority. */
   eager?: boolean;
+  /** Optional element rendered above the title (e.g. category chip). */
+  topNote?: ReactNode;
 }
 
 /**
@@ -40,6 +42,7 @@ export default function PageHero({
   actions,
   tagline = false,
   eager = false,
+  topNote,
 }: PageHeroProps) {
   return (
     <section className={`page-hero${image ? " page-hero--split" : ""}`}>
