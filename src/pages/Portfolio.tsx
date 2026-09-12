@@ -25,10 +25,10 @@ export default function Portfolio() {
 
       <section className="section">
         <div className="container">
-          <p className="text-muted mb-4" style={{ fontSize: "1.4rem" }}>
+          {/* <p className="text-muted mb-4" style={{ fontSize: "1.4rem" }}>
             Note: partner names are shown only where originally attributed; outcomes
             are described qualitatively. Umri's should confirm details before public use.
-          </p>
+          </p> */}
           <div className="stack">
             {PROJECTS.map((p) => (
               <Reveal key={p.slug}>
