@@ -25,6 +25,7 @@ export default function SuccessStories() {
   const supporting = getSupportingStories();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const lastFocused = useRef<HTMLElement | null>(null);
 
   const close = useCallback(() => setOpenIndex(null), []);
@@ -46,6 +47,22 @@ export default function SuccessStories() {
       if (e.key === "Escape") close();
       if (e.key === "ArrowRight") step(1);
       if (e.key === "ArrowLeft") step(-1);
+      /* Keep Tab cycling inside the dialog while it is open. */
+      if (e.key === "Tab" && dialogRef.current) {
+        const focusables = dialogRef.current.querySelectorAll<HTMLElement>(
+          "button:not([disabled])",
+        );
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => {
@@ -111,6 +128,7 @@ export default function SuccessStories() {
           onClick={close}
         >
           <div
+            ref={dialogRef}
             className="stories-lightbox__inner"
             onClick={(e) => e.stopPropagation()}
           >
