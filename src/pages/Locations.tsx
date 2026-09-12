@@ -23,9 +23,9 @@ export default function Locations() {
           <Breadcrumbs items={[{ name: "Coverage" }]} />
           <h1>Where Umri's operates</h1>
           <p>
-            Nationwide logistics across Kenya, coordinated from Naivasha, with
-            port links in Mombasa and regional coordination across East
-            Africa. Only areas we genuinely serve are listed here.
+            Nationwide logistics across Kenya, coordinated from Genesis House
+            in Naivasha, with port links in Mombasa and regional coordination
+            across East Africa. Only areas we genuinely serve are listed here.
           </p>
         </div>
       </section>
