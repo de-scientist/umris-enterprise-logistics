@@ -10,7 +10,7 @@ export default function Contact() {
   useSeo({
     title: "Contact & Request a Quote",
     description:
-      "Contact Umri's Enterprises Logistics by phone, WhatsApp or email, or request a quotation online. Operating across Kenya and East Africa.",
+      "Contact Umri's Enterprises Logistics at Genesis House, Naivasha, by phone, WhatsApp or email, or request a quotation online. Operating across Kenya and East Africa.",
     path: "/contact",
   });
 

@@ -58,7 +58,7 @@ export default function About() {
               chain.
             </p>
             <p className="mt-3">
-              From our base in {SITE.hq.city}, we serve {SITE.serviceArea},
+              From Genesis House in {SITE.hq.city}, we serve {SITE.serviceArea},
               combining transport, storage and coordination into one dependable
               operation.
             </p>
