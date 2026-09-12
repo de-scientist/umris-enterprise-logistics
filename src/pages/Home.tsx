@@ -10,6 +10,7 @@ import CtaBand from "../components/sections/CtaBand";
 import ServiceCard from "../components/ServiceCard";
 import NetworkVisual from "../components/logistics/NetworkVisual";
 import QuoteCalculator from "../components/logistics/QuoteCalculator";
+import CoverageAreas from "../components/sections/CoverageAreas";
 import Faq from "../components/ui/Faq";
 import Reveal from "../components/ui/Reveal";
 import SectionHeading from "../components/ui/SectionHeading";
@@ -23,13 +24,13 @@ import aboutImg from "../assets/t3.jpeg";
 
 /**
  * Homepage order (§51): hero → trust strip → services →
- * why → how → industries → network → calculator → insights → FAQ → CTA.
+ * why → how → industries → network → coverage → calculator → insights → FAQ → CTA.
  */
 export default function Home() {
   useSeo({
-    title: `Transportation & Logistics in Kenya`,
+    title: "Umri's Enterprises | Logistics & Transportation in Kenya",
     description:
-      "Umri's Enterprises provides exceptional transportation services across Kenya and East Africa — freight, warehousing, distribution and timely delivery. Eyes on Perfection.",
+      "Umri's Enterprises provides reliable transportation and logistics support across selected counties in Kenya, including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui and Kwale. Eyes on Perfection.",
     path: "/",
   });
 
@@ -65,6 +66,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* COVERAGE AREAS */}
+      <CoverageAreas />
 
       {/* WHO WE ARE split */}
       <section className="section section--surface">

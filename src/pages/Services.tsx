@@ -2,6 +2,7 @@ import SectionHeading from "../components/ui/SectionHeading";
 import ServiceCard from "../components/ServiceCard";
 import Reveal from "../components/ui/Reveal";
 import CtaBand from "../components/sections/CtaBand";
+import CoverageAreas from "../components/sections/CoverageAreas";
 import PageHero from "../components/ui/PageHero";
 import { SERVICES, type Service } from "../data/services";
 import { useSeo, JsonLd } from "../lib/seo";
@@ -16,9 +17,9 @@ const CATEGORIES: Service["category"][] = [
 
 export default function Services() {
   useSeo({
-    title: "Logistics & Transportation Services",
+    title: "Logistics & Transportation Services | Umri's Enterprises",
     description:
-      "Explore Umri's Enterprises Logistics services: freight transport, warehousing, customs clearing, forwarding, trucking, tracking, procurement, last-mile delivery and consultancy.",
+      "Explore Umri's Enterprises Logistics services: freight transport, warehousing, customs clearing, forwarding, trucking, tracking, procurement, last-mile delivery and consultancy across selected counties in Kenya.",
     path: "/services",
   });
 
@@ -49,6 +50,9 @@ export default function Services() {
           </div>
         </section>
       ))}
+
+      {/* COVERAGE */}
+      <CoverageAreas heading="Logistics Coverage That Goes Further" />
 
       <CtaBand title="Not sure which service you need?" text="Tell us what you're moving and we'll recommend the right combination." />
     </>

@@ -1,11 +1,12 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
+import { COVERAGE_AREAS } from "../../data/coverageAreas";
 
 /* ============================================================
-   QUOTE CALCULATOR — frontend-only illustrative estimator.
-   Rates are NOT official Umri's pricing; the result is labelled
-   as an estimate and every CTA routes to /quote for confirmation.
-   ============================================================ */
+    QUOTE CALCULATOR — frontend-only illustrative estimator.
+    Rates are NOT official Umri's pricing; the result is labelled
+    as an estimate and every CTA routes to /quote for confirmation.
+    ============================================================ */
 
 const SERVICE_MULTIPLIER: Record<string, number> = {
   "Road / Trucking": 1,
@@ -15,9 +16,9 @@ const SERVICE_MULTIPLIER: Record<string, number> = {
   "Customs Clearing Support": 1.4,
 };
 
-const BASE_PER_KM = 180; // KES illustrative base per km
-const PER_KG = 12; // KES illustrative per kg
-const PER_PARCEL = 250; // KES illustrative per parcel
+const BASE_PER_KM = 180;
+const PER_KG = 12;
+const PER_PARCEL = 250;
 
 const ROUTES_KM: Record<string, number> = {
   "Nairobi–Mombasa": 485,
@@ -28,6 +29,8 @@ const ROUTES_KM: Record<string, number> = {
   "Mombasa–Nairobi": 485,
 };
 
+const COVERAGE_AREA_NAMES = COVERAGE_AREAS.map((a) => a.name);
+
 function formatKES(n: number): string {
   return `KES ${Math.round(n).toLocaleString("en-KE")}`;
 }
@@ -37,12 +40,23 @@ export default function QuoteCalculator() {
   const [service, setService] = useState("Road / Trucking");
   const [weight, setWeight] = useState("500");
   const [parcels, setParcels] = useState("10");
+  const [customDistance, setCustomDistance] = useState("");
   const [state, setState] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [estimate, setEstimate] = useState<{ low: number; high: number } | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const useOtherRoute = route === "Other route";
+  const isValidCustomDistance = useOtherRoute && customDistance !== "" && Number.isFinite(Number(customDistance)) && Number(customDistance) > 0;
+
+  const canCalculate = !useOtherRoute || isValidCustomDistance;
+
   const calculate = (ev: FormEvent) => {
     ev.preventDefault();
+    if (useOtherRoute && (!customDistance || !Number.isFinite(Number(customDistance)) || Number(customDistance) <= 0)) {
+      setError("Enter a valid estimated distance in km.");
+      setState("error");
+      return;
+    }
     const w = Number(weight);
     const p = Number(parcels);
     if (!Number.isFinite(w) || w <= 0 || w > 30000) {
@@ -57,10 +71,9 @@ export default function QuoteCalculator() {
     }
     setError(null);
     setState("loading");
-    const km = ROUTES_KM[route] ?? 200;
+    const d = useOtherRoute ? Number(customDistance) : ROUTES_KM[route] ?? 0;
     const mult = SERVICE_MULTIPLIER[service] ?? 1;
-    const mid = (BASE_PER_KM * km + PER_KG * w + PER_PARCEL * p) * mult;
-    // Simulated calculation delay for loading-state UX.
+    const mid = (BASE_PER_KM * d + PER_KG * w + PER_PARCEL * p) * mult;
     window.setTimeout(() => {
       setEstimate({ low: mid * 0.9, high: mid * 1.15 });
       setState("done");
@@ -71,6 +84,7 @@ export default function QuoteCalculator() {
     setState("idle");
     setEstimate(null);
     setError(null);
+    setCustomDistance("");
   };
 
   return (
@@ -85,9 +99,31 @@ export default function QuoteCalculator() {
                   {r}
                 </option>
               ))}
-              <option value="Other route">Other route (uses 200 km guide)</option>
+              {COVERAGE_AREA_NAMES.map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+              <option value="Other route">Other route (manual distance)</option>
             </select>
           </div>
+          {useOtherRoute && (
+            <div className="field">
+              <label htmlFor="calc-custom-distance">Estimated distance (km)</label>
+              <input
+                id="calc-custom-distance"
+                type="number"
+                inputMode="numeric"
+                min="1"
+                max="5000"
+                placeholder="Enter estimated km"
+                value={customDistance}
+                onChange={(e) => setCustomDistance(e.target.value)}
+                required={useOtherRoute}
+              />
+              <span className="field-hint">Illustrative estimate only — not a verified route distance.</span>
+            </div>
+          )}
           <div className="field">
             <label htmlFor="calc-service">Service type</label>
             <select id="calc-service" value={service} onChange={(e) => setService(e.target.value)}>
@@ -119,7 +155,7 @@ export default function QuoteCalculator() {
         </div>
 
         <div className="calc__actions">
-          <button type="submit" className="btn btn--primary" disabled={state === "loading"}>
+          <button type="submit" className="btn btn--primary" disabled={state === "loading" || !canCalculate}>
             {state === "loading" ? "Calculating…" : "Calculate estimate"}
           </button>
           {(state === "done" || state === "error") && (
@@ -129,6 +165,12 @@ export default function QuoteCalculator() {
           )}
         </div>
       </form>
+
+      {useOtherRoute && (
+        <p className="calc__coverage-note">
+          <strong>Illustrative route.</strong> Custom distances are for estimation purposes only and do not represent verified route distances.
+        </p>
+      )}
 
       <div aria-live="polite" className="calc__result">
         {state === "loading" && (
@@ -159,6 +201,18 @@ export default function QuoteCalculator() {
             </div>
           </div>
         )}
+      </div>
+
+      <div className="calc__coverage-info">
+        <p>
+          <strong>Service coverage</strong>
+        </p>
+        <p>
+          We currently provide transportation and logistics support across selected counties including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui and Kwale.
+        </p>
+        <p>
+          For an official quote, submit your requirements and our team can confirm availability and pricing.
+        </p>
       </div>
     </div>
   );

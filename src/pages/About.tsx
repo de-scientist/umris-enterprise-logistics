@@ -2,6 +2,7 @@ import { FaHandshake, FaScaleBalanced, FaEye } from "react-icons/fa6";
 import SectionHeading from "../components/ui/SectionHeading";
 import Reveal from "../components/ui/Reveal";
 import CtaBand from "../components/sections/CtaBand";
+import CoverageAreas from "../components/sections/CoverageAreas";
 import PageHero from "../components/ui/PageHero";
 import SuccessStories from "../components/sections/SuccessStories";
 import Testimonials from "../components/Testimonials";
@@ -14,9 +15,9 @@ const VALUE_ICONS = [FaHandshake, FaScaleBalanced, FaEye];
 
 export default function About() {
   useSeo({
-    title: "About Umri's Enterprises",
+    title: "About Umri's Enterprises | Logistics & Transportation",
     description:
-      "Since 2017, Umri's Enterprises has provided exceptional transportation services across Kenya and East Africa — building partnerships on trust. Eyes on Perfection.",
+      "Since 2017, Umri's Enterprises has provided exceptional transportation services across selected counties in Kenya, including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui and Kwale. Eyes on Perfection.",
     path: "/about",
   });
 
@@ -142,6 +143,9 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* COVERAGE AREAS */}
+      <CoverageAreas heading="Where We Serve" />
 
       {/* REAL WORK. REAL MOVEMENT. */}
       <SuccessStories />

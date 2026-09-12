@@ -60,6 +60,11 @@ export function websiteSchema() {
 
 export function localBusinessSchema() {
   const [lat, lng] = SITE.hq.coords;
+  const coverageAreaNames = [
+    "Meru County", "Makueni County", "Samburu County", "Taita-Taveta County",
+    "Nyandarua County", "Kajiado County", "Nakuru County", "Laikipia County",
+    "Kitui County", "Kwale County",
+  ];
   return {
     "@context": "https://schema.org",
     "@type": "MovingCompany",
@@ -69,7 +74,6 @@ export function localBusinessSchema() {
     url: SITE.canonicalDomain,
     telephone: SITE.phone,
     email: SITE.email,
-    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE.hq.label,
@@ -82,7 +86,7 @@ export function localBusinessSchema() {
       latitude: lat,
       longitude: lng,
     },
-    areaServed: ["Kenya", "East Africa"],
+    areaServed: ["Kenya", "East Africa", ...coverageAreaNames],
     sameAs: [SITE.social.facebook].filter(Boolean) as string[],
   };
 }

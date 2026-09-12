@@ -5,14 +5,15 @@ import Reveal from "../components/ui/Reveal";
 import { LOCATIONS } from "../data/locations";
 import { useSeo, JsonLd } from "../lib/seo";
 import { organizationSchema, breadcrumbSchema } from "../lib/schema";
+import { COVERAGE_AREAS } from "../data/coverageAreas";
 import locationsHero from "../assets/truck5.jpg";
 
 /** /locations — honest coverage. Only areas Umri's actually serves. */
 export default function Locations() {
   useSeo({
-    title: "Coverage & Locations",
+    title: "Service Coverage | Umri's Enterprises",
     description:
-      "Umri's Enterprises Logistics operates from Genesis House in Naivasha, Kenya, with coverage across Kenya and regional coordination across East Africa.",
+      "Umri's Enterprises Logistics provides transportation and logistics support across selected counties in Kenya, including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui and Kwale.",
     path: "/locations",
   });
 
@@ -22,13 +23,47 @@ export default function Locations() {
       <PageHero
         eyebrow="Coverage"
         title="Where Umri's operates"
-        description="Nationwide logistics across Kenya, coordinated from Genesis House in Naivasha, with port links in Mombasa and regional coordination across East Africa. Only areas we genuinely serve are listed here."
+        description="Nationwide logistics across Kenya, coordinated from Genesis House in Naivasha, with port links in Mombasa and regional coordination across East Africa. We serve selected counties across Kenya."
         image={locationsHero}
         imageAlt="Umri's Enterprises transportation truck ready for dispatch in Kenya"
         crumbs={[{ name: "Coverage" }]}
       />
 
-      <section className="section">
+      {/* COUNTY COVERAGE LIST */}
+      <section className="section" aria-label="County coverage areas">
+        <div className="container">
+          <div className="answer-block">
+            <h2 className="h3">Our current coverage areas</h2>
+            <p>
+              Umri's Enterprises provides transportation and logistics support across selected counties in Kenya. Our current coverage includes:
+            </p>
+          </div>
+          <div className="grid-3" style={{ marginTop: "var(--space-4)" }}>
+            {COVERAGE_AREAS.map((area) => (
+              <Reveal key={area.slug}>
+                <article className="card">
+                  <span className="coverage-card__name" style={{ fontSize: "1.6rem" }}>{area.name}</span>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+          <div className="answer-block mt-5">
+            <h2 className="h3">Regional and cross-border coordination</h2>
+            <p>
+              Beyond the listed counties, Umri's coordinates logistics
+              across Kenya and into neighbouring East African markets on
+              request. Share your origin and destination when requesting a
+              quote and the team will confirm availability.
+            </p>
+            <p className="mt-3">
+              <Link to="/quote" className="btn btn--primary">Check your route →</Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* OPERATIONAL HUB */}
+      <section className="section section--surface">
         <div className="container">
           <div className="grid-3">
             {LOCATIONS.map((l) => (
@@ -43,20 +78,6 @@ export default function Locations() {
                 </article>
               </Reveal>
             ))}
-          </div>
-
-          <div className="answer-block mt-5">
-            <h2 className="h3">What areas does Umri's serve?</h2>
-            <p>
-              Umri's serves clients across Kenya — including Nairobi, Naivasha,
-              Nakuru, Eldoret and Mombasa corridors — and coordinates
-              cross-border movement into neighbouring East African markets on
-              request. Share your origin and destination when requesting a
-              quote and the team will confirm coverage.
-            </p>
-            <p className="mt-3">
-              <Link to="/quote" className="btn btn--primary">Check your route →</Link>
-            </p>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PageHero from "../components/ui/PageHero";
 import Faq from "../components/ui/Faq";
+import CoverageAreas from "../components/sections/CoverageAreas";
 import CtaBand from "../components/sections/CtaBand";
 import { SITE_FAQ } from "../data/faqs";
 import { useSeo, JsonLd } from "../lib/seo";
@@ -9,9 +10,9 @@ import { organizationSchema, breadcrumbSchema, faqSchema } from "../lib/schema";
 /** /faq — AEO-optimised answer hub with FAQPage structured data. */
 export default function FaqPage() {
   useSeo({
-    title: "Frequently Asked Questions",
+    title: "Frequently Asked Questions | Umri's Enterprises",
     description:
-      "Answers about Umri's logistics services, quotes, tracking, warehousing, customs clearing and coverage across Kenya and East Africa.",
+      "Answers about Umri's Enterprises logistics services, coverage across selected counties in Kenya, quotes, tracking, warehousing, customs clearing. Final pricing is subject to confirmation.",
     path: "/faq",
   });
 
@@ -25,6 +26,13 @@ export default function FaqPage() {
         crumbs={[{ name: "FAQs" }]}
       />
 
+      {/* COVERAGE INFO */}
+      <section className="section">
+        <div className="container container-narrow">
+          <CoverageAreas heading="Where We Serve" />
+        </div>
+      </section>
+
       {/* AEO definition block */}
       <section className="section">
         <div className="container container-narrow">
@@ -34,7 +42,7 @@ export default function FaqPage() {
               Umri's provides freight transportation, trucking, secure
               warehousing, customs clearing, freight forwarding, last-mile
               delivery, procurement support and logistics consultancy for
-              businesses and organisations across Kenya and East Africa.
+              businesses and organisations across selected counties in Kenya.
             </p>
           </div>
           <div className="mt-4">
