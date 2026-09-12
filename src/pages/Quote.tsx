@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import QuoteForm from "../components/QuoteForm";
 import QuoteCalculator from "../components/logistics/QuoteCalculator";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import Faq from "../components/ui/Faq";
 import { SITE } from "../data/siteConfig";
 import { useSeo, JsonLd } from "../lib/seo";
@@ -38,17 +38,14 @@ export default function Quote() {
   return (
     <>
       <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "Get a Quote", path: "/quote" }]), faqSchema(QUOTE_FAQS)]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Get a Quote" }]} />
-          <h1>Let&apos;s move your business forward</h1>
-          <p>
-            Get an illustrative estimate in seconds, then send the details for
-            an official quote. No account needed — your request opens in
-            WhatsApp or email.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Request A Quote"
+        title="Let's move your business forward"
+        description="Get an illustrative estimate in seconds, then send the details for an official quote. No account needed — your request opens in WhatsApp or email."
+        image="/testimonials/t4.jpeg"
+        imageAlt="Umri's Enterprises truck on delivery rounds at a rural dispensary in Kenya"
+        crumbs={[{ name: "Get a Quote" }]}
+      />
 
       <section className="section">
         <div className="container">
