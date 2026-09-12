@@ -5,6 +5,7 @@ import TrustStrip from "../components/sections/TrustStrip";
 import WhyUs from "../components/sections/WhyUs";
 import HowItWorks from "../components/sections/HowItWorks";
 import Capabilities from "../components/sections/Capabilities";
+import SuccessStories from "../components/sections/SuccessStories";
 import CtaBand from "../components/sections/CtaBand";
 import ServiceCard from "../components/ServiceCard";
 import NetworkVisual from "../components/logistics/NetworkVisual";
