@@ -1,20 +1,26 @@
 /* ============================================================
    SITE CONFIG — Single source of truth for Umri's Enterprises
    ------------------------------------------------------------
-   ⚠️ HUMAN VERIFICATION REQUIRED for fields marked `verify: true`.
-   The original codebase contained conflicting information:
-     - Business name: "Umri's Logistics" vs "Umri's Enterprises Logistics"
-     - HQ location: Hero said "Thika"; Map said "Naivasha"
-     - Domain: README -> umrisenterprise.com; Footer -> umrislogistics.co.ke
-   These are kept as configurable constants so they can be corrected
-   in ONE place without hunting through components.
+   Brand and location are defined ONCE here. Components, SEO,
+   structured data and pages must consume SITE / BRAND instead
+   of hardcoding the company name or address.
    ============================================================ */
+
+/** Central brand source — prevents future name inconsistencies. */
+export const BRAND = {
+  /** Short brand name for lockups, greetings and prose. */
+  name: "Umri's Enterprises",
+  /** Full business name for titles, schema and legal contexts. */
+  logisticsName: "Umri's Enterprises Logistics",
+  /** Shortest reference, e.g. header lockup. */
+  shortName: "Umri's",
+} as const;
 
 export const SITE = {
   /* Official legal/brand entity — used in schema, titles, footer */
-  name: "Umri's Enterprises Logistics",
-  shortName: "Umri's",
-  legalNote: "Umri's Enterprises",
+  name: BRAND.logisticsName,
+  shortName: BRAND.shortName,
+  legalNote: BRAND.name,
 
   /* ⚠️ VERIFY: production domain. The live deployment is on Vercel's
      subdomain; set this to the official domain once confirmed so
@@ -27,16 +33,20 @@ export const SITE = {
   phoneDisplay: "+254 764 268 280",
   whatsapp: "254764268280", // international format, no "+"
 
-  /* ⚠️ VERIFY: headquarters. Existing code conflicted (Thika vs Naivasha).
-     Map component placed the pin in Naivasha. Kept Naivasha as the
-     operational hub pending confirmation. Coordinates are Naivasha. */
+  /* Confirmed location label: Genesis House, Naivasha, Kenya.
+     Coordinates are the approximate Genesis House reference
+     supplied by the business (-0.749481, 36.462653). No street
+     address is invented — only the confirmed building name. */
   hq: {
+    label: "Genesis House",
     city: "Naivasha",
     country: "Kenya",
-    verify: true,
-    coords: [-0.7167, 36.431] as [number, number],
-    addressLine: "Naivasha, Kenya", // ⚠️ VERIFY street address
+    coords: [-0.749481, 36.462653] as [number, number],
+    addressLine: "Genesis House, Naivasha, Kenya",
   },
+
+  /* Official directions destination supplied by the business. */
+  mapsUrl: "https://maps.app.goo.gl/9L5jFbEG9zUTXX3V8?g_st=aw",
 
   /* Service region description (factual: operates across Kenya + East Africa) */
   serviceArea: "Across Kenya, with regional logistics across East Africa",

@@ -15,10 +15,11 @@ function orgBase() {
     description: SITE.positioning,
     address: {
       "@type": "PostalAddress",
+      streetAddress: SITE.hq.label,
       addressLocality: SITE.hq.city,
       addressCountry: SITE.hq.country,
-      streetAddress: SITE.hq.addressLine,
     },
+    hasMap: SITE.mapsUrl,
     areaServed: {
       "@type": "AdministrativeArea",
       name: "Kenya",
