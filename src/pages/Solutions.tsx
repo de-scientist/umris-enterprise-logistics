@@ -52,16 +52,14 @@ export default function Solutions() {
   return (
     <>
       <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "Solutions", path: "/solutions" }])]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Solutions" }]} />
-          <h1>Solutions shaped around your operation</h1>
-          <p>
-            Services are what we do. Solutions are how they fit your business —
-            from a single shipment to managed movement of goods.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Solutions"
+        title="Solutions shaped around your operation"
+        description="Services are what we do. Solutions are how they fit your business — from a single shipment to managed movement of goods."
+        image="/testimonials/t6.jpeg"
+        imageAlt="Umri's Enterprises truck at a county health facility during field delivery operations in Kenya"
+        crumbs={[{ name: "Solutions" }]}
+      />
 
       <section className="section">
         <div className="container">

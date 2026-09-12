@@ -16,16 +16,14 @@ export default function Industries() {
   return (
     <>
       <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "Industries", path: "/industries" }])]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Industries" }]} />
-          <h1>Logistics tailored to your industry</h1>
-          <p>
-            Every sector moves goods differently. Here is the logistics problem
-            each faces — and how Umri's solves it.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Industries"
+        title="Logistics tailored to your industry"
+        description="Every sector moves goods differently. Here is the logistics problem each faces — and how Umri's solves it."
+        image="/testimonials/t5.jpeg"
+        imageAlt="Umri's Enterprises truck at a county government health facility in Kenya"
+        crumbs={[{ name: "Industries" }]}
+      />
 
       <section className="section">
         <div className="container">

@@ -19,17 +19,14 @@ export default function Locations() {
   return (
     <>
       <JsonLd data={[organizationSchema(), breadcrumbSchema([{ name: "Coverage", path: "/locations" }])]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Coverage" }]} />
-          <h1>Where Umri's operates</h1>
-          <p>
-            Nationwide logistics across Kenya, coordinated from Genesis House
-            in Naivasha, with port links in Mombasa and regional coordination
-            across East Africa. Only areas we genuinely serve are listed here.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Coverage"
+        title="Where Umri's operates"
+        description="Nationwide logistics across Kenya, coordinated from Genesis House in Naivasha, with port links in Mombasa and regional coordination across East Africa. Only areas we genuinely serve are listed here."
+        image={locationsHero}
+        imageAlt="Umri's Enterprises transportation truck ready for dispatch in Kenya"
+        crumbs={[{ name: "Coverage" }]}
+      />
 
       <section className="section">
         <div className="container">
