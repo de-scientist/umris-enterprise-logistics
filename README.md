@@ -125,7 +125,7 @@ Several fields in `src/data/siteConfig.ts` are flagged with `verify: true` becau
 - **HQ location** — original code conflicted between Thika and Naivasha; currently set to Naivasha with Naivasha coordinates.
 - **Street address** — placeholder line only; confirm the real address.
 - **Instagram** — currently a generic `instagram.com` placeholder and intentionally hidden from the UI until a real handle is supplied.
-- **Canonical domain** — currently the Vercel deployment subdomain. Update `canonicalDomain` once the official domain is confirmed so metadata, sitemap and Open Graph all point to the right place.
+- **Canonical domain** — set to `https://umrisenterprise.co.ke`. All canonical/sitemap/OG references point here.
 
 Update these in **one place** (`src/data/siteConfig.ts`) — they propagate to the footer, contact page, schema and metadata automatically.
 
