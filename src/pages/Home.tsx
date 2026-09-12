@@ -28,9 +28,9 @@ import aboutImg from "../assets/t3.jpeg";
  */
 export default function Home() {
   useSeo({
-    title: `Logistics & Transportation Services in Kenya`,
+    title: `Transportation & Logistics in Kenya`,
     description:
-      "Umri's Enterprises Logistics provides reliable freight, warehousing, distribution and transport solutions across Kenya and East Africa. Request a quote today.",
+      "Umri's Enterprises provides exceptional transportation services across Kenya and East Africa — freight, warehousing, distribution and timely delivery. Eyes on Perfection.",
     path: "/",
   });
 

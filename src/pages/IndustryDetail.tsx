@@ -37,21 +37,16 @@ export default function IndustryDetail() {
           ]),
         ]}
       />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Industries", to: "/industries" }, { name: industry.name }]} />
-          <h1>{industry.name} logistics in Kenya</h1>
-          <p>{industry.solution}</p>
-          <div className="mt-4 flex gap-3 wrap">
-            <Link to="/quote" className="btn btn--accent btn--lg">
-              Get a Quote
-            </Link>
-            <Link to="/contact" className="btn btn--light">
-              Talk to the team
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Industries"
+        title={`${industry.name} logistics in Kenya`}
+        description={industry.solution}
+        crumbs={[{ name: "Industries", to: "/industries" }, { name: industry.name }]}
+        actions={[
+          { label: "Get a Quote", to: "/quote", variant: "accent" },
+          { label: "Talk to the team", to: "/contact", variant: "light" },
+        ]}
+      />
 
       <section className="section">
         <div className="container">

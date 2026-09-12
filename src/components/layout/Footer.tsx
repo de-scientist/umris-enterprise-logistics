@@ -34,6 +34,8 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <img src="/logo31.png" alt={`${SITE.name} logo`} />
+            <p className="footer-brand__name">{SITE.legalNote}</p>
+            <p className="footer-tagline">{SITE.tagline}</p>
             <p>
               We don&apos;t simply move goods. We connect businesses, people and
               markets through dependable logistics — {SITE.serviceArea.toLowerCase()}.
