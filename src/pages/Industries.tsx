@@ -1,6 +1,6 @@
 import Reveal from "../components/ui/Reveal";
 import CtaBand from "../components/sections/CtaBand";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import { INDUSTRIES } from "../data/industries";
 import { useSeo, JsonLd } from "../lib/seo";
 import { organizationSchema, breadcrumbSchema } from "../lib/schema";

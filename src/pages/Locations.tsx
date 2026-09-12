@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import CtaBand from "../components/sections/CtaBand";
 import Reveal from "../components/ui/Reveal";
 import { LOCATIONS } from "../data/locations";
 import { useSeo, JsonLd } from "../lib/seo";
 import { organizationSchema, breadcrumbSchema } from "../lib/schema";
+import locationsHero from "../assets/truck5.jpg";
 
 /** /locations — honest coverage. Only areas Umri's actually serves. */
 export default function Locations() {
