@@ -1,5 +1,5 @@
 import { FaPhone, FaWhatsapp, FaEnvelope, FaLocationDot, FaClock } from "react-icons/fa6";
-import Breadcrumbs from "../components/ui/Breadcrumbs";
+import PageHero from "../components/ui/PageHero";
 import QuoteForm from "../components/QuoteForm";
 import MapSection from "../components/layout/MapSection";
 import { SITE, whatsappLink } from "../data/siteConfig";
@@ -24,16 +24,14 @@ export default function Contact() {
   return (
     <>
       <JsonLd data={[organizationSchema(), localBusinessSchema(), breadcrumbSchema([{ name: "Contact", path: "/contact" }])]} />
-      <section className="page-hero">
-        <div className="container">
-          <Breadcrumbs items={[{ name: "Contact" }]} />
-          <h1>Let's move it together</h1>
-          <p>
-            Tell us what you need moved. We'll come back with a clear, tailored
-            quotation — no hidden costs.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Get In Touch"
+        title="Let's move it together"
+        description="Tell us what you need moved. We'll come back with a clear, tailored quotation — no hidden costs. Visit us at Genesis House, Naivasha."
+        image="/testimonials/t8.jpeg"
+        imageAlt="Umri's Enterprises branded truck in the field during delivery rounds in Kenya"
+        crumbs={[{ name: "Contact" }]}
+      />
 
       <section className="section">
         <div className="container">
