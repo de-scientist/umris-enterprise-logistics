@@ -11,7 +11,7 @@ export default function Locations() {
   useSeo({
     title: "Coverage & Locations",
     description:
-      "Umri's Enterprises Logistics operates across Kenya with regional coordination across East Africa. See hubs, service areas and port links.",
+      "Umri's Enterprises Logistics operates from Genesis House in Naivasha, Kenya, with coverage across Kenya and regional coordination across East Africa.",
     path: "/locations",
   });
 
