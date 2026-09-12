@@ -113,6 +113,9 @@ export default function Home() {
 
       <Capabilities />
 
+      {/* SUCCESS STORIES — visual proof of work, before sector content */}
+      <SuccessStories />
+
       {/* INDUSTRIES */}
       <section className="section">
         <div className="container">
