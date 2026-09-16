@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BRAND, SITE, absoluteUrl } from "../data/siteConfig";
+import { BRAND, absoluteUrl } from "../data/siteConfig";
 
 export interface SeoProps {
   title: string;
