@@ -9,10 +9,11 @@ import { organizationSchema, breadcrumbSchema } from "../lib/schema";
 
 export default function Insights() {
   useSeo({
-    title: "Insights — Logistics Thinking for Kenyan Businesses",
+    title: "Insights | Umri's Enterprises",
     description:
-      "Practical articles on efficient logistics, real-time tracking and route optimisation for businesses in Kenya and East Africa.",
+      "Practical articles on efficient logistics, route optimisation and supply-chain strategy for businesses in Kenya and East Africa.",
     path: "/insights",
+    image: "/logo512.png",
   });
 
   return (

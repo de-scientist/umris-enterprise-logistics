@@ -13,10 +13,11 @@ import { organizationSchema, breadcrumbSchema } from "../lib/schema";
  */
 export default function CaseStudies() {
   useSeo({
-    title: "Case Studies",
+    title: "Case Studies | Umri's Enterprises",
     description:
-      "How Umri's Enterprises Logistics coordinates freight, relief and cross-border logistics — challenges, approaches and outcomes.",
+      "How Umri's Enterprises coordinates freight, relief and cross-border logistics — challenges, approaches and outcomes.",
     path: "/case-studies",
+    image: "/logo512.png",
   });
 
   return (
