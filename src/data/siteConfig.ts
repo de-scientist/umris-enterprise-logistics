@@ -71,6 +71,9 @@ export const NAV_LINKS = [
 export const BUSINESS_DESCRIPTION =
   "Since 2017, Umri's Enterprises has been providing exceptional transportation services, building partnerships on trust and delivering excellence through integrity, efficiency, and seamless, timely transportation.";
 
+/** OG image URL for social sharing. */
+export const OG_IMAGE = absoluteUrl("/logo512.png");
+
 export function whatsappLink(message: string): string {
   return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
 }
