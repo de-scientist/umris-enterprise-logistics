@@ -20,6 +20,7 @@ export const SITE = {
   /** Official legal/brand entity — used in schema, titles, footer. */
   name: BRAND.name,
   shortName: BRAND.shortName,
+  legalNote: BRAND.name,
   tagline: BRAND.tagline,
 
   /* Official production domain — all canonical/sitemap/OG references use this. */
