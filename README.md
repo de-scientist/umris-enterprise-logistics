@@ -1,6 +1,8 @@
-# Umri's Enterprises Logistics
+# Umri's Enterprises
 
-A conversion-focused website for **Umri's Enterprises Logistics** — a Kenyan logistics and transportation company serving businesses across Kenya and East Africa.
+A conversion-focused website for **Umri's Enterprises** — a Kenyan transportation and logistics company serving businesses across Kenya and East Africa since 2017.
+
+**Official tagline:** Eyes on Perfection.
 
 **Live site:** https://umrisenterprise.co.ke/
 
@@ -8,7 +10,7 @@ A conversion-focused website for **Umri's Enterprises Logistics** — a Kenyan l
 
 ## Overview
 
-The site presents Umri's Enterprises' logistics services (freight transportation, secure warehousing, customs clearing, freight forwarding, trucking, cargo tracking, procurement, last-mile delivery and consultancy), its operational capabilities, industry focus, project evidence and insights. It is built as a fast, accessible, SEO- and AEO-friendly single-page application with server-rendered-equivalent metadata via React.
+The site presents Umri's Enterprises' transportation and logistics services (freight transportation, secure warehousing, customs clearing, freight forwarding, trucking, last-mile delivery, procurement and consultancy), its operational capabilities, industry focus, project evidence and insights. It is built as a fast, accessible, SEO- and GEO-friendly single-page application with server-rendered-equivalent metadata via React.
 
 The project prioritises **authenticity**: all copy, case studies and claims are grounded in the business's actual operations. No clients, statistics, fleet sizes, certifications or results are invented.
 
@@ -62,8 +64,9 @@ src/
   App.tsx               # Route definitions, global layout (Header/Footer/CTA)
   index.css             # Design system (tokens, components, utilities)
   data/                 # Single source of truth for content
-    siteConfig.ts       # Brand, contact, social, navigation (verify fields flagged)
+    siteConfig.ts       # Brand, contact, social, navigation
     services.ts         # Service catalogue + per-service FAQs/process
+    coverageAreas.ts    # 13 verified Kenyan coverage counties
     industries.tsx      # Industry focus cards
     projects.ts         # Case studies / project evidence
     testimonials.ts     # Client testimonials (classified by verification)
@@ -77,9 +80,11 @@ src/
     layout/             # Header, Footer, MobileActionBar, ScrollToTop, MapSection
     sections/           # Hero, TrustStrip, WhyUs, HowItWorks, Capabilities, CtaBand
     ui/                 # SectionHeading, Reveal, Faq, Button, Breadcrumbs, WhatsApp
-    ServiceCard.tsx, Testimonials.tsx, Gallery.tsx
+    logistics/          # QuoteCalculator, TrackingForm, ShipmentCard, NetworkVisual
+    ServiceCard.tsx, Testimonials.tsx, Gallery.tsx, QuoteForm.tsx
   pages/                # Home, About, Services, ServiceDetail, Industries,
-                        # Portfolio, Insights, Article, Contact, NotFound
+                        # Portfolio, Insights, Article, Contact, Faq, Locations,
+                        # Tracking, CaseStudies, Solutions, NotFound
 public/
   robots.txt            # Crawl rules
   sitemap.xml           # Indexable route map
@@ -94,42 +99,44 @@ public/
 | `/` | Home |
 | `/about` | About |
 | `/services` | Services overview |
-| `/services/:slug` | Service detail (one per service in `data/services.ts`) |
+| `/services/:slug` | Service detail |
+| `/solutions` | Solutions |
 | `/industries` | Industries served |
-| `/portfolio` | Projects / case studies |
-| `/insights` | Insights / blog index |
+| `/industries/:slug` | Industry detail |
+| `/tracking` | Shipment tracking (demo) |
+| `/quote` | Request a quote |
+| `/faq` | Frequently asked questions |
+| `/locations` | Areas we serve |
+| `/case-studies` | Case studies |
+| `/portfolio` | Portfolio |
+| `/insights` | Insights / blog |
 | `/insights/:slug` | Article |
 | `/contact` | Contact & quote hub |
 | `*` | Not Found (404) |
 
 ---
 
-## Design System
-
-Visual identity uses a magenta primary (`#8a2f6a`) with a green accent (`#6cc06b`), a neutral ink/surface scale and Poppins typography. Tokens (colors, spacing, radii, shadows, motion) live as CSS custom properties in `src/index.css`. Motion is restrained and honours `prefers-reduced-motion`.
-
----
-
 ## SEO, AEO & Structured Data
 
 - Per-route titles, meta descriptions, canonical and Open Graph/Twitter tags are managed by `useSeo()` in `lib/seo.ts`.
-- JSON-LD structured data is injected per page: `Organization`, `MovingCompany` (LocalBusiness), `WebSite`, `Service`, `Article`, `FAQPage` and `BreadcrumbList`.
+- JSON-LD structured data is injected per page: `Organization`, `LocalBusiness`, `WebSite`, `Service`, `FAQPage`, `BreadcrumbList` and `Article`.
 - `public/sitemap.xml` and `public/robots.txt` are provided for crawlability.
+- Canonical domain: `https://umrisenterprise.co.ke`
 
 ---
 
-## Business Information — Verify Before Publishing
+## Business Information
 
-Several fields in `src/data/siteConfig.ts` are flagged with `verify: true` because the original sources conflicted. **Do not treat the following as confirmed:**
-
-- **HQ location** — original code conflicted between Thika and Naivasha; currently set to Naivasha with Naivasha coordinates.
-- **Street address** — placeholder line only; confirm the real address.
-- **Instagram** — currently a generic `instagram.com` placeholder and intentionally hidden from the UI until a real handle is supplied.
-- **Canonical domain** — set to `https://umrisenterprise.co.ke`. All canonical/sitemap/OG references point here.
-
-Update these in **one place** (`src/data/siteConfig.ts`) — they propagate to the footer, contact page, schema and metadata automatically.
-
-Contact details (phone, WhatsApp, email) are taken from the existing codebase and should also be confirmed.
+| Field | Value |
+| ----- | ----- |
+| Business name | Umri's Enterprises |
+| Tagline | Eyes on Perfection. |
+| Established | 2017 |
+| Domain | https://umrisenterprise.co.ke |
+| HQ | Genesis House, Naivasha, Kenya |
+| Phone | +254 764 268 280 |
+| Email | umris.enterprises@gmail.com |
+| Coverage | 13 Kenyan counties |
 
 ---
 
@@ -137,4 +144,6 @@ Contact details (phone, WhatsApp, email) are taken from the existing codebase an
 
 - No backend or API integrations are present; the quote form is a client-side qualification form (no submission endpoint). Wire it to an email/CRM service before relying on it for leads.
 - Images are sourced from `src/assets/`; some are large PNGs and should be optimised (WebP/AVIF + responsive sizes) for Core Web Vitals.
+- Shipment tracking is currently a frontend demo using sample data — live tracking is not yet available.
+- The quote calculator provides illustrative estimates only — not official pricing.
 - This README reflects the codebase as built; it does not assert business facts beyond what the application itself states.
