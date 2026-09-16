@@ -7,10 +7,11 @@ import { organizationSchema, breadcrumbSchema } from "../lib/schema";
 
 export default function Portfolio() {
   useSeo({
-    title: "Portfolio & Case Studies",
+    title: "Portfolio | Umri's Enterprises",
     description:
-      "See how Umri's Enterprises Logistics coordinates freight, relief and cross-border logistics for partners across Kenya and East Africa.",
+      "See how Umri's Enterprises coordinates freight, relief and cross-border logistics for partners across Kenya and East Africa.",
     path: "/portfolio",
+    image: "/logo512.png",
   });
 
   return (

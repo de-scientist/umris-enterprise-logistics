@@ -5,8 +5,8 @@ import { SITE } from "../data/siteConfig";
 
 export default function NotFound() {
   useSeo({
-    title: "Page not found",
-    description: "The page you were looking for could not be found.",
+    title: "Page Not Found | Umri's Enterprises",
+    description: "The page you were looking for could not be found on Umri's Enterprises website.",
     path: "/404",
   });
 

@@ -19,6 +19,7 @@ export default function IndustryDetail() {
       ? `${industry.name} logistics in Kenya: ${industry.solution}`
       : "Industry logistics solutions in Kenya.",
     path: `/industries/${slug ?? ""}`,
+    image: "/logo512.png",
   });
 
   if (!industry) return <NotFound />;
