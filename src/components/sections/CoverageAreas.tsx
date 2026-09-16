@@ -2,7 +2,7 @@ import { COVERAGE_AREAS } from "../../data/coverageAreas";
 import Reveal from "../ui/Reveal";
 
 export default function CoverageAreas({
-  heading = "Serving More of Kenya",
+  heading = "Areas We Serve",
   intro,
   className = "",
 }: {
@@ -11,7 +11,7 @@ export default function CoverageAreas({
   className?: string;
 }) {
   const defaultIntro =
-    "Umri's Enterprises provides reliable transportation and logistics support across selected counties in Kenya, helping move essential goods, cargo and supplies where they are needed.";
+    "Umri's Enterprises provides reliable transportation and logistics support across selected counties in Kenya. Our current coverage includes Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu counties.";
 
   return (
     <section className={`coverage ${className}`} aria-label="Coverage areas">
