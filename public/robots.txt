@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_vercel/
 
 Sitemap: https://umrisenterprise.co.ke/sitemap.xml
