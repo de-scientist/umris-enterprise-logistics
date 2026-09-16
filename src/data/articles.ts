@@ -31,7 +31,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Your supply chain decides your speed, reliability and customer satisfaction. Here is how a strong logistics partner moves growth.",
     category: "Logistics",
-    author: "Umri's Enterprises Logistics",
+    author: "Umri's Enterprises",
     date: "5 November 2025",
     readTime: "5 min read",
     image: t1,
@@ -51,7 +51,7 @@ export const ARTICLES: Article[] = [
       { type: "quote", text: "A strong logistics partner doesn't just move goods; it moves growth." },
       { type: "h2", text: "Choosing a partner that fits" },
       { type: "p", text: "Look for a provider who can explain their process, not just quote a price. Ask how they handle tracking, what happens if a delivery slips, and how they coordinate multi-leg movements. The answers tell you whether they run an operation or just a fleet." },
-      { type: "p", text: "Umri's Enterprises Logistics focuses on dependable transport, warehousing and distribution that keep Kenyan businesses moving — with coordination built around your delivery requirements." },
+      { type: "p", text: "Umri's Enterprises focuses on dependable transport, warehousing and distribution that keep Kenyan businesses moving — with coordination built around your delivery requirements." },
     ],
     faqs: [
       { q: "Why does logistics matter to small businesses?", a: "Reliable logistics protects your reputation and cash flow — late or damaged deliveries cost more than the service itself." },
@@ -65,7 +65,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Customers want transparency. Real-time tracking delivers exactly that — and turns visibility into a competitive advantage.",
     category: "Technology",
-    author: "Umri's Enterprises Logistics",
+    author: "Umri's Enterprises",
     date: "29 October 2025",
     readTime: "4 min read",
     image: t2,
@@ -97,7 +97,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Poor route planning wastes fuel, time and patience. Data-driven routing cuts cost and lifts reliability.",
     category: "Transportation",
-    author: "Umri's Enterprises Logistics",
+    author: "Umri's Enterprises",
     date: "20 October 2025",
     readTime: "5 min read",
     image: t3,

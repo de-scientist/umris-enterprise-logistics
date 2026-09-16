@@ -19,7 +19,7 @@ export const COVERAGE_AREAS: CoverageArea[] = [
   { name: "Lamu County", slug: "lamu" },
 ] as const;
 
-if (typeof window !== "undefined" && import.meta.env?.DEV) {
+if (typeof window !== "undefined") {
   if (COVERAGE_AREAS.length !== 13) {
     throw new Error(`Expected 13 Umri's Enterprises coverage areas, got ${COVERAGE_AREAS.length}.`);
   }

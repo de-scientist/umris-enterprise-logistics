@@ -6,7 +6,7 @@ export interface FAQ {
 export const SITE_FAQ: FAQ[] = [
   {
     q: "What logistics services does Umri's Enterprises provide?",
-    a: "We provide transport, warehousing, last-mile delivery, customs clearing, freight forwarding, procurement support and tailored supply-chain solutions for businesses, institutions and organisations across Kenya and East Africa.",
+    a: "We provide transport, warehousing, last-mile delivery, customs clearing, freight forwarding, procurement support and tailored supply-chain solutions for businesses, institutions and organisations across selected counties in Kenya and East Africa.",
   },
   {
     q: "Where does Umri's Enterprises operate?",
@@ -45,34 +45,6 @@ export const SITE_FAQ: FAQ[] = [
     a: "Use the official quote request form and provide the relevant transportation or logistics requirements. The Umri's Enterprises team can then review the request and confirm the appropriate service and pricing.",
   },
   {
-    q: "Do you deliver to all parts of these counties?",
-    a: "Coverage can vary depending on the destination, service requirements, cargo and operational conditions. Contact Umri's Enterprises with your origin and destination so the team can confirm availability.",
-  },
-  {
-    q: "Can I get an exact delivery quote online?",
-    a: "The website calculator provides an illustrative estimate only. Final pricing depends on the specific transportation requirements and must be confirmed by Umri's Enterprises.",
-  },
-  {
-    q: "Does the quote calculator show official Umri's pricing?",
-    a: "No. The current calculator is a frontend-only illustrative estimator. The displayed rates are guide values and are not official Umri's Enterprises pricing.",
-  },
-  {
-    q: "How do I request an official quote?",
-    a: "Submit your requirements through the official quote request form. Include relevant information such as your origin, destination, service requirement, cargo details and package or weight information where applicable.",
-  },
-  {
-    q: "Can Umri's Enterprises handle logistics outside the listed counties?",
-    a: "The listed counties represent our current stated coverage. If your destination is outside these areas, contact Umri's Enterprises to confirm whether the requested service can be supported.",
-  },
-  {
-    q: "What information should I provide when requesting a quote?",
-    a: "Provide the origin, destination, service required, approximate cargo weight, package count and any other relevant handling or delivery requirements. Additional information may be requested before a final quote is confirmed.",
-  },
-  {
-    q: "Is shipment tracking currently available?",
-    a: "The tracking feature is currently being developed and is not yet a fully connected live tracking service. For shipment-related enquiries, please contact Umri's Enterprises directly.",
-  },
-  {
     q: "How can I request a quotation?",
     a: "You can request a quote through our contact form, by WhatsApp, via our Facebook page, or with a direct call. Share your cargo type, origin, destination and timing for an accurate estimate.",
   },
@@ -104,4 +76,4 @@ export const SITE_FAQ: FAQ[] = [
     q: "How can I contact Umri's Enterprises?",
     a: "By phone on +254 764 268 280, by WhatsApp on the same number, by email at umris.enterprises@gmail.com, or through the contact form on this website.",
   },
-];
+] as const;

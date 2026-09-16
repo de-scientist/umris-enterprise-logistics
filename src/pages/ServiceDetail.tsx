@@ -13,6 +13,7 @@ import NotFound from "./NotFound";
 export default function ServiceDetail() {
   const { slug } = useParams();
   const service = slug ? getService(slug) : undefined;
+  const isTracking = slug === "real-time-tracking";
 
   useSeo({
     title: service ? `${service.title} | Umri's Enterprises` : "Service",
@@ -164,6 +165,21 @@ export default function ServiceDetail() {
       )}
 
       <CtaBand title={`Need ${service.title.toLowerCase()}?`} text="Share your requirement and we'll prepare a clear quotation." topic={service.title} />
+      {isTracking && (
+        <section className="section">
+          <div className="container container-narrow">
+            <div className="answer-block">
+              <h2 className="h3">Tracking availability</h2>
+              <p>
+                Real-time cargo tracking is currently being developed. The tracking page at{" "}
+                <Link to="/tracking">/tracking</Link> demonstrates the tracking interface using sample data.
+                Live GPS and real-time carrier updates are not yet available. For shipment status, contact
+                Umri's Enterprises directly.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }

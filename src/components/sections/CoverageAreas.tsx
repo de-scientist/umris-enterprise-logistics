@@ -10,8 +10,9 @@ export default function CoverageAreas({
   intro?: string;
   className?: string;
 }) {
+  const countyList = COVERAGE_AREAS.map((a) => a.name).join(", ");
   const defaultIntro =
-    "Umri's Enterprises provides reliable transportation and logistics support across selected counties in Kenya. Our current coverage includes Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu counties.";
+    `Umri's Enterprises provides reliable transportation and logistics support across selected counties in Kenya. Our current coverage includes ${countyList}.`;
 
   return (
     <section className={`coverage ${className}`} aria-label="Coverage areas">

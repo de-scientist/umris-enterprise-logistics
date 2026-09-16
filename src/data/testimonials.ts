@@ -13,7 +13,7 @@ export interface Testimonial {
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Umri's Enterprises Logistics has consistently delivered speed, clarity, and professionalism. Their reliability has made our emergency response operations smoother and far more efficient.",
+      "Umri's Enterprises has consistently delivered speed, clarity, and professionalism. Their reliability has made our emergency response operations smoother and far more efficient.",
     name: "Diptesh",
     org: "Spartan Relief Limited",
     verified: true,

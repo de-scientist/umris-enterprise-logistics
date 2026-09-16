@@ -74,7 +74,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "operational-fleet-dispatch",
     title: "Operational Fleet Dispatch & Loading",
-    client: "Umri's Enterprises Logistics",
+    client: "Umri's Enterprises",
     industry: "Internal Capability",
     location: "Kenya",
     service: "Local & Long-Distance Trucking",

@@ -1,10 +1,8 @@
-import { BRAND, SITE, absoluteUrl } from "../data/siteConfig";
-import { COVERAGE_AREAS } from "../data/coverageAreas";
+import { BRAND, SITE, absoluteUrl, BUSINESS_DESCRIPTION } from "../data/siteConfig";
 import { SERVICES, type Service } from "../data/services";
 import { SITE_FAQ } from "../data/faqs";
 import { ARTICLES, type Article } from "../data/articles";
 
-const coverageAreaNames = COVERAGE_AREAS.map((a) => a.name);
 const sameAs = [SITE.social.facebook, SITE.social.instagram, SITE.social.twitter, SITE.social.linkedin].filter(Boolean) as string[];
 
 function orgBase() {
@@ -14,7 +12,7 @@ function orgBase() {
     name: BRAND.name,
     alternateName: BRAND.shortName,
     url: SITE.canonicalDomain,
-    description: BRAND.name + " provides dependable transport, warehousing and distribution solutions that keep Kenyan businesses moving.",
+    description: BUSINESS_DESCRIPTION,
     email: SITE.email,
     telephone: SITE.phone,
     address: {
@@ -44,6 +42,38 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     ...orgBase(),
+    description: BUSINESS_DESCRIPTION,
+  };
+}
+
+export function organizationSchemaWithDetails() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": absoluteUrl("/#organization"),
+    name: BRAND.name,
+    alternateName: BRAND.shortName,
+    url: SITE.canonicalDomain,
+    description: BUSINESS_DESCRIPTION,
+    email: SITE.email,
+    telephone: SITE.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: SITE.hq.label,
+      addressLocality: SITE.hq.city,
+      addressCountry: SITE.hq.country,
+    },
+    hasMap: SITE.mapsUrl,
+    areaServed: ["Kenya"],
+    sameAs: sameAs,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: SITE.phone,
+      contactType: "sales",
+      email: SITE.email,
+      availableLanguage: "en",
+    },
+    foundingDate: String(SITE.foundedYear),
   };
 }
 
@@ -60,6 +90,18 @@ export function websiteSchema() {
       target: `${SITE.canonicalDomain}/insights?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
+  };
+}
+
+export function webPageSchema(title: string, description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description: description,
+    url: absoluteUrl(),
+    publisher: { "@id": absoluteUrl("/#organization") },
+    isPartOf: { "@id": absoluteUrl("/#website") },
   };
 }
 
@@ -86,7 +128,7 @@ export function localBusinessSchema() {
       latitude: lat,
       longitude: lng,
     },
-    areaServed: ["Kenya", ...coverageAreaNames],
+    areaServed: ["Kenya"],
     sameAs: sameAs,
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",

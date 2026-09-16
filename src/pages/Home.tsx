@@ -78,7 +78,7 @@ export default function Home() {
             <span className="eyebrow">Who we are</span>
             <h2>Logistics built around reliability</h2>
             <p>
-              Umri's Enterprises Logistics exists to keep Kenyan businesses moving.
+              Umri's Enterprises exists to keep Kenyan businesses moving.
               Whether it is freight across the country, storage between movements,
               or the final delivery to a customer, we coordinate each step with
               care and clear communication.

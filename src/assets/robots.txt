@@ -1,3 +1,9 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_vercel/
+Disallow: /_vite/
+
+Sitemap: https://umrisenterprise.co.ke/sitemap.xml

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BRAND, absoluteUrl } from "../data/siteConfig";
+import { BRAND, SITE, absoluteUrl } from "../data/siteConfig";
 
 export interface SeoProps {
   title: string;
@@ -39,6 +39,7 @@ export function useSeo({ title, description, path = "/", image, type = "website"
     const url = absoluteUrl(path);
     const fullTitle = title.includes(BRAND.name) ? title : title + BRAND_SUFFIX;
     const shareImage = image ?? OG_IMAGE;
+    const twitterSite = SITE.social.twitter ? `@${SITE.social.twitter}` : undefined;
 
     document.title = fullTitle;
     upsertMeta('meta[name="description"]', "name", "description", description);
@@ -51,7 +52,9 @@ export function useSeo({ title, description, path = "/", image, type = "website"
     upsertMeta('meta[property="og:image:height"]', "property", "og:image:height", String(OG_IMAGE_HEIGHT));
     upsertMeta('meta[property="og:image:alt"]', "property", "og:image:alt", `${BRAND.name} logo`);
     upsertMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
-    upsertMeta('meta[name="twitter:site"]', "name", "twitter:site", `@${BRAND.name}`);
+    if (twitterSite) {
+      upsertMeta('meta[name="twitter:site"]', "name", "twitter:site", twitterSite);
+    }
     upsertMeta('meta[name="twitter:title"]', "name", "twitter:title", fullTitle);
     upsertMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
     upsertMeta('meta[name="twitter:image"]', "name", "twitter:image", shareImage);
