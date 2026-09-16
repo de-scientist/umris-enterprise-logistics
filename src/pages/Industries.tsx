@@ -7,10 +7,11 @@ import { organizationSchema, breadcrumbSchema } from "../lib/schema";
 
 export default function Industries() {
   useSeo({
-    title: "Industries We Serve",
+    title: "Industries We Serve | Umri's Enterprises",
     description:
-      "Umri's Enterprises Logistics serves humanitarian, medical, manufacturing, retail, agriculture, construction, e-commerce and corporate clients across Kenya.",
+      "Umri's Enterprises serves humanitarian, medical, manufacturing, retail, agriculture, construction, e-commerce and corporate clients across Kenya.",
     path: "/industries",
+    image: "/logo512.png",
   });
 
   return (

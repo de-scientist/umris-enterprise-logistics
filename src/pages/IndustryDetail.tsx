@@ -14,7 +14,7 @@ export default function IndustryDetail() {
   const industry = INDUSTRIES.find((i) => i.slug === slug);
 
   useSeo({
-    title: industry ? `${industry.name} Logistics` : "Industry",
+    title: industry ? `${industry.name} Logistics | Umri's Enterprises` : "Industry",
     description: industry
       ? `${industry.name} logistics in Kenya: ${industry.solution}`
       : "Industry logistics solutions in Kenya.",

@@ -43,10 +43,11 @@ const SOLUTIONS = [
 /** /solutions — bundles services into buyer-oriented outcomes. */
 export default function Solutions() {
   useSeo({
-    title: "Logistics Solutions",
+    title: "Logistics Solutions | Umri's Enterprises",
     description:
-      "Logistics solutions for e-commerce, business freight, import and export, fulfilment and distribution across Kenya and East Africa.",
+      "Logistics solutions for e-commerce, business freight, import and export, fulfilment and distribution across Kenya.",
     path: "/solutions",
+    image: "/logo512.png",
   });
 
   return (
