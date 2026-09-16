@@ -11,10 +11,11 @@ import locationsHero from "../assets/truck5.jpg";
 /** /locations — honest coverage. Only areas Umri's actually serves. */
 export default function Locations() {
   useSeo({
-    title: "Service Coverage | Umri's Enterprises",
+    title: "Areas We Serve in Kenya | Umri's Enterprises",
     description:
-      "Umri's Enterprises Logistics provides transportation and logistics support across selected counties in Kenya, including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu.",
+      "Umri's Enterprises provides transportation and logistics support across selected counties in Kenya including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu.",
     path: "/locations",
+    image: "/logo512.png",
   });
 
   return (

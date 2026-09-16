@@ -12,8 +12,9 @@ export default function FaqPage() {
   useSeo({
     title: "Frequently Asked Questions | Umri's Enterprises",
     description:
-      "Answers about Umri's Enterprises logistics services, coverage across selected counties in Kenya, quotes, tracking, warehousing, customs clearing. Final pricing is subject to confirmation.",
+      "Answers about Umri's Enterprises logistics services, coverage across Kenya, quotes, tracking, warehousing, customs clearing. Final pricing is subject to confirmation.",
     path: "/faq",
+    image: "/logo512.png",
   });
 
   return (
@@ -37,7 +38,7 @@ export default function FaqPage() {
       <section className="section">
         <div className="container container-narrow">
           <div className="answer-block">
-            <h2 className="h3">What logistics services does Umri's Enterprises Logistics provide?</h2>
+            <h2 className="h3">What logistics services does Umri's Enterprises provide?</h2>
             <p>
               Umri's provides freight transportation, trucking, secure
               warehousing, customs clearing, freight forwarding, last-mile

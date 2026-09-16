@@ -19,8 +19,9 @@ export default function Services() {
   useSeo({
     title: "Logistics & Transportation Services | Umri's Enterprises",
     description:
-      "Explore Umri's Enterprises Logistics services: freight transport, warehousing, customs clearing, forwarding, trucking, tracking, procurement, last-mile delivery and consultancy across selected counties in Kenya.",
+      "Explore Umri's Enterprises logistics services: freight transport, warehousing, customs clearing, forwarding, trucking, last-mile delivery and consultancy across Kenya.",
     path: "/services",
+    image: "/logo512.png",
   });
 
   return (

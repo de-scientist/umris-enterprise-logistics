@@ -29,10 +29,11 @@ const QUOTE_FAQS = [
  */
 export default function Quote() {
   useSeo({
-    title: "Get a Quote",
+    title: "Request a Logistics Quote | Umri's Enterprises",
     description:
       "Request a logistics quote from Umri's Enterprises Logistics. Get an illustrative estimate instantly, then request an official quote for your shipment.",
     path: "/quote",
+    image: "/logo512.png",
   });
 
   return (

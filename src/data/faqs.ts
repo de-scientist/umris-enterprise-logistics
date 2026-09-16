@@ -5,7 +5,7 @@ export interface FAQ {
 
 export const SITE_FAQ: FAQ[] = [
   {
-    q: "What logistics services does Umri's Enterprises Logistics provide?",
+    q: "What logistics services does Umri's Enterprises provide?",
     a: "We provide transport, warehousing, last-mile delivery, customs clearing, freight forwarding, procurement support and tailored supply-chain solutions for businesses, institutions and organisations across Kenya and East Africa.",
   },
   {

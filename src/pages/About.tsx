@@ -15,10 +15,11 @@ const VALUE_ICONS = [FaHandshake, FaScaleBalanced, FaEye];
 
 export default function About() {
   useSeo({
-    title: "About Umri's Enterprises | Logistics & Transportation",
+    title: "About Umri's Enterprises | Kenyan Logistics & Transportation",
     description:
-      "Since 2017, Umri's Enterprises has provided exceptional transportation services across selected counties in Kenya, including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu. Eyes on Perfection.",
+      "Since 2017, Umri's Enterprises has provided exceptional transportation services across Kenya. Building partnerships on trust, delivering excellence through integrity and efficiency.",
     path: "/about",
+    image: "/logo512.png",
   });
 
   return (

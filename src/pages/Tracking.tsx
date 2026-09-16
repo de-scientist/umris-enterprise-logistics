@@ -21,10 +21,11 @@ export default function Tracking() {
   const [searched, setSearched] = useState(false);
 
   useSeo({
-    title: "Track Your Shipment",
+    title: "Track Your Shipment | Umri's Enterprises",
     description:
-      "Track your Umri's shipment using a demo tracking number. This page demonstrates shipment tracking with sample data — live tracking is not yet available.",
+      "Track your Umri's Enterprises shipment using a demo tracking number. This page demonstrates shipment tracking with sample data — live tracking is not yet available.",
     path: "/tracking",
+    image: "/logo512.png",
   });
 
   const search = async (tn: string) => {

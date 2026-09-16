@@ -8,35 +8,30 @@
 
 /** Central brand source — prevents future name inconsistencies. */
 export const BRAND = {
-  /** Short brand name for lockups, greetings and prose. */
+  /** Official business name — used everywhere. */
   name: "Umri's Enterprises",
-  /** Full business name for titles, schema and legal contexts. */
-  logisticsName: "Umri's Enterprises Logistics",
+  /** Official tagline. */
+  tagline: "Eyes on Perfection.",
   /** Shortest reference, e.g. header lockup. */
   shortName: "Umri's",
-  /** Official brand signature. Use intentionally — hero, About, footer. */
-  tagline: "Eyes on Perfection.",
 } as const;
 
 export const SITE = {
-  /* Official legal/brand entity — used in schema, titles, footer */
-  name: BRAND.logisticsName,
+  /** Official legal/brand entity — used in schema, titles, footer. */
+  name: BRAND.name,
   shortName: BRAND.shortName,
-  legalNote: BRAND.name,
+  tagline: BRAND.tagline,
 
-   /* Official production domain — all canonical/sitemap/OG references use this. */
-   canonicalDomain: "https://umrisenterprise.co.ke",
+  /* Official production domain — all canonical/sitemap/OG references use this. */
+  canonicalDomain: "https://umrisenterprise.co.ke",
 
-  /* Contact — taken from existing codebase (Header/Contact). */
+  /* Contact */
   email: "umris.enterprises@gmail.com",
   phone: "+254 764 268 280",
   phoneDisplay: "+254 764 268 280",
-  whatsapp: "254764268280", // international format, no "+"
+  whatsapp: "254764268280",
 
-  /* Confirmed location label: Genesis House, Naivasha, Kenya.
-     Coordinates are the approximate Genesis House reference
-     supplied by the business (-0.749481, 36.462653). No street
-     address is invented — only the confirmed building name. */
+  /* Verified location: Genesis House, Naivasha, Kenya */
   hq: {
     label: "Genesis House",
     city: "Naivasha",
@@ -45,26 +40,21 @@ export const SITE = {
     addressLine: "Genesis House, Naivasha, Kenya",
   },
 
-  /* Official directions destination supplied by the business. */
   mapsUrl: "https://maps.app.goo.gl/9L5jFbEG9zUTXX3V8?g_st=aw",
 
-  /* Service region description (factual: operates across Kenya + East Africa) */
   serviceArea: "Across Kenya, with regional logistics across East Africa",
 
-  /* Social — only verified accounts. Instagram in original code was a
-     generic placeholder (instagram.com) and is flagged for verification. */
+  positioning:
+    "Umri's Enterprises provides dependable transport, warehousing and distribution solutions that keep Kenyan businesses moving.",
+
+  foundedYear: 2017,
+
   social: {
     facebook: "https://www.facebook.com/100063605441743",
-    instagram: "https://www.instagram.com/", // ⚠️ VERIFY handle
-    instagramVerify: true,
-    twitter: "", // not verified — omitted from UI
-    linkedin: "", // not verified — omitted from UI
+    instagram: "",
+    twitter: "",
+    linkedin: "",
   },
-
-  /* Official brand signature (single source: BRAND.tagline). */
-  tagline: BRAND.tagline,
-  positioning:
-    "Umri's Enterprises Logistics provides dependable transport, warehousing and distribution solutions that keep Kenyan businesses moving.",
 } as const;
 
 export const NAV_LINKS = [
@@ -75,6 +65,10 @@ export const NAV_LINKS = [
   { label: "Resources", to: "/insights" },
   { label: "About", to: "/about" },
 ] as const;
+
+/** Official description for metadata/schema. */
+export const BUSINESS_DESCRIPTION =
+  "Since 2017, Umri's Enterprises has been providing exceptional transportation services, building partnerships on trust and delivering excellence through integrity, efficiency, and seamless, timely transportation.";
 
 export function whatsappLink(message: string): string {
   return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`;

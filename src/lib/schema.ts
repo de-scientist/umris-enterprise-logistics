@@ -1,18 +1,22 @@
-import { SITE, absoluteUrl } from "../data/siteConfig";
+import { BRAND, SITE, COVERAGE_AREAS, absoluteUrl } from "../data/siteConfig";
 import { SERVICES, type Service } from "../data/services";
 import { SITE_FAQ } from "../data/faqs";
 import { ARTICLES, type Article } from "../data/articles";
 
+const coverageAreaNames = COVERAGE_AREAS.map((a) => a.name);
+const sameAs = [SITE.social.facebook, SITE.social.instagram, SITE.social.twitter, SITE.social.linkedin].filter(Boolean) as string[];
+
 function orgBase() {
   return {
+    "@context": "https://schema.org",
     "@type": ["Organization", "LogisticsCompany", "LocalBusiness"],
     "@id": absoluteUrl("/#organization"),
-    name: SITE.name,
-    alternateName: SITE.shortName,
+    name: BRAND.name,
+    alternateName: BRAND.shortName,
     url: SITE.canonicalDomain,
+    description: BRAND.name + " provides dependable transport, warehousing and distribution solutions that keep Kenyan businesses moving.",
     email: SITE.email,
     telephone: SITE.phone,
-    description: SITE.positioning,
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE.hq.label,
@@ -24,7 +28,7 @@ function orgBase() {
       "@type": "AdministrativeArea",
       name: "Kenya",
     },
-    sameAs: [SITE.social.facebook].filter(Boolean) as string[],
+    sameAs: sameAs,
     contactPoint: {
       "@type": "ContactPoint",
       telephone: SITE.phone,
@@ -32,6 +36,7 @@ function orgBase() {
       email: SITE.email,
       availableLanguage: "en",
     },
+    foundingDate: String(SITE.foundedYear),
   };
 }
 
@@ -48,7 +53,7 @@ export function websiteSchema() {
     "@type": "WebSite",
     "@id": absoluteUrl("/#website"),
     url: SITE.canonicalDomain,
-    name: SITE.name,
+    name: BRAND.name,
     publisher: { "@id": absoluteUrl("/#organization") },
     potentialAction: {
       "@type": "SearchAction",
@@ -60,16 +65,11 @@ export function websiteSchema() {
 
 export function localBusinessSchema() {
   const [lat, lng] = SITE.hq.coords;
-  const coverageAreaNames = [
-    "Meru County", "Makueni County", "Samburu County", "Taita-Taveta County",
-    "Nyandarua County", "Kajiado County", "Nakuru County", "Laikipia County",
-    "Kitui County", "Kwale County", "Embu County", "Machakos County", "Lamu County",
-  ];
   return {
     "@context": "https://schema.org",
-    "@type": "MovingCompany",
+    "@type": "LocalBusiness",
     "@id": absoluteUrl("/#organization"),
-    name: SITE.name,
+    name: BRAND.name,
     image: absoluteUrl("/logo512.png"),
     url: SITE.canonicalDomain,
     telephone: SITE.phone,
@@ -86,8 +86,14 @@ export function localBusinessSchema() {
       latitude: lat,
       longitude: lng,
     },
-    areaServed: ["Kenya", "East Africa", ...coverageAreaNames],
-    sameAs: [SITE.social.facebook].filter(Boolean) as string[],
+    areaServed: ["Kenya", ...coverageAreaNames],
+    sameAs: sameAs,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
   };
 }
 

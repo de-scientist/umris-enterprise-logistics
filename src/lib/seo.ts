@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { SITE, absoluteUrl } from "../data/siteConfig";
+import { BRAND, SITE, absoluteUrl } from "../data/siteConfig";
 
 export interface SeoProps {
   title: string;
@@ -9,7 +9,10 @@ export interface SeoProps {
   type?: "website" | "article";
 }
 
-const BRAND_SUFFIX = ` | ${SITE.name}`;
+const BRAND_SUFFIX = ` | ${BRAND.name}`;
+const OG_IMAGE = absoluteUrl("/logo512.png");
+const OG_IMAGE_WIDTH = 1200;
+const OG_IMAGE_HEIGHT = 630;
 
 function upsertMeta(selector: string, attr: "name" | "property", key: string, content: string) {
   let el = document.head.querySelector<HTMLMetaElement>(selector);
@@ -34,8 +37,8 @@ function upsertLink(rel: string, href: string) {
 export function useSeo({ title, description, path = "/", image, type = "website" }: SeoProps) {
   useEffect(() => {
     const url = absoluteUrl(path);
-    const fullTitle = title.includes(SITE.name) ? title : title + BRAND_SUFFIX;
-    const shareImage = image ?? absoluteUrl("/logo512.png");
+    const fullTitle = title.includes(BRAND.name) ? title : title + BRAND_SUFFIX;
+    const shareImage = image ?? OG_IMAGE;
 
     document.title = fullTitle;
     upsertMeta('meta[name="description"]', "name", "description", description);
@@ -44,9 +47,13 @@ export function useSeo({ title, description, path = "/", image, type = "website"
     upsertMeta('meta[property="og:url"]', "property", "og:url", url);
     upsertMeta('meta[property="og:type"]', "property", "og:type", type);
     upsertMeta('meta[property="og:image"]', "property", "og:image", shareImage);
+    upsertMeta('meta[property="og:image:width"]', "property", "og:image:width", String(OG_IMAGE_WIDTH));
+    upsertMeta('meta[property="og:image:height"]', "property", "og:image:height", String(OG_IMAGE_HEIGHT));
+    upsertMeta('meta[property="og:image:alt"]', "property", "og:image:alt", `${BRAND.name} logo`);
+    upsertMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
+    upsertMeta('meta[name="twitter:site"]', "name", "twitter:site", `@${BRAND.name}`);
     upsertMeta('meta[name="twitter:title"]', "name", "twitter:title", fullTitle);
     upsertMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
-    upsertMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
     upsertMeta('meta[name="twitter:image"]', "name", "twitter:image", shareImage);
     upsertLink("canonical", url);
   }, [title, description, path, image, type]);

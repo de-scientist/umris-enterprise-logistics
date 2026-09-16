@@ -3,7 +3,7 @@ import { whatsappLink } from "../../data/siteConfig";
 
 /* eslint-disable react-refresh/only-export-components -- shared helper + components by design */
 export function whatsappMessage(topic: string, detail = ""): string {
-  const base = `Hello Umri's Enterprises Logistics, I'd like to request a quotation`;
+  const base = `Hello Umri's Enterprises, I'd like to request a quotation`;
   const service = topic ? ` for ${topic}` : "";
   const extra = detail ? ` ${detail}` : ".";
   return `${base}${service}${extra}`;

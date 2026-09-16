@@ -15,9 +15,10 @@ export default function ServiceDetail() {
   const service = slug ? getService(slug) : undefined;
 
   useSeo({
-    title: service ? `${service.title} in Kenya` : "Service",
-    description: service ? service.short : "Umri's logistics service.",
+    title: service ? `${service.title} | Umri's Enterprises` : "Service",
+    description: service ? service.short : "Umri's Enterprises logistics service.",
     path: `/services/${service ? service.slug : slug ?? ""}`,
+    image: service ? service.image : undefined,
   });
 
   if (!service) return <NotFound />;

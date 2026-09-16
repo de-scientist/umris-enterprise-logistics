@@ -50,7 +50,7 @@ export default function QuoteForm({ topic }: { topic?: string }) {
 
   const buildMessage = () => {
     const lines = [
-      `Hello Umri's Enterprises Logistics, I'd like to request a quotation.`,
+      `Hello Umri's Enterprises, I'd like to request a quotation.`,
       ``,
       `Name: ${form.name}`,
       `Company: ${form.company || "—"}`,
