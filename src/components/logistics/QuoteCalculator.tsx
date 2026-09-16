@@ -30,6 +30,7 @@ const ROUTES_KM: Record<string, number> = {
 };
 
 const COVERAGE_AREA_NAMES = COVERAGE_AREAS.map((a) => a.name);
+const COVERAGE_AREA_LIST = COVERAGE_AREAS.map((a) => a.name).join(", ");
 
 function formatKES(n: number): string {
   return `KES ${Math.round(n).toLocaleString("en-KE")}`;
@@ -47,7 +48,6 @@ export default function QuoteCalculator() {
 
   const useOtherRoute = route === "Other route";
   const isValidCustomDistance = useOtherRoute && customDistance !== "" && Number.isFinite(Number(customDistance)) && Number(customDistance) > 0;
-
   const canCalculate = !useOtherRoute || isValidCustomDistance;
 
   const calculate = (ev: FormEvent) => {
@@ -208,7 +208,7 @@ export default function QuoteCalculator() {
           <strong>Service coverage</strong>
         </p>
         <p>
-          We currently provide transportation and logistics support across selected counties including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu.
+          We currently provide transportation and logistics support across selected counties including {COVERAGE_AREA_LIST}.
         </p>
         <p>
           For an official quote, submit your requirements and our team can confirm availability and pricing.
