@@ -13,7 +13,7 @@ export default function Locations() {
   useSeo({
     title: "Areas We Serve in Kenya | Umri's Enterprises",
     description:
-      "Umri's Enterprises provides transportation and logistics support across selected counties in Kenya including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu.",
+      "Umri's Enterprises provides transportation and logistics support across 13 counties in Kenya, including Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu.",
     path: "/locations",
     image: "/logo512.png",
   });
