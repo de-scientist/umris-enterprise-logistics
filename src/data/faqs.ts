@@ -9,7 +9,7 @@ export const SITE_FAQ: FAQ[] = [
     a: "We provide transport, warehousing, last-mile delivery, customs clearing, freight forwarding, procurement support and tailored supply-chain solutions for businesses, institutions and organisations across Kenya and East Africa.",
   },
   {
-    q: "Where does Umri's Enterprises Logistics operate?",
+    q: "Where does Umri's Enterprises operate?",
     a: "Umri's Enterprises provides transportation and logistics support across selected counties in Kenya. Our current coverage includes Meru, Makueni, Samburu, Taita-Taveta, Nyandarua, Kajiado, Nakuru, Laikipia, Kitui, Kwale, Embu, Machakos and Lamu counties.",
   },
   {
@@ -101,7 +101,7 @@ export const SITE_FAQ: FAQ[] = [
     a: "Yes. Commercial cargo — from manufactured goods to medical supplies — is core to our freight and trucking services.",
   },
   {
-    q: "How can I contact Umri's Enterprises Logistics?",
+    q: "How can I contact Umri's Enterprises?",
     a: "By phone on +254 764 268 280, by WhatsApp on the same number, by email at umris.enterprises@gmail.com, or through the contact form on this website.",
   },
 ];
