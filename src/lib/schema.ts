@@ -1,4 +1,5 @@
-import { BRAND, SITE, COVERAGE_AREAS, absoluteUrl } from "../data/siteConfig";
+import { BRAND, SITE, absoluteUrl } from "../data/siteConfig";
+import { COVERAGE_AREAS } from "../data/coverageAreas";
 import { SERVICES, type Service } from "../data/services";
 import { SITE_FAQ } from "../data/faqs";
 import { ARTICLES, type Article } from "../data/articles";
@@ -8,7 +9,6 @@ const sameAs = [SITE.social.facebook, SITE.social.instagram, SITE.social.twitter
 
 function orgBase() {
   return {
-    "@context": "https://schema.org",
     "@type": ["Organization", "LogisticsCompany", "LocalBusiness"],
     "@id": absoluteUrl("/#organization"),
     name: BRAND.name,
